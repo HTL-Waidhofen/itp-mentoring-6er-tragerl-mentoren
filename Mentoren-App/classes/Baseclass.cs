@@ -11,18 +11,4 @@ public abstract class Base
 	public Base()
 	{
 	}
-	public bool LoginSucess(string email, string password, list<Base> list)
-	{
-        foreach (Base user in list)
-        {
-            if (email == user.Email)
-            {
-                if (password == user.Password) 
-                {
-                        return true                 
-                }
-            }
-        }
-        return false;
-    }
 }
