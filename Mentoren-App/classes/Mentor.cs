@@ -18,6 +18,6 @@ public class Mentor : Base
 	
 	public Mentor()
 	{
-		role = "mentor";
+		Role = "mentor";
 	}
 }

@@ -10,12 +10,13 @@
 
     <StackPanel Background="White">
 
-        <TextBox HorizontalAlignment="Center" FontSize="30">Registrierung</TextBox>
-        <TextBlock x:Name="VName" Text="Vorname"></TextBlock>
-        <TextBlock x:Name="NName" Text="Nachname"></TextBlock>
-        <TextBlock x:Name="Mail" Text="E-Mail"></TextBlock>
-        <TextBlock x:Name="Name" Text="Name"></TextBlock>
-        <ComboBox x:Name="RoleSelection" Background="LightGray" Width="100px"  Margin="5,0,5,5">
+        <TextBlock HorizontalAlignment="Center" FontSize="30">Registrierung</TextBlock>
+        <TextBox x:Name="VName" Text="Vorname"></TextBox>
+        <TextBox x:Name="NName" Text="Nachname"></TextBox>
+        <TextBox x:Name="Mail" Text="E-Mail"></TextBox>
+        <TextBox x:Name="pwd" Text="Passwort"></TextBox>
+        <TextBox x:Name="pwdBestaetigt" Text="Passwort bestätigen"></TextBox>
+        <ComboBox x:Name="RoleSelection" Background="LightGray" Width="100px" Margin="5,0,5,5">
             <ComboBoxItem>Student</ComboBoxItem>
             <ComboBoxItem>Mentor</ComboBoxItem>
         </ComboBox>
