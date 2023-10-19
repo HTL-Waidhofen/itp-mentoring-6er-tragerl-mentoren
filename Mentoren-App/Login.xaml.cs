@@ -33,7 +33,7 @@ namespace Mentoren_App
 
         }
 
-        private void UserRegistration(object sender, RoutedEventArgs e)
+        private void GoToRegistration(object sender, RoutedEventArgs e)
         {
 
         }
