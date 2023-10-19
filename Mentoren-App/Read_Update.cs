@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mentoren_App
 {
-    internal class Read_Update
+    public class Read_Update
     {
     }
 }
