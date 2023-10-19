@@ -8,12 +8,22 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login">
 
-    <StackPanel Background="White">
-        <TextBox HorizontalAlignment="Center" FontSize="30">Login</TextBox>
-        <TextBlock x:Name="LoginMail" Background="LightGray" Width="100px" Text="E-Mail"  Margin="5"></TextBlock>
-        <TextBlock x:Name="LoginPwd" Background="LightGray" Width="100px" Text="Passwort" Margin="5,0,5,5"></TextBlock>
-        <Button Click="LogUserIn" Background="LightGray" Width="100px"  Margin="5,0,5,5">Login</Button>
-        <Button Click="UserRegistration" Background="LightGray" Width="100px"  Margin="5,0,5,5">Registrieren</Button>
+    <StackPanel Background="White" Orientation="Vertical" HorizontalAlignment="Center">
+        
+        <Label HorizontalAlignment="Center" Content="Login" FontSize="30"/>
+        
+        <StackPanel Orientation="Horizontal">
+            <Label x:Name="LoginMail" Width="100px" Content="E-Mail"  Margin="5"/>
+            <TextBox Width="150" Margin="5"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label x:Name="LoginPwd" Width="100px" Content="Passwort" Margin="5"/>
+            <TextBox Width="150" Margin="5"></TextBox>
+        </StackPanel>
+
+        <Button Click="LogUserIn" Content="Login" Background="LightGray" Width="100px"  Margin="5"/>
+        <Button Click="UserRegistration" Content="Registrieren" Background="LightGray" Width="100px"  Margin="5"/>
     </StackPanel>
     
 </Page>
