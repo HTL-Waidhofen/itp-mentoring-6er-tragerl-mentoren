@@ -8,7 +8,16 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registrierung">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel Background="White">
+
+        <TextBox>Registrierung</TextBox>
+        <TextBlock x:Name="VName" Text="Vorname"></TextBlock>
+        <TextBlock x:Name="NName" Text="Nachname"></TextBlock>
+        <TextBlock x:Name="Mail" Text="E-Mail"></TextBlock>
+        <TextBlock x:Name="Name" Text="Name"></TextBlock>
+        <ComboBox x:Name="RoleSelection">
+            <ComboBoxItem>Student</ComboBoxItem>
+            <ComboBoxItem>Mentor</ComboBoxItem>
+        </ComboBox>
+    </StackPanel>
 </Page>
