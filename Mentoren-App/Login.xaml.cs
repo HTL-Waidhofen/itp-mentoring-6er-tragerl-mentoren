@@ -29,13 +29,15 @@ namespace Mentoren_App
         {
             //Methode für den Login mit Email/ Passwort# mit rückgabe von true/false und ist User/Admin/Mentor
             //Wenn true => Redirect auf Page
-
+            //Redirect auf User /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
+            //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
+            //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
 
         }
 
         private void GoToRegistration(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
         }
 
 

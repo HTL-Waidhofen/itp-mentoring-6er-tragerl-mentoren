@@ -23,6 +23,26 @@ namespace Mentoren_App
         public MainWindow()
         {
             InitializeComponent();
+            NavigateToPage("Login.xaml");
         }
+        public void NavigateToPage(string pageName)
+        {
+            mainFrame.Navigate(new Uri(pageName, UriKind.Relative));
+        }
+
+        private void GoToSettings(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void GoToImpressum(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

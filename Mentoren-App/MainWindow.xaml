@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mentoren_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock></TextBlock>
-        <TextBox></TextBox>
-    </Grid>
+        Title="Mentoren-App" Height="450" Width="800">
+    <StackPanel>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="_Menü">
+                <MenuItem Header="Einstellungen" Click="GoToSettings"  />
+                <MenuItem Header="Logout" Click="Logout"/>
+                <MenuItem Header="Impressum" Click="GoToImpressum" />
+            </MenuItem>
+        </Menu>
+        <Frame Name="mainFrame" />
+    </StackPanel>
 </Window>
