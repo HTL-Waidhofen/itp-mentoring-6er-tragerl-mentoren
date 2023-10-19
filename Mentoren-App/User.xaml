@@ -8,16 +8,28 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="User">
 
-    <StackPanel Background="White">
+    <StackPanel Orientation="Horizontal" Background="White">
+        <StackPanel Orientation="Vertical" Width="200px" Height="400px">
+            <GroupBox Header="Profil"></GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Width="300px" Height="400px" >
+            <ComboBox x:Name="chooseSubject">
+                <ComboBoxItem>Mathematik</ComboBoxItem>
+                <ComboBoxItem>Englisch</ComboBoxItem>
+                <ComboBoxItem>Deutsch</ComboBoxItem>
+                <ComboBoxItem>SEW</ComboBoxItem>
+                <ComboBoxItem>MEDT</ComboBoxItem>
+                <ComboBoxItem>ITP</ComboBoxItem>
+                <ComboBoxItem>SYT</ComboBoxItem>
+            </ComboBox>
+            <GroupBox Header="Mentoren">
+                <ListBox x:Name="MentorList">Hier Sollen die Mentoren ausgegeben werden, die für das oben ausgewählte Fach zuständig sind</ListBox>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Width="300px" Height="400px">
+            <GroupBox Header="Mentor-Profil"></GroupBox>
+            <GroupBox Header="Mentor-Verlauf"></GroupBox>
+        </StackPanel>
 
-        <ComboBox>
-            <ComboBoxItem>Mathematik</ComboBoxItem>
-            <ComboBoxItem>Englisch</ComboBoxItem>
-            <ComboBoxItem>Deutsch</ComboBoxItem>
-            <ComboBoxItem>SEW</ComboBoxItem>
-            <ComboBoxItem>MEDT</ComboBoxItem>
-            <ComboBoxItem>ITP</ComboBoxItem>
-            <ComboBoxItem>SYT</ComboBoxItem>
-        </ComboBox>
     </StackPanel>
 </Page>
