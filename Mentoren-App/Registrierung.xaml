@@ -10,14 +10,15 @@
 
     <StackPanel Background="White">
 
-        <TextBox>Registrierung</TextBox>
+        <TextBox HorizontalAlignment="Center" FontSize="30">Registrierung</TextBox>
         <TextBlock x:Name="VName" Text="Vorname"></TextBlock>
         <TextBlock x:Name="NName" Text="Nachname"></TextBlock>
         <TextBlock x:Name="Mail" Text="E-Mail"></TextBlock>
         <TextBlock x:Name="Name" Text="Name"></TextBlock>
-        <ComboBox x:Name="RoleSelection">
+        <ComboBox x:Name="RoleSelection" Background="LightGray" Width="100px"  Margin="5,0,5,5">
             <ComboBoxItem>Student</ComboBoxItem>
             <ComboBoxItem>Mentor</ComboBoxItem>
         </ComboBox>
+        <Button Click="RegistrateUser"  Background="LightGray" Width="100px"  Margin="5,0,5,5">Registrieren</Button>
     </StackPanel>
 </Page>

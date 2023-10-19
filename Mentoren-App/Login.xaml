@@ -13,7 +13,7 @@
         <TextBlock x:Name="LoginMail" Background="LightGray" Width="100px" Text="E-Mail"  Margin="5"></TextBlock>
         <TextBlock x:Name="LoginPwd" Background="LightGray" Width="100px" Text="Passwort" Margin="5,0,5,5"></TextBlock>
         <Button Click="LogUserIn" Background="LightGray" Width="100px"  Margin="5,0,5,5">Login</Button>
-        <Button Click="UserRegistration" Background="LightGray" Width="100px"  Margin="5,0,5,5">Registrieren</Button>
+        <Button Click="GoToRegistration" Background="LightGray" Width="100px"  Margin="5,0,5,5">Registrieren</Button>
     </StackPanel>
     
 </Page>

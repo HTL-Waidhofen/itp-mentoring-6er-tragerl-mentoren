@@ -31,7 +31,7 @@ namespace Mentoren_App
             //Wenn true => Redirect auf Page
         }
 
-        private void UserRegistration(object sender, RoutedEventArgs e)
+        private void GoToRegistration(object sender, RoutedEventArgs e)
         {
 
         }

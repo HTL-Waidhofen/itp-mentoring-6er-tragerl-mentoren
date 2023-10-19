@@ -24,5 +24,10 @@ namespace Mentoren_App
         {
             InitializeComponent();
         }
+
+        private void RegistrateUser(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
