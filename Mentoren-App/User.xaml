@@ -8,5 +8,16 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="User">
 
-    <StackPanel></StackPanel>
+    <StackPanel Background="White">
+
+        <ComboBox>
+            <ComboBoxItem>Mathematik</ComboBoxItem>
+            <ComboBoxItem>Englisch</ComboBoxItem>
+            <ComboBoxItem>Deutsch</ComboBoxItem>
+            <ComboBoxItem>SEW</ComboBoxItem>
+            <ComboBoxItem>MEDT</ComboBoxItem>
+            <ComboBoxItem>ITP</ComboBoxItem>
+            <ComboBoxItem>SYT</ComboBoxItem>
+        </ComboBox>
+    </StackPanel>
 </Page>
