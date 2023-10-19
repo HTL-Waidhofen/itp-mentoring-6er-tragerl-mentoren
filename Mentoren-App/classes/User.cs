@@ -2,10 +2,11 @@
 
 public class Student : Base
 {
-	string Class = { get; set; }
+	string Class { get; set; }
+
 	public Student()
 	{
-		role = "student"
+		Role = "student";
 	}
 }
 
