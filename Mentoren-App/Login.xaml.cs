@@ -29,11 +29,15 @@ namespace Mentoren_App
         {
             //Methode für den Login mit Email/ Passwort# mit rückgabe von true/false und ist User/Admin/Mentor
             //Wenn true => Redirect auf Page
+
+
         }
 
         private void UserRegistration(object sender, RoutedEventArgs e)
         {
 
         }
+
+
     }
 }
