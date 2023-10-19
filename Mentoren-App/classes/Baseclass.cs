@@ -11,18 +11,15 @@ public abstract class Base
 	public Base()
 	{
 	}
-	public bool LoginSucess(string fname, string name, string password, list<Base> list)
+	public bool LoginSucess(string email, string password, list<Base> list)
 	{
         foreach (Base user in list)
         {
-            if (fname == user.FName)
+            if (email == user.Email)
             {
-                if (name == user.Name) 
+                if (password == user.Password) 
                 {
-                    if (password == user.Password)
-                    {
-                        return true
-                    } 
+                        return true                 
                 }
             }
         }
