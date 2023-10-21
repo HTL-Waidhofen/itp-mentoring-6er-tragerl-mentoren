@@ -32,17 +32,22 @@ namespace Mentoren_App
 
         private void GoToSettings(object sender, RoutedEventArgs e)
         {
-
+            NavigateToPage("Einstellungen.xaml");
         }
-        private void GoToImpressum(object sender, RoutedEventArgs e)
+        private void GoToInfo(object sender, RoutedEventArgs e)
         {
-
+            NavigateToPage("Info.xaml");
         }
 
         private void Logout(object sender, RoutedEventArgs e)
         {
-
+            //evl funktion für das Abmelden?
+            NavigateToPage("Login.xaml");
         }
 
+        private void Shutdown(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

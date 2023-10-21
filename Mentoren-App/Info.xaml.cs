@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace Mentoren_App
 {
     /// <summary>
-    /// Interaktionslogik für Registrierung.xaml
+    /// Interaktionslogik für Info.xaml
     /// </summary>
-    public partial class Registrierung : Page
+    public partial class Info : Page
     {
-        public Registrierung()
+        public Info()
         {
             InitializeComponent();
-        }
-
-        private void RegistrateUser(object sender, RoutedEventArgs e)
-        {
-            //Registrierungsfunktion
-            MessageBox.Show("Registrierung wurde verarbeitet. Sie können sich nun einloggen.", "Registrierung", MessageBoxButton.OK, MessageBoxImage.Information);
-            NavigationService?.Navigate(new Uri("Login.xaml", UriKind.Relative));
         }
     }
 }

@@ -8,7 +8,20 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Admin">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Horizontal" Background="White">
+        <StackPanel Orientation="Vertical" Width="200px" Height="400px">
+            <GroupBox Header="Profil"></GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Width="300px" Height="400px" >
+            <GroupBox Header="Schüler">
+                <ListBox x:Name="SchülerList">Hier sollen die Schüler ausgegeben werden</ListBox>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Width="300px" Height="400px">
+            <GroupBox Header="Mentoren">
+                <ListBox x:Name="MentorList">Hier sollen die Mentoren ausgegeben werden</ListBox>
+            </GroupBox>
+        </StackPanel>
+
+    </StackPanel>
 </Page>

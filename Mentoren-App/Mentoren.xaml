@@ -8,7 +8,19 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Mentoren">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Horizontal" Background="White">
+        <StackPanel Orientation="Vertical" Width="200px" Height="400px">
+            <GroupBox Header="Profil"></GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Width="300px" Height="400px" >
+            <GroupBox Header="Schüler">
+                <ListBox x:Name="MentorList">Hier sollen die Schüler ausgegeben werden, die der Mentor gerade betreut</ListBox>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Width="300px" Height="400px">
+            <GroupBox Header="Schüler-Profil"></GroupBox>
+            <GroupBox Header="Schüler-Verlauf"></GroupBox>
+        </StackPanel>
+
+    </StackPanel>
 </Page>
