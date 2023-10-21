@@ -8,5 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Info">
 
-    <StackPanel Background="White"></StackPanel>
+    <StackPanel Background="White">
+        <TextBox HorizontalAlignment="Center" FontSize="30">Info</TextBox>
+        <TextBox>Hier soll ein Infotext eingefügt werden</TextBox>
+        
+        
+    </StackPanel>
 </Page>

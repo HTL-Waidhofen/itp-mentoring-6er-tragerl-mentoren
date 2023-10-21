@@ -10,7 +10,7 @@
 
     <StackPanel Background="White">
 
-        <TextBlock>Einstellungen</TextBlock>
+        <TextBox HorizontalAlignment="Center" FontSize="30">Einstellungen</TextBox>
         <GroupBox Header="Profil">
             <StackPanel>
                 <TextBox x:Name="VName"></TextBox>
