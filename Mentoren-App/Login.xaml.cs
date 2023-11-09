@@ -32,7 +32,7 @@ namespace Mentoren_App
             //Redirect auf User /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
-
+           
         }
 
         private void GoToRegistration(object sender, RoutedEventArgs e)

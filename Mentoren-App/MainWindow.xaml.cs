@@ -34,12 +34,12 @@ namespace Mentoren_App
         {
             NavigateToPage("Einstellungen.xaml");
         }
-        private void GoToInfo(object sender, RoutedEventArgs e)
+        public void GoToInfo(object sender, RoutedEventArgs e)
         {
             NavigateToPage("Info.xaml");
         }
 
-        private void Logout(object sender, RoutedEventArgs e)
+        public void Logout(object sender, RoutedEventArgs e)
         {
             //evl funktion für das Abmelden?
             NavigateToPage("Login.xaml");

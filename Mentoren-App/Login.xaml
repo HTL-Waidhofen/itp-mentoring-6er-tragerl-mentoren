@@ -9,6 +9,12 @@
       Title="Login">
 
     <StackPanel Background="White">
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="_Menü">
+                <MenuItem Header="Info" Click="GoToInfo" />
+                <MenuItem Header="Beenden" Click="Shutdown" />
+            </MenuItem>
+        </Menu>
         <TextBox HorizontalAlignment="Center" FontSize="30">Login</TextBox>
         <TextBox x:Name="LoginMail" Background="LightGray" Width="100px" Text="E-Mail"  Margin="5"></TextBox>
         <TextBox x:Name="LoginPwd" Background="LightGray" Width="100px" Text="Passwort" Margin="5,0,5,5"></TextBox>
