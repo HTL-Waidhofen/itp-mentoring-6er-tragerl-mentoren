@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-public abstract class Base
+public class User
 {
 	public int ID { get; }
 	public string FName { get; }
@@ -20,7 +20,6 @@ public abstract class Base
 	public string Role { get; set; }
 	public string Password { get; set; }
     public string Email { get; set; }
-	public Base()
-	{
-	}
+    public list<Functions> Function {  get; set; } 
+
 }
