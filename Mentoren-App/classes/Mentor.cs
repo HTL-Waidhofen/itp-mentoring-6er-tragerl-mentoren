@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class Mentor : Base
 {
-	list<string> students { get; set; }
+	List<string> students { get; set; }
 	
 	public Mentor()
 	{
-		role="mentor"
+		Role = "mentor";
 	}
 }
