@@ -1,6 +1,6 @@
 ﻿using System;
 
-public abstract class Base
+public abstract class User
 {
 	int ID { get; }
 	string FName { get; }
@@ -8,6 +8,9 @@ public abstract class Base
 	string Role { get; set; }
 	string Password { get; set; }
     string Email { get; set; }
+    bool Admin { get; set; }
+    bool Mentor { get; set; }
+    bool Student {  get; set; }
 	public Base()
 	{
 	}
