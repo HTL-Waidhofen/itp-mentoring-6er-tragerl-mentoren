@@ -28,8 +28,36 @@ namespace Mentoren_App
         private void RegistrateUser(object sender, RoutedEventArgs e)
         {
             //Registrierungsfunktion
-            MessageBox.Show("Registrierung wurde verarbeitet. Sie können sich nun einloggen.", "Registrierung", MessageBoxButton.OK, MessageBoxImage.Information);
-            NavigationService?.Navigate(new Uri("Login.xaml", UriKind.Relative));
+            VName.Text = Mail.Text;
+            bool isValid = IsValidEmail(Mail.Text.ToString());
+            if(isValid == true)
+            {
+                MessageBox.Show("Ihre Email hat ein falsches Format. Bitte überprüfen sie ihre Eingabe", "Fehler bei Email", MessageBoxButton.OK);
+            }
+            //MessageBox.Show("Registrierung wurde verarbeitet. Sie können sich nun einloggen.", "Registrierung", MessageBoxButton.OK, MessageBoxImage.Information);
+            //NavigationService?.Navigate(new Uri("Login.xaml", UriKind.Relative));
+        }
+        public bool IsValidEmail(string email)
+        {
+            if (!email.EndsWith("@htlwy.at"))
+            {
+                return false;
+            }
+
+            string[] parts = email.Split('@');
+            if (parts.Length != 2 || string.IsNullOrEmpty(parts[0]) || string.IsNullOrEmpty(parts[1]))
+            {
+                return false;
+            }
+
+            string domainPart = parts[1];
+            int dotIndex = domainPart.IndexOf('.');
+            if (dotIndex == -1 || dotIndex < 2 || dotIndex >= domainPart.Length - 2)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
