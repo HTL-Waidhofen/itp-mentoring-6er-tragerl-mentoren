@@ -10,7 +10,16 @@
 
     <StackPanel Background="White">
         <TextBox HorizontalAlignment="Center" FontSize="30">Info</TextBox>
-        <TextBox>Hier soll ein Infotext eingefügt werden</TextBox>
+        <TextBox>
+          Diese App wurde in Rahmen eines ITP Projekts über 3-4 Monate erstellt.
+          Team:
+          Maximillian Heschl
+          Silke Zauner
+          Ana Pop
+          Jakob Hintsteiner
+          Killian Mayrhofer
+          Tobias Teufel
+        </TextBox>
         
         
     </StackPanel>
