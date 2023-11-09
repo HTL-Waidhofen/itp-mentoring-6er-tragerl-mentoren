@@ -23,6 +23,31 @@ namespace Mentoren_App
         public MainWindow()
         {
             InitializeComponent();
+            NavigateToPage("Login.xaml");
+        }
+        public void NavigateToPage(string pageName)
+        {
+            mainFrame.Navigate(new Uri(pageName, UriKind.Relative));
+        }
+
+        private void GoToSettings(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("Einstellungen.xaml");
+        }
+        private void GoToInfo(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("Info.xaml");
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            //evl funktion für das Abmelden?
+            NavigateToPage("Login.xaml");
+        }
+
+        private void Shutdown(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

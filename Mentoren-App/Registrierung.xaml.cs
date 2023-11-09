@@ -27,7 +27,9 @@ namespace Mentoren_App
 
         private void RegistrateUser(object sender, RoutedEventArgs e)
         {
-
+            //Registrierungsfunktion
+            MessageBox.Show("Registrierung wurde verarbeitet. Sie können sich nun einloggen.", "Registrierung", MessageBoxButton.OK, MessageBoxImage.Information);
+            NavigationService?.Navigate(new Uri("Login.xaml", UriKind.Relative));
         }
     }
 }

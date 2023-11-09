@@ -12,12 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-public class Mentor : Base
+
+namespace Mentoren_App
 {
-    List<string> students { get; set; }
-	
-	public Mentor()
-	{
-		Role = "mentor";
-	}
+    /// <summary>
+    /// Interaktionslogik für Info.xaml
+    /// </summary>
+    public partial class Info : Page
+    {
+        public Info()
+        {
+            InitializeComponent();
+        }
+    }
 }
