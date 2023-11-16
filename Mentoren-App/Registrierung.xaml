@@ -13,46 +13,40 @@
             <ImageBrush ImageSource="Images\gradient.png"/>
         </StackPanel.Background>
 
-        <Border BorderBrush="Gray" BorderThickness="4,8,4,8" CornerRadius="5" HorizontalAlignment="Center">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
             <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
-
+        
             <StackPanel Orientation="Horizontal">
                 <Label Content="Vorname"></Label>
                 <TextBox x:Name="VName" Margin="3" Width="120"/>
             </StackPanel>
-
+        
             <StackPanel Orientation="Horizontal">
                 <Label Content="Nachname"></Label>
                 <TextBox x:Name="NName" Margin="3" Width="120"/>
             </StackPanel>
-
+        
             <StackPanel Orientation="Horizontal">
                 <Label Content="E-Mail"></Label>
                 <TextBox x:Name="Mail" Margin="3" Width="120"/>
             </StackPanel>
-
+        
             <StackPanel Orientation="Horizontal">
                 <Label Content="Password"></Label>
                 <PasswordBox x:Name="pwd" Margin="3" Width="120"/>
             </StackPanel>
-
+        
             <StackPanel Orientation="Horizontal">
                 <Label Content="Password bestätigung"></Label>
                 <PasswordBox x:Name="CheckPwd" Margin="3" Width="120"/>
             </StackPanel>
-
-            <StackPanel>
-                <ComboBox x:Name="RoleSelection" Background="LightGray" Width="100px" Margin="3">
-                    <ComboBoxItem>Student</ComboBoxItem>
-                    <ComboBoxItem>Mentor</ComboBoxItem>
-                </ComboBox>
+        
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <CheckBox x:Name="student" Content="Schüler"/>
+                <CheckBox x:Name="mentor" Content="Mentor"/>
             </StackPanel>
-
+        
             <Button Click="RegistrateUser"  Background="LightGray" Width="100px"  Margin="3">Registrieren</Button>
         </StackPanel>
-        </Border>
-        
-        
     </StackPanel>
 </Page>
