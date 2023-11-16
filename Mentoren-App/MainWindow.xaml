@@ -15,7 +15,14 @@
                 <MenuItem Header="Beenden" Click="Shutdown" />
             </MenuItem>
         </Menu>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="Images\gradient.png"/>
+        </StackPanel.Background>
+            
         <Frame Name="mainFrame" />
+<<<<<<< HEAD
         <Label Content="Dashboard"/>
+=======
+>>>>>>> 980f55ac6efef77a8a450bf29ff97653d6cda4ad
     </StackPanel>
 </Window>
