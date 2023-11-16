@@ -9,12 +9,11 @@
       Title="Login">
 
     <StackPanel VerticalAlignment="Center" Height="237">
-<<<<<<< HEAD
+
         <StackPanel.Background>
             <ImageBrush ImageSource="images\gradient.png"/>
         </StackPanel.Background>
-=======
->>>>>>> 980f55ac6efef77a8a450bf29ff97653d6cda4ad
+
         <StackPanel Background="White" Height="188" Width="220">
             <Label HorizontalAlignment="Center" Content="Login" FontSize="20" Height="44"/>
             <StackPanel Orientation="Horizontal">
