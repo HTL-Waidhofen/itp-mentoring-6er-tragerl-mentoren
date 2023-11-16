@@ -20,7 +20,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Width="60" Content="Passwort"/>
-                <TextBox x:Name="LoginPwd" Width="100px" Height="20" />
+                <PasswordBox x:Name="LoginPwd" Width="100px" Height="20" />
             </StackPanel>
             <StackPanel Margin="10" Height="51">
                 <Button Foreground="White" Background="DarkSlateBlue" Margin="5" Click="LogUserIn" Width="100px" Content="Login"/>
