@@ -20,9 +20,7 @@
         </StackPanel.Background>
             
         <Frame Name="mainFrame" />
-<<<<<<< HEAD
         <Label Content="Dashboard"/>
-=======
->>>>>>> 980f55ac6efef77a8a450bf29ff97653d6cda4ad
+
     </StackPanel>
 </Window>
