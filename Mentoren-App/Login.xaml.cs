@@ -43,8 +43,8 @@ namespace Mentoren_App
                 String query = "SELECT COUNT(1) FROM tblUser WHERE Email=@Email AND Password=@Password";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                 sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.Parameters.AddWithValue("@Email", txtUsername.Text);
-                sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Password);
+                sqlCmd.Parameters.AddWithValue("@Email", LoginMail.Text);
+                sqlCmd.Parameters.AddWithValue("@Password", LoginPwd.Text);
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                 if (count == 1)
                 {
