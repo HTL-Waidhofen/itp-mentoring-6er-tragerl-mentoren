@@ -8,9 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registrierung">
 
-    <StackPanel Background="CornflowerBlue" VerticalAlignment="Center">
+    <StackPanel VerticalAlignment="Center">
+        <StackPanel.Background>
+            <ImageBrush ImageSource="Images\gradient.png"/>
+        </StackPanel.Background>
 
-        <Border BorderBrush="DarkBlue" BorderThickness="4,8,4,8" CornerRadius="5" HorizontalAlignment="Center">
+        <Border BorderBrush="Gray" BorderThickness="4,8,4,8" CornerRadius="5" HorizontalAlignment="Center">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
             <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
 
