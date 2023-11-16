@@ -9,9 +9,6 @@
       Title="Login">
 
     <StackPanel VerticalAlignment="Center" Height="237">
-        <StackPanel.Background>
-            <ImageBrush ImageSource="Images\gradient.png"/>
-        </StackPanel.Background>
         <StackPanel Background="White" Height="188" Width="220">
             <Label HorizontalAlignment="Center" Content="Login" FontSize="20" Height="44"/>
             <StackPanel Orientation="Horizontal">
