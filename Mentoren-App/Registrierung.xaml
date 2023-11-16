@@ -9,7 +9,14 @@
       Title="Registrierung">
 
     <StackPanel VerticalAlignment="Center">
+<<<<<<< HEAD
+        <StackPanel.Background>
+            <ImageBrush ImageSource="images\gradient.png"/>
+        </StackPanel.Background>
+
+=======
         
+>>>>>>> 980f55ac6efef77a8a450bf29ff97653d6cda4ad
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
             <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
         
