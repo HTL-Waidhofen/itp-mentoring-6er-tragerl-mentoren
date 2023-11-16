@@ -45,8 +45,8 @@
                 <CheckBox x:Name="student" Content="Schüler"/>
                 <CheckBox x:Name="mentor" Content="Mentor"/>
             </StackPanel>
-        
-            <Button Click="RegistrateUser"  Background="CornflowerBlue" Width="100px"  Margin="3">Registrieren</Button>
+
+            <Button Click="RegistrateUser"  Background="DarkSlateBlue" Foreground="White" Width="100px"  Margin="3">Registrieren</Button>
         </StackPanel>
     </StackPanel>
 </Page>
