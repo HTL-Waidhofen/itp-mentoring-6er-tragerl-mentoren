@@ -28,14 +28,17 @@ namespace Mentoren_App
         private void RegistrateUser(object sender, RoutedEventArgs e)
         {
             //Registrierungsfunktion
-            VName.Text = Mail.Text;
-            bool isValid = IsValidEmail(Mail.Text.ToString());
-            if(isValid == true)
+            if(IsValidEmail(Mail.Text.ToString()) == false || AreFieldsFilled() == false || IsNameCorrect() == false)
             {
                 MessageBox.Show("Ihre Email hat ein falsches Format. Bitte überprüfen sie ihre Eingabe", "Fehler bei Email", MessageBoxButton.OK);
             }
-            //MessageBox.Show("Registrierung wurde verarbeitet. Sie können sich nun einloggen.", "Registrierung", MessageBoxButton.OK, MessageBoxImage.Information);
-            //NavigationService?.Navigate(new Uri("Login.xaml", UriKind.Relative));
+            else
+            {          
+                //Crud Funktion für Benutzer erstellen
+                MessageBox.Show("Registrierung wurde verarbeitet. Sie können sich nun einloggen.", "Registrierung", MessageBoxButton.OK, MessageBoxImage.Information);
+                NavigationService?.Navigate(new Uri("Login.xaml", UriKind.Relative));
+                
+            }
         }
         public bool IsValidEmail(string email)
         {
@@ -50,7 +53,7 @@ namespace Mentoren_App
                 return false;
             }
 
-            string domainPart = parts[1];
+            string domainPart = parts[0];
             int dotIndex = domainPart.IndexOf('.');
             if (dotIndex == -1 || dotIndex < 2 || dotIndex >= domainPart.Length - 2)
             {
@@ -58,6 +61,54 @@ namespace Mentoren_App
             }
 
             return true;
+        }
+
+        public bool AreFieldsFilled()
+        {
+            List<TextBox> fields = new List<TextBox>();
+            fields.Add(VName);
+            fields.Add(NName);
+            fields.Add(Mail);
+            fields.Add(pwd);
+            fields.Add(pwdBestaetigt);
+            bool isFilled = true;
+            SolidColorBrush brightRedBrush = new SolidColorBrush(Colors.IndianRed);
+            SolidColorBrush whiteBrush = new SolidColorBrush(Colors.White);
+            foreach (TextBox field in fields)
+            {
+                if (string.IsNullOrWhiteSpace(field.Text))
+                {
+                    field.Background = brightRedBrush;
+                    isFilled = false;
+                }
+                else
+                    field.Background = whiteBrush;
+            }
+            if (isFilled == false) 
+                MessageBox.Show("Bitte füllen Sie alle Felder aus", "Felder ausfüllen", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            if (fields[3].Text != fields[4].Text)
+            {
+                isFilled= false;
+                MessageBox.Show("Die Passwörter stimmen nicht überein", "Falsches Passwort", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
+            //Schüler Mentor
+            return isFilled;
+        }
+
+        public bool IsNameCorrect()
+        {
+            string[] names = Mail.Text.Split('@');
+
+            string[] seperatedNames = names[0].Split(".");
+
+            if (VName.Text == seperatedNames[0] && NName.Text == seperatedNames[1])
+                return true;
+
+            MessageBox.Show("Ihr Vor- und Nachname soll gleich denen in der Email sein", "Inkorrekter Name", MessageBoxButton.OK, MessageBoxImage.Information);
+            return false;
         }
     }
 }
