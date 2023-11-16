@@ -16,6 +16,6 @@
             </MenuItem>
         </Menu>
         <Frame Name="mainFrame" />
-        <Label Content="Dashboard"/>s
+        <Label Content="Dashboard"/>
     </StackPanel>
 </Window>

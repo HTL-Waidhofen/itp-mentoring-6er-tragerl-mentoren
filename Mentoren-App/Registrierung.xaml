@@ -10,7 +10,7 @@
 
     <StackPanel VerticalAlignment="Center">
         <StackPanel.Background>
-            <ImageBrush ImageSource="Images\gradient.png"/>
+            <ImageBrush ImageSource="images\gradient.png"/>
         </StackPanel.Background>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
