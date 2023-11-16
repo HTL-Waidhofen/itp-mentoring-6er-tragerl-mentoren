@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.collections;
+using System.Collections;
 public class User
 {
 	public int ID { get; }
@@ -21,7 +21,7 @@ public class User
 	public string Role { get; set; }
 	public string Password { get; set; }
     public string Email { get; set; }
-    public list<Functions> Function {  get; set; }
+    public List<Functions> Function {  get; set; }
 }
 public class Functions
 {
