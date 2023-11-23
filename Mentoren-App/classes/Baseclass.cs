@@ -13,18 +13,42 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
+using System.Threading.Channels;
+using System.ComponentModel;
+
 public class User
 {
 	public int ID { get; }
 	public string FName { get; }
     public string Name { get; }
-	public string Role { get; set; }
 	public string Password { get; set; }
     public string Email { get; set; }
-    public List<Functions> Function {  get; set; } 
-	public User()
-	{
-	}
+    public Functions allowed {  get; set; }
+
+    User()
+    {
+    }
+    bool isAdmin(Functions allowed)
+    {     
+        if(allowed.Admin == true) 
+         return true;         
+        else         
+            return false;        
+    }
+    bool isMentor(Functions allowed)
+    {
+        if (allowed.Mentor == true)
+            return true;
+        else
+            return false;
+    }
+    bool isStudent(Functions allowed)
+    {
+        if (allowed.Student == true)
+            return true;
+        else
+            return false;
+    }
 }
 public class Functions
 {
@@ -39,5 +63,4 @@ public class Functions
         Student = student;
         Mentor = mentor;
     }
-
 }
