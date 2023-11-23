@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:Mentoren_App"
         mc:Ignorable="d"
         Title="Mentoren-App" Height="450" Width="800">
+    
     <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="images\gradient.png"/>
+        </StackPanel.Background>
+
         <Menu VerticalAlignment="Top">
             <MenuItem Header="_Menü">
                 <MenuItem Header="Einstellungen" Click="GoToSettings"  />
@@ -15,11 +20,8 @@
                 <MenuItem Header="Beenden" Click="Shutdown" />
             </MenuItem>
         </Menu>
-        <StackPanel.Background>
-            <ImageBrush ImageSource="images\gradient.png"/>
-        </StackPanel.Background>
-            
-        <Frame Name="mainFrame" />
+        
+        <Frame x:Name="mainFrame"/>
         <Label Content="Dashboard"/>
 
     </StackPanel>
