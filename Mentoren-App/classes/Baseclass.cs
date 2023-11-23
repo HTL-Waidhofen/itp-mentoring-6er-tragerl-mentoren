@@ -16,6 +16,9 @@ using System.Collections;
 using System.Threading.Channels;
 using System.ComponentModel;
 
+
+//NOTE:
+//I made the DB because wdhen i tried to open the other DB it didn't load 
 public class User
 {
 	public int ID { get; }
@@ -63,4 +66,5 @@ public class Functions
         Student = student;
         Mentor = mentor;
     }
+
 }
