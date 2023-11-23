@@ -19,7 +19,7 @@
             <ImageBrush ImageSource="images\gradient.png"/>
         </StackPanel.Background>
             
-        <Frame Name="mainFrame" />
+        <Frame Name="mainFrame"/>
         <Label Content="Dashboard"/>
 
     </StackPanel>
