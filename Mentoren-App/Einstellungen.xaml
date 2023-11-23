@@ -10,15 +10,19 @@
 
     <StackPanel Background="White">
 
-        <TextBox HorizontalAlignment="Center" FontSize="30">Einstellungen</TextBox>
+        <Label Content="Einstellungen" FontSize="30" HorizontalAlignment="Center"/>
         <GroupBox Header="Profil">
             <StackPanel>
                 <TextBox x:Name="VName"></TextBox>
                 <TextBox x:Name="NName"></TextBox>
                 <TextBox x:Name="ID" IsEnabled="False"></TextBox>
                 <TextBox x:Name="Email"></TextBox>
-                <Button Click="changeProfileInfo">Ändern</Button>
-                <Button Click="deleteProfile">Löschen</Button>
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Click="changeProfileInfo" Background="DarkSlateBlue" Foreground="White" Width="100px"  Margin="3">Ändern</Button>
+                    <Button Click="deleteProfile" Background="DarkSlateBlue" Foreground="White" Width="100px"  Margin="3">Löschen</Button>
+                </StackPanel>
+                
             </StackPanel>
         </GroupBox>
     </StackPanel>
