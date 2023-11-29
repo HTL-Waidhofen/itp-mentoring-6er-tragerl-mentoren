@@ -15,10 +15,14 @@ using System.Windows.Shapes;
 using System.Collections;
 using System.Threading.Channels;
 using System.ComponentModel;
+using SQLite;
+using SQLitePCL;
 
 
 //NOTE:
 //I made the DB because wdhen i tried to open the other DB it didn't load 
+
+
 public class User
 {
 	public int ID { get; }
@@ -55,12 +59,12 @@ public class User
 }
 public class Functions
 {
-    public bool Admin { get; set; }
     public bool Student { get; set; }
     public bool Mentor { get; set; }
-    //add any other Roles/Functions
+    public bool Admin { get; set; }
+    //add any other Functions
 
-    Functions(bool admin = false, bool student = true, bool mentor = false) 
+    public Functions(bool admin = false, bool student = true, bool mentor = false) 
     { 
         Admin = admin;
         Student = student;

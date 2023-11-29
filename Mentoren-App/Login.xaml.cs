@@ -32,6 +32,33 @@ namespace Mentoren_App
             //Redirect auf User /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
+            string email = "htlwy.at";  //Filler für daten der Datenbank
+            string password = "123";
+            Functions b = new Functions(true, false, false);
+
+            if(LoginMail.ToString() == email && LoginPwd.ToString() == password)
+            {
+                if (b.Admin == true)
+                    NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
+                else if (b.Mentor == true)
+                    NavigationService?.Navigate(new Uri("Mentoren.xaml", UriKind.Relative));
+                else if (b.Student == true)
+                    NavigationService?.Navigate(new Uri("User.xaml", UriKind.Relative));      
+            }
+            else
+            {
+                if (LoginPwd.ToString() != password)
+                    MessageBox.Show("Ihr Passwort ist falsch bitter versuchen sie es erneut");
+                else if (LoginMail.ToString() != email)
+                    MessageBox.Show("Ihre Email ist falsch bitte versuchen sie es erneut");
+                else
+                {
+                    MessageBox.Show("Sie haben noch kein Konto");
+                    NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
+
+                }
+
+            }
 
         }
 
