@@ -31,8 +31,8 @@ namespace Mentoren_App
 
         private void LogUserIn(object sender, RoutedEventArgs e)
         {
-            //Methode für den Login mit Email/ Passwort# mit rückgabe von true/false und ist User/Admin/Mentor
-            //Wenn true => Redirect auf Page
+            //Methode für den Login mit Email/ Passwort 
+            //If true => Redirect to Page
             //Redirect auf User /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
@@ -72,6 +72,10 @@ namespace Mentoren_App
 */
 
 
+
+            //Output if Login failed
+            //if(false == true)
+            //MessageBox.Show("Ein Fehler ist aufgetreten. Bitte kontrollieren sie ihre Eingaben. Wenn sie noch nicht registriet sind klicken sie auf 'Registrieren'","Fehler bei Verarbeitung", MessageBoxButton.OK);
         }
         public void GoToRegistration(object sender, RoutedEventArgs e)
         {

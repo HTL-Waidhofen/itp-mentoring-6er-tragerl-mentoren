@@ -49,5 +49,27 @@ namespace Mentoren_App
         {
             Environment.Exit(0);
         }
+        public bool IsValidEmail(string email)
+        {
+            if (!email.EndsWith("@htlwy.at"))
+            {
+                return false;
+            }
+
+            string[] parts = email.Split('@');
+            if (parts.Length != 2 || string.IsNullOrEmpty(parts[0]) || string.IsNullOrEmpty(parts[1]))
+            {
+                return false;
+            }
+
+            string domainPart = parts[1];
+            int dotIndex = domainPart.IndexOf('.');
+            if (dotIndex == -1 || dotIndex < 2 || dotIndex >= domainPart.Length - 2)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

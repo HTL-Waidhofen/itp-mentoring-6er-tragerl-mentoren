@@ -9,9 +9,6 @@
       Title="Registrierung">
 
     <StackPanel VerticalAlignment="Center">
-        <StackPanel.Background>
-            <ImageBrush ImageSource="Images\gradient.png"/>
-        </StackPanel.Background>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
             <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
@@ -37,16 +34,16 @@
             </StackPanel>
         
             <StackPanel Orientation="Horizontal">
-                <Label Content="Password bestätigung"></Label>
-                <PasswordBox x:Name="CheckPwd" Margin="3" Width="120"/>
+                <Label Content="Password bestätigen"></Label>
+                <PasswordBox x:Name="pwdBestaetigt" Margin="3" Width="120"/>
             </StackPanel>
         
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <CheckBox x:Name="student" Content="Schüler"/>
                 <CheckBox x:Name="mentor" Content="Mentor"/>
             </StackPanel>
-        
-            <Button Click="RegistrateUser"  Background="LightGray" Width="100px"  Margin="3">Registrieren</Button>
+
+            <Button Click="RegistrateUser"  Background="DarkSlateBlue" Foreground="White" Width="100px"  Margin="3">Registrieren</Button>
         </StackPanel>
     </StackPanel>
 </Page>
