@@ -8,34 +8,35 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registrierung">
 
-    <StackPanel VerticalAlignment="Center">
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
             <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
         
             <StackPanel Orientation="Horizontal">
-                <Label Content="Vorname"></Label>
+                <Label Content="Vorname" Width="70"/>
                 <TextBox x:Name="VName" Margin="3" Width="120"/>
             </StackPanel>
         
             <StackPanel Orientation="Horizontal">
-                <Label Content="Nachname"></Label>
+                <Label Content="Nachname" Width="70"/>
                 <TextBox x:Name="NName" Margin="3" Width="120"/>
             </StackPanel>
         
             <StackPanel Orientation="Horizontal">
-                <Label Content="E-Mail"></Label>
+                <Label Content="E-Mail" Width="70"/>
                 <TextBox x:Name="Mail" Margin="3" Width="120"/>
             </StackPanel>
-        
+            
             <StackPanel Orientation="Horizontal">
-                <Label Content="Password"></Label>
+                <Label Content="Password" Width="70"/>
                 <PasswordBox x:Name="pwd" Margin="3" Width="120"/>
             </StackPanel>
         
             <StackPanel Orientation="Horizontal">
+
                 <Label Content="Password bestätigen"></Label>
                 <PasswordBox x:Name="pwdBestaetigt" Margin="3" Width="120"/>
+
             </StackPanel>
         
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
