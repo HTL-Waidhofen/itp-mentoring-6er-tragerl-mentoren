@@ -25,9 +25,5 @@
         <Frame x:Name="mainFrame"/>
         <Label Content="Dashboard"/>
 
-
-        <Frame Name="mainFrame" />
-        <Label Content="Dashboard"/>
-
     </StackPanel>
 </Window>
