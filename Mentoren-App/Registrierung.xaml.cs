@@ -65,12 +65,11 @@ namespace Mentoren_App
 
         public bool AreFieldsFilled()
         {
-            List<TextBox> fields = new List<TextBox>();
+            List<Control> fields = new List<Control>();
             fields.Add(VName);
             fields.Add(NName);
             fields.Add(Mail);
-            fields.Add(pwd);
-            fields.Add(pwdBestaetigt);
+
             bool isFilled = true;
             SolidColorBrush brightRedBrush = new SolidColorBrush(Colors.IndianRed);
             SolidColorBrush whiteBrush = new SolidColorBrush(Colors.White);
@@ -84,16 +83,19 @@ namespace Mentoren_App
                 else
                     field.Background = whiteBrush;
             }
-            if (isFilled == false) 
+            if (isFilled == false)
                 MessageBox.Show("Bitte füllen Sie alle Felder aus", "Felder ausfüllen", MessageBoxButton.OK, MessageBoxImage.Error);
-
-            if (fields[3].Text != fields[4].Text)
+            if (pwd.SecurePassword != pwdBestaetigt.SecurePassword)
             {
                 isFilled= false;
                 MessageBox.Show("Die Passwörter stimmen nicht überein", "Falsches Passwort", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-
+            if (pwd.SecurePassword == null)
+                pwd.Background = brightRedBrush;
+            if (pwdBestaetigt.SecurePassword == null)
+                pwd.Background = brightRedBrush;
+            
+            
             //Schüler Mentor
             return isFilled;
         }
