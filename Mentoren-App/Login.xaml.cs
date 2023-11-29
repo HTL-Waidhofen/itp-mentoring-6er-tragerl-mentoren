@@ -36,6 +36,8 @@ namespace Mentoren_App
             //Redirect auf User /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
+
+           
             /*
             SqlConnection sqlCon = new SqlConnection(@"Mentoren DB.sqbpro");
             try
@@ -67,6 +69,7 @@ namespace Mentoren_App
             {
                 sqlCon.Close();
             }
+
         }
     }
 */
