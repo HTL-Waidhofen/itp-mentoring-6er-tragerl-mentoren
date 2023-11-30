@@ -8,8 +8,20 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login">
 
-    <StackPanel VerticalAlignment="Center"> 
-        <StackPanel Background="White" Height="188" Width="220" >
+
+    <StackPanel VerticalAlignment="Center" Height="237">
+        
+        <StackPanel Background="white" Height="188" Width="220">
+
+
+            <StackPanel Background="White">
+
+                 
+
+        <StackPanel VerticalAlignment="Center" Height="237" >
+       
+           
+            <StackPanel Background="White" Height="188" Width="220">
 
             <Label HorizontalAlignment="Center" Content="Login" FontSize="20" Height="44"/>
             <StackPanel Orientation="Horizontal">

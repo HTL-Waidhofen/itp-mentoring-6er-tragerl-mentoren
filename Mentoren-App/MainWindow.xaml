@@ -8,16 +8,14 @@
         Title="Mentoren-App" Height="450" Width="800">
     
     <StackPanel>
-        <StackPanel.Background>
-            <ImageBrush ImageSource=".\Images\gradient.png"/>
-        </StackPanel.Background>
+ 
 
         <Menu VerticalAlignment="Top">
-            <MenuItem Header="_Menü">
-                <MenuItem Header="Einstellungen" Click="GoToSettings"  />
-                <MenuItem Header="Logout" Click="Logout"/>
-                <MenuItem Header="Info" Click="GoToInfo" />
-                <MenuItem Header="Beenden" Click="Shutdown" />
+            <MenuItem x:Name="Menu" Header="_Menü">
+                <MenuItem x:Name="Settings" Header="Einstellungen" Click="GoToSettings"  />
+                <MenuItem x:Name="Log" Header="Logout" Click="Logout"/>
+                <MenuItem x:Name="Info" Header="Info" Click="GoToInfo" />
+                <MenuItem x:Name="Shut" Header="Beenden" Click="Shutdown" />
             </MenuItem>
         </Menu>
 
