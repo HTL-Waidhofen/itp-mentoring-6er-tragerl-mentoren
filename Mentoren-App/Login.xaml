@@ -8,8 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login">
 
-    <StackPanel Orientation="Vertical" >
-
+    <StackPanel VerticalAlignment="Center">
 
         <StackPanel Background="White" Height="188" Width="220">
 
@@ -26,7 +25,9 @@
                 <Button Foreground="White" Background="DarkSlateBlue" Margin="5" Click="LogUserIn" Width="100px" Content="Login"/>
                 <Button Foreground="White"  Background="DarkSlateBlue" Click="GoToRegistration"  Width="100px" Content="Registrieren"/>
             </StackPanel>
+            
         </StackPanel>
 
     </StackPanel>
+        
 </Page>
