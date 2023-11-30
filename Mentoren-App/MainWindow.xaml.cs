@@ -23,6 +23,7 @@ namespace Mentoren_App
         public MainWindow()
         {
             InitializeComponent();
+
             NavigateToPage("Login.xaml");
         }
         public void NavigateToPage(string pageName)
@@ -70,6 +71,21 @@ namespace Mentoren_App
             }
 
             return true;
+        }
+        public void HideMenuItems()
+        {
+
+
+            foreach (var menuItem in Menu.Items)
+            {
+                if (menuItem is MenuItem subMenuItem)
+                {
+                    if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout")
+                    {
+                        subMenuItem.Visibility = Visibility.Collapsed;
+                    }
+                }
+            }
         }
     }
 }
