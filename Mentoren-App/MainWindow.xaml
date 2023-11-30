@@ -21,9 +21,11 @@
             </MenuItem>
         </Menu>
 
-        
         <Frame x:Name="mainFrame"/>
+<<<<<<< HEAD
+=======
    
+>>>>>>> 4c4c4f9e36a3dd46298498368278aef29124c841
 
     </StackPanel>
 </Window>
