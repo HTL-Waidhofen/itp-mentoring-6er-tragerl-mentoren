@@ -13,22 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
-public class User
+public class Benutzer
 {
 	public int ID { get; }
-	public string FName { get; }
-    public string Name { get; }
+	public string Vorname { get; }
+    public string Nachname { get; }
 	public string Role { get; set; }
-	public string Password { get; set; }
-    public string Email { get; set; }
-    public List<Functions> Function {  get; set; }
-}
-public class Functions
-{
-	bool Student { get; set; }
-	bool Mentor { get; set; }
-	bool Admin {  get; set; }
-
+	public string Email { gent; set; }
+    public string Passwort { get; set; }
 }
 
 
