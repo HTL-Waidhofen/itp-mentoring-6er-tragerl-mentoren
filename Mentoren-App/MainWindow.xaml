@@ -9,7 +9,7 @@
     
     <StackPanel>
         <StackPanel.Background>
-            <ImageBrush ImageSource="images\gradient.png"/>
+            <ImageBrush ImageSource=".\Images\gradient.png"/>
         </StackPanel.Background>
 
         <Menu VerticalAlignment="Top">
