@@ -19,7 +19,7 @@ public class Benutzer
 	public string Vorname { get; }
     public string Nachname { get; }
 	public string Role { get; set; }
-	public string Email { gent; set; }
+	public string Email { get; set; }
     public string Passwort { get; set; }
 }
 
