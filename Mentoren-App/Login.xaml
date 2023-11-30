@@ -15,12 +15,7 @@
 
 
             <StackPanel Background="White">
-                    <Menu VerticalAlignment="Top">
-                        <MenuItem Header="_Menü">
-                            <MenuItem Header="Info" Click="GoToInfo" />
-                            <MenuItem Header="Beenden" Click="Shutdown" />
-                        </MenuItem>
-                    </Menu>
+
 
         <StackPanel VerticalAlignment="Center" Height="237" >
        

@@ -23,6 +23,10 @@ namespace Mentoren_App
         public Registrierung()
         {
             InitializeComponent();
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.HideMenuItems();
+            }
         }
 
         private void RegistrateUser(object sender, RoutedEventArgs e)

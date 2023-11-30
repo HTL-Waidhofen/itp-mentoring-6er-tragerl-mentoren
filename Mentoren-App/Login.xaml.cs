@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Data.SqlClient;
 using System.Data.SQLite;
-
+using System.Configuration;
 
 namespace Mentoren_App
 {
@@ -27,6 +27,10 @@ namespace Mentoren_App
         public Login()
         {
             InitializeComponent();
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.HideMenuItems();
+            }
         }
 
         private void LogUserIn(object sender, RoutedEventArgs e)
@@ -84,6 +88,7 @@ namespace Mentoren_App
         {
             NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
         }
+     
     }
 }
 
