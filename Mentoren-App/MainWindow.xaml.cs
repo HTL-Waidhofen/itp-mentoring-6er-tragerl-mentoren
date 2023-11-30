@@ -45,7 +45,7 @@ namespace Mentoren_App
             NavigateToPage("Login.xaml");
         }
 
-        private void Shutdown(object sender, RoutedEventArgs e)
+        public void Shutdown(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
         }

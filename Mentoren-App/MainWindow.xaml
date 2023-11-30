@@ -8,9 +8,7 @@
         Title="Mentoren-App" Height="450" Width="800">
     
     <StackPanel>
-        <StackPanel.Background>
-            <ImageBrush ImageSource="images\gradient.png"/>
-        </StackPanel.Background>
+       
 
         <Menu VerticalAlignment="Top">
             <MenuItem Header="_Menü">
