@@ -73,29 +73,35 @@ namespace Mentoren_App
             bool isFilled = true;
             SolidColorBrush brightRedBrush = new SolidColorBrush(Colors.IndianRed);
             SolidColorBrush whiteBrush = new SolidColorBrush(Colors.White);
-            foreach (TextBox field in fields)
+            foreach (TextBox textBox in fields)
             {
-                if (string.IsNullOrWhiteSpace(field.Text))
+                if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    field.Background = brightRedBrush;
+                    textBox.Background = brightRedBrush;
                     isFilled = false;
                 }
                 else
-                    field.Background = whiteBrush;
+                {
+                    textBox.Background = whiteBrush;
+                }
             }
-            if (isFilled == false)
-                MessageBox.Show("Bitte füllen Sie alle Felder aus", "Felder ausfüllen", MessageBoxButton.OK, MessageBoxImage.Error);
-            if (pwd.SecurePassword != pwdBestaetigt.SecurePassword)
+
+            if (pwd.SecurePassword == null || pwdBestaetigt.SecurePassword == null)
             {
-                isFilled= false;
+                isFilled = false;
+                MessageBox.Show("Bitte füllen Sie alle Felder aus", "Felder ausfüllen", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                if (pwd.SecurePassword == null)
+                    pwd.Background = brightRedBrush;
+                if (pwdBestaetigt.SecurePassword == null)
+                    pwdBestaetigt.Background = brightRedBrush;
+            }
+            else if (pwd.SecurePassword != pwdBestaetigt.SecurePassword)
+            {
+                isFilled = false;
                 MessageBox.Show("Die Passwörter stimmen nicht überein", "Falsches Passwort", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            if (pwd.SecurePassword == null)
-                pwd.Background = brightRedBrush;
-            if (pwdBestaetigt.SecurePassword == null)
-                pwd.Background = brightRedBrush;
-            
-            
+
             //Schüler Mentor
             return isFilled;
         }
