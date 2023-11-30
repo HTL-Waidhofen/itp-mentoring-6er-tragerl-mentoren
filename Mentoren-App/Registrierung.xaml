@@ -8,45 +8,52 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registrierung">
 
-    <StackPanel VerticalAlignment="Center">
-        <StackPanel.Background>
-            <ImageBrush ImageSource="Images\gradient.png"/>
-        </StackPanel.Background>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
-            <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
+        <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
 
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Vorname"></Label>
-                <TextBox x:Name="VName" Margin="3" Width="120"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Nachname"></Label>
-                <TextBox x:Name="NName" Margin="3" Width="120"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <Label Content="E-Mail"></Label>
-                <TextBox x:Name="Mail" Margin="3" Width="120"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Password"></Label>
-                <PasswordBox x:Name="pwd" Margin="3" Width="120"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Password bestätigung"></Label>
-                <PasswordBox x:Name="CheckPwd" Margin="3" Width="120"/>
-            </StackPanel>
-
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <CheckBox x:Name="student" Content="Schüler" Margin="2"/>
-                <CheckBox x:Name="mentor" Content="Mentor" Margin="2"/>
-            </StackPanel>
-
-            <Button Click="RegistrateUser"  Background="LightGray" Width="100px"  Margin="3">Registrieren</Button>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Vorname" Width="70"/>
+            <TextBox x:Name="VName" Margin="3" Width="120"/>
         </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Nachname" Width="70"/>
+            <TextBox x:Name="NName" Margin="3" Width="120"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="E-Mail" Width="70"/>
+            <TextBox x:Name="Mail" Margin="3" Width="120"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Password" Width="70"/>
+            <PasswordBox x:Name="pwd" Margin="3" Width="120"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+
+            <Label Content="Password bestätigen"></Label>
+            <PasswordBox x:Name="pwdBestaetigt" Margin="3" Width="120"/>
+
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <CheckBox x:Name="student" Content="Schüler"/>
+            <CheckBox x:Name="mentor" Content="Mentor"/>
+        </StackPanel>
+
+        <TextBlock HorizontalAlignment="Center" FontSize="30">Registrierung</TextBlock>
+        <TextBox x:Name="VName" Text="Vorname"></TextBox>
+        <TextBox x:Name="NName" Text="Nachname"></TextBox>
+        <TextBox x:Name="Mail" Text="E-Mail"></TextBox>
+        <TextBox x:Name="pwd" Text="Passwort"></TextBox>
+        <TextBox x:Name="pwdBestaetigt" Text="Passwort bestätigen"></TextBox>
+        <ComboBox x:Name="RoleSelection" Background="LightGray" Width="100px" Margin="5,0,5,5">
+            <ComboBoxItem>Student</ComboBoxItem>
+            <ComboBoxItem>Mentor</ComboBoxItem>
+        </ComboBox>
+        <Button Click="RegistrateUser"  Background="LightGray" Width="100px"  Margin="5,0,5,5">Registrieren</Button>
     </StackPanel>
 </Page>

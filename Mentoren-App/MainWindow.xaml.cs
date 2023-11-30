@@ -23,6 +23,7 @@ namespace Mentoren_App
         public MainWindow()
         {
             InitializeComponent();
+
             NavigateToPage("Login.xaml");
         }
         public void NavigateToPage(string pageName)
@@ -32,17 +33,59 @@ namespace Mentoren_App
 
         private void GoToSettings(object sender, RoutedEventArgs e)
         {
-
+            NavigateToPage("Einstellungen.xaml");
         }
-        private void GoToImpressum(object sender, RoutedEventArgs e)
+        public void GoToInfo(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("Info.xaml");
+        }
+
+        public void Logout(object sender, RoutedEventArgs e)
+        {
+            //evl funktion für das Abmelden?
+            NavigateToPage("Login.xaml");
+        }
+
+        public void Shutdown(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        public bool IsValidEmail(string email)
+        {
+            if (!email.EndsWith("@htlwy.at"))
+            {
+                return false;
+            }
+
+            string[] parts = email.Split('@');
+            if (parts.Length != 2 || string.IsNullOrEmpty(parts[0]) || string.IsNullOrEmpty(parts[1]))
+            {
+                return false;
+            }
+
+            string domainPart = parts[1];
+            int dotIndex = domainPart.IndexOf('.');
+            if (dotIndex == -1 || dotIndex < 2 || dotIndex >= domainPart.Length - 2)
+            {
+                return false;
+            }
+
+            return true;
+        }
+        public void HideMenuItems()
         {
 
+
+            foreach (var menuItem in Menu.Items)
+            {
+                if (menuItem is MenuItem subMenuItem)
+                {
+                    if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout")
+                    {
+                        subMenuItem.Visibility = Visibility.Collapsed;
+                    }
+                }
+            }
         }
-
-        private void Logout(object sender, RoutedEventArgs e)
-        {
-
-        }
-
     }
 }
