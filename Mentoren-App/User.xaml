@@ -9,11 +9,11 @@
       Title="User">
     <StackPanel Orientation="Horizontal" Background="White">
 
-        <StackPanel Orientation="Vertical" Width="200px" Height="400px">
+        <StackPanel Orientation="Vertical" Width="170" Height="400px">
             <GroupBox Header="Profil" Height="150" />
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Width="300px" Height="400px" >
+        <StackPanel Orientation="Vertical" Width="278" Height="400px" >
             <ComboBox x:Name="chooseSubject">
                 <ComboBoxItem>Mathematik</ComboBoxItem>
                 <ComboBoxItem>Englisch</ComboBoxItem>
@@ -30,15 +30,25 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
-            <GroupBox Header="Mentor-Profil" Height="150" />
+            <GroupBox Header="Mentor-Profil" Height="106" />
 
-            <GroupBox Header="Mentor-Verlauf" Height="150"/>
+            <GroupBox Header="Mentor-Verlauf" Height="86">
+                <ScrollBar HorizontalAlignment="Right">
 
-            <GroupBox Header="Email an Mentor" x:Name="MailTo">
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Email" Width="60"/>
-                    <TextBox x:Name="LoginMail"  Width="100px" Height="20"/>
+                </ScrollBar>
+            </GroupBox>
+
+
+            <GroupBox Header="Email an Mentor" x:Name="MailTo" Height="140">
+                <StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Label Content="Email" Width="60" Height="28"/>
+                    <TextBox x:Name="LoginMail"  Width="140" Height="20"/>
+                    </StackPanel>
                 </StackPanel>
+              
             </GroupBox>
 
         </StackPanel>
