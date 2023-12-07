@@ -14,7 +14,8 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Width="270" Height="400px" >
-            <ComboBox x:Name="chooseSubject">
+            <Label Content="Wähle ein Fach aus:"/>
+            <ComboBox x:Name="chooseSubject" Margin="3,0,3,3">
                 <ComboBoxItem>Mathematik</ComboBoxItem>
                 <ComboBoxItem>Englisch</ComboBoxItem>
                 <ComboBoxItem>Deutsch</ComboBoxItem>
