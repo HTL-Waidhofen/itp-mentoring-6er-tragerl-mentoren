@@ -24,5 +24,10 @@ namespace Mentoren_App
         {
             InitializeComponent();
         }
+        public void SendEmail_BTN(object sender, RoutedEventArgs e)
+        {
+
+
+        }
     }
 }
