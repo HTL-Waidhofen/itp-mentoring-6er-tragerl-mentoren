@@ -24,5 +24,10 @@ namespace Mentoren_App
         {
             InitializeComponent();
         }
+
+        private void SendEmail_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
