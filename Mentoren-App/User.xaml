@@ -51,7 +51,7 @@
                         <TextBox x:Name="EmailContent_TB" Height="100" TextChanged="EmailContent_TB_TextChanged" />
                     </StackPanel>
                     <StackPanel>
-                        <Button Foreground="White" Background="DarkSlateBlue" Width="80" Margin="3" Content="Absenden" Click="Button_Click"/>
+                        <Button Foreground="White" Background="DarkSlateBlue" Width="80" Margin="3" Content="Absenden" Click="SendEmail_Click"/>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
