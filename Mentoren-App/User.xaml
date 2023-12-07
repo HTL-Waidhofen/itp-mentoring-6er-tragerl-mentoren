@@ -29,7 +29,13 @@
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
             <GroupBox Header="Mentor-Profil"></GroupBox>
             <GroupBox Header="Mentor-Verlauf"></GroupBox>
+            <GroupBox Header="Email an Mentor" x:Name="MailTo">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Email" Width="60"/>
+                    <TextBox x:Name="LoginMail"  Width="100px" Height="20"/>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
-
+            
     </StackPanel>
 </Page>
