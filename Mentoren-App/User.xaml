@@ -10,7 +10,7 @@
     <StackPanel Orientation="Horizontal" Background="White">
 
         <StackPanel Orientation="Vertical" Width="200px" Height="400px">
-            <GroupBox Header="Profil"></GroupBox>
+            <GroupBox Header="Profil" Height="150" />
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Width="300px" Height="400px" >
@@ -30,9 +30,9 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
-            <GroupBox Header="Mentor-Profil"></GroupBox>
+            <GroupBox Header="Mentor-Profil" Height="150" />
 
-            <GroupBox Header="Mentor-Verlauf"></GroupBox>
+            <GroupBox Header="Mentor-Verlauf" Height="150"/>
 
             <GroupBox Header="Email an Mentor" x:Name="MailTo">
                 <StackPanel Orientation="Horizontal">
