@@ -23,6 +23,10 @@ namespace Mentoren_App
         public Mentoren()
         {
             InitializeComponent();
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.ShowMenuItems();
+            }
         }
     }
 }
