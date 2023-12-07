@@ -15,8 +15,8 @@
 
         <StackPanel Orientation="Vertical" Width="270" Height="400px" >
             <Label Content="Wähle ein Fach aus:"/>
-            <ComboBox x:Name="chooseSubject" Margin="3,0,3,3">
-                <ComboBoxItem>Mathematik</ComboBoxItem>
+            <ComboBox SelectedIndex="0" x:Name="chooseSubject" Margin="3,0,3,3">
+                <ComboBoxItem >Mathematik</ComboBoxItem>
                 <ComboBoxItem>Englisch</ComboBoxItem>
                 <ComboBoxItem>Deutsch</ComboBoxItem>
                 <ComboBoxItem>SEW</ComboBoxItem>
@@ -29,30 +29,32 @@
                 <ListBox x:Name="MentorList">Hier Sollen die Mentoren ausgegeben werden, die für das oben ausgewählte Fach zuständig sind</ListBox>
             </GroupBox>
         </StackPanel>
-
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
             <GroupBox Header="Mentor-Profil" Height="100" />
-
             <GroupBox Header="Mentor-Verlauf" Height="80">
                 <ScrollBar HorizontalAlignment="Right">
 
                 </ScrollBar>
             </GroupBox>
-
-
-            <GroupBox Header="Email an Mentor" x:Name="MailTo" Height="140">
+            <GroupBox Header="Email an Mentor" x:Name="MailTo">
                 <StackPanel>
 
                     <StackPanel Orientation="Horizontal">
-
                         <Label Content="Email" Width="60"/>
-                    <TextBox x:Name="LoginMail"  Width="140" Margin="3"/>
+                        <TextBox x:Name="LoginMail_TB"  Width="140" Margin="3"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Betreff" Width="60"/>
+                        <TextBox x:Name="Betreff_TB"  Width="140" Margin="3"/>
+                    </StackPanel>
+                    <StackPanel Margin="7">
+                        <TextBox x:Name="EmailContent_TB" Height="100" TextChanged="EmailContent_TB_TextChanged"></TextBox>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button Foreground="White" Background="DarkSlateBlue" Width="80" Margin="3">Absenden</Button>
                     </StackPanel>
                 </StackPanel>
-              
             </GroupBox>
-
         </StackPanel>
-        
     </StackPanel>
 </Page>
