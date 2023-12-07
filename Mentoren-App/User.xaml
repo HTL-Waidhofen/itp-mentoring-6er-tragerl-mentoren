@@ -48,10 +48,10 @@
                         <TextBox x:Name="Betreff_TB"  Width="140" Margin="3"/>
                     </StackPanel>
                     <StackPanel Margin="7">
-                        <TextBox x:Name="EmailContent_TB" Height="100" TextChanged="EmailContent_TB_TextChanged"></TextBox>
+                     <TextBox x:Name="EmailContent_TB" Height="100"/>
                     </StackPanel>
                     <StackPanel>
-                        <Button Foreground="White" Background="DarkSlateBlue" Width="80" Margin="3">Absenden</Button>
+                        <Button Foreground="White" Background="DarkSlateBlue" Width="80" Margin="3" Content="Absenden" Click="SendEmail_Click"/>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
