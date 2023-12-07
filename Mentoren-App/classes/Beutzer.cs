@@ -20,7 +20,11 @@ public class Benutzer
     public string Nachname { get; }
 	public string Role { get; set; }
 	public string Email { get; set; }
-    public string Passwort { get; set; }
+    private string Passwort { get; set; }
+    public override string ToString()
+    {
+        return Vorname + " " + Nachname + ", Email: " + Email;
+    }
 }
 
 
