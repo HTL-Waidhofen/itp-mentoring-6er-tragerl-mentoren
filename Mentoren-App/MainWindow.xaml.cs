@@ -23,6 +23,7 @@ namespace Mentoren_App
         public MainWindow()
         {
             InitializeComponent();
+
             NavigateToPage("Login.xaml");
         }
         public void NavigateToPage(string pageName)
@@ -45,7 +46,7 @@ namespace Mentoren_App
             NavigateToPage("Login.xaml");
         }
 
-        private void Shutdown(object sender, RoutedEventArgs e)
+        public void Shutdown(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
         }
@@ -70,6 +71,21 @@ namespace Mentoren_App
             }
 
             return true;
+        }
+        public void HideMenuItems()
+        {
+
+
+            foreach (var menuItem in Menu.Items)
+            {
+                if (menuItem is MenuItem subMenuItem)
+                {
+                    if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout")
+                    {
+                        subMenuItem.Visibility = Visibility.Collapsed;
+                    }
+                }
+            }
         }
     }
 }

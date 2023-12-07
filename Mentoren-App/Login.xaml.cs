@@ -15,8 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Data.SqlClient;
 using System.Data.SQLite;
-
-
+using System.Configuration;
+using Mentoren_App;
 namespace Mentoren_App
 {
     /// <summary>
@@ -27,6 +27,10 @@ namespace Mentoren_App
         public Login()
         {
             InitializeComponent();
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.HideMenuItems();
+            }
         }
 
         private void LogUserIn(object sender, RoutedEventArgs e)
@@ -36,8 +40,6 @@ namespace Mentoren_App
             //Redirect auf User /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
-
-           
             /*
             SqlConnection sqlCon = new SqlConnection(@"Mentoren DB.sqbpro");
             try
@@ -74,8 +76,6 @@ namespace Mentoren_App
     }
 */
 
-
-
             //Output if Login failed
             //if(false == true)
             //MessageBox.Show("Ein Fehler ist aufgetreten. Bitte kontrollieren sie ihre Eingaben. Wenn sie noch nicht registriet sind klicken sie auf 'Registrieren'","Fehler bei Verarbeitung", MessageBoxButton.OK);
@@ -84,6 +84,8 @@ namespace Mentoren_App
         {
             NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
         }
+
+     
     }
 }
 

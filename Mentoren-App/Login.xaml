@@ -14,41 +14,34 @@
         <StackPanel Background="white" Height="188" Width="220">
 
 
-    <StackPanel Background="White">
-        <Menu VerticalAlignment="Top">
-            <MenuItem Header="_Menü">
-                <MenuItem Header="Info" Click="GoToInfo" />
-                <MenuItem Header="Beenden" Click="Shutdown" />
-            </MenuItem>
-        </Menu>
-        <TextBox HorizontalAlignment="Center" FontSize="30">Login</TextBox>
-        <TextBox x:Name="LoginMail" Background="LightGray" Width="100px" Text="E-Mail"  Margin="5"></TextBox>
-        <TextBox x:Name="LoginPwd" Background="LightGray" Width="100px" Text="Passwort" Margin="5,0,5,5"></TextBox>
-        <Button Click="LogUserIn" Background="LightGray" Width="100px"  Margin="5,0,5,5">Login</Button>
-        <Button Click="GoToRegistration" Background="LightGray" Width="100px"  Margin="5,0,5,5">Registrieren</Button>
+            <StackPanel Background="White">
 
-    <StackPanel VerticalAlignment="Center" Height="237" >
+                 
+
+        <StackPanel VerticalAlignment="Center" Height="237" >
        
            
-        
-        <StackPanel Background="White" Height="188" Width="220">
+            <StackPanel Background="White" Height="188" Width="220">
 
-            <Label HorizontalAlignment="Center" Content="Login" FontSize="20" Height="44"/>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Email" Width="60"/>
-                <TextBox x:Name="LoginMail"  Width="100px" Height="20"/>
+                <Label HorizontalAlignment="Center" Content="Login" FontSize="20" Height="44"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Email" Width="60"/>
+                    <TextBox x:Name="LoginMail"  Width="100px" Height="20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="60" Content="Passwort"/>
+                    <PasswordBox x:Name="LoginPwd" Width="100px" Height="20" />
+                </StackPanel>
+                <StackPanel Margin="10" Height="51">
+                    <Button Foreground="White" Background="DarkSlateBlue" Margin="5" Click="LogUserIn" Width="100px" Content="Login"/>
+                    <Button Foreground="White"  Background="DarkSlateBlue" Click="GoToRegistration"  Width="100px" Content="Registrieren"/>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Width="60" Content="Passwort"/>
-                <PasswordBox x:Name="LoginPwd" Width="100px" Height="20" />
-            </StackPanel>
-            <StackPanel Margin="10" Height="51">
-                <Button Foreground="White" Background="DarkSlateBlue" Margin="5" Click="LogUserIn" Width="100px" Content="Login"/>
-                <Button Foreground="White"  Background="DarkSlateBlue" Click="GoToRegistration"  Width="100px" Content="Registrieren"/>
+
+
             </StackPanel>
         </StackPanel>
-    
+    </StackPanel>
 
     </StackPanel>
-    
 </Page>
