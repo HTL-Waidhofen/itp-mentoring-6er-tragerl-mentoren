@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections;
-public class Benutzer
+public class Benutzer : DbConnection
 {
 	public int ID { get; }
 	public string Vorname { get; }

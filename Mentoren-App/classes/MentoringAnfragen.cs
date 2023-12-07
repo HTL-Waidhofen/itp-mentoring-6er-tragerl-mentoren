@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mentoren_App.classes
 {
-    internal class MentoringAnfragen
+    internal class MentoringAnfragen : DbConnection
     {
         int AnfragenID { get; set; }
         int SchuelerID { get; set; }
