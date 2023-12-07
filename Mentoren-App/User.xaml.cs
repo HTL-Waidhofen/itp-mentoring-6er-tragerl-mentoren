@@ -28,7 +28,7 @@ namespace Mentoren_App
                 mainWindow.ShowMenuItems();
             }
         }
-        
+        /*
         public void sortMentorsBySubject(List<Benutzer> allMentors)
         {
             List<Benutzer> sortedMentors = new List<Benutzer>;
@@ -45,7 +45,7 @@ namespace Mentoren_App
             foreach (Benutzer mentor in sortedMentors)
 
                 mentorOutput.Items.Add(mentor.ToString);
-        }
+        }*/
         
     }
 }
