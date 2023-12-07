@@ -19,9 +19,8 @@
             </MenuItem>
         </Menu>
 
-        
+
         <Frame x:Name="mainFrame"/>
-        <Label Content="Dashboard"/>
 
     </StackPanel>
 </Window>
