@@ -30,21 +30,23 @@ namespace Mentoren_App
         private void SendEmail_Click(object sender, RoutedEventArgs e)
         {
             try { 
+
             string smtpServer = "smtp.gmail.com";
             int smtpPort = 587;
-            string smtpBenutzername = "zaunersilke21@gmail.at";
+            string smtpBenutzername = "";
             string smtpPasswort = "";
 
-            // E-Mail-Einstellungen
-            string absenderEmail = "silke.zauner@htlwy.at";
-            string empfaengerEmail = "anappp73@gmail.com";
-            string betreff = "Test E-Mail";
-            string text = "Dies ist eine Test-E-Mail.";
+            string absenderEmail = LoginMail_TB.Text;
+            string empfaengerEmail = "";
+            string betreff = Betreff_TB.Text;
+            string text = EmailContent_TB.Text;
 
             // Erstellen der MailMessage
+
             MailMessage mailNachricht = new MailMessage(absenderEmail, empfaengerEmail, betreff, text);
 
             // Erstellen des SmtpClients und Senden der E-Mail
+
             SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort);
             smtpClient.Credentials = new NetworkCredential(smtpBenutzername, smtpPasswort);
             smtpClient.EnableSsl = true;
