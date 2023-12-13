@@ -5,7 +5,6 @@ public abstract class DbConnection
 {
     public string ConnectionString = "Dein_Datenbank_Connection_String";
 
-    // CREATE: Allgemeine Methode zum Hinzufügen von Daten
     public void CreateData(string query, SqlParameter[] parameters)
     {
         using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -22,7 +21,6 @@ public abstract class DbConnection
         }
     }
 
-    // READ: Allgemeine Methode zum Lesen von Daten
     public SqlDataReader ReadData(string query, SqlParameter[] parameters)
     {
         SqlConnection connection = new SqlConnection(ConnectionString);
@@ -38,7 +36,6 @@ public abstract class DbConnection
         }
     }
 
-    // UPDATE: Allgemeine Methode zum Aktualisieren von Daten
     public void UpdateData(string query, SqlParameter[] parameters)
     {
         using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -55,7 +52,6 @@ public abstract class DbConnection
         }
     }
 
-    // DELETE: Allgemeine Methode zum Löschen von Daten
     public void DeleteData(string query, SqlParameter[] parameters)
     {
         using (SqlConnection connection = new SqlConnection(ConnectionString))
