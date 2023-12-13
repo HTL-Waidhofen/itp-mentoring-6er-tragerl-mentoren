@@ -25,7 +25,6 @@ public class Benutzer : DbConnection
     {
         return Vorname + " " + Nachname + ", Email: " + Email;
     }
-
     Benutzer(int id, string vorname, string nachname, string role, string email, string passwort) 
     {
         this.ID = id;
