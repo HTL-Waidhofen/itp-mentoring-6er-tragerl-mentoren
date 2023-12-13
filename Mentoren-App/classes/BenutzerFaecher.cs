@@ -15,7 +15,6 @@ namespace Mentoren_App.classes
             this.FachID = fachID;
         }
 
-        // CREATE: Neuen Eintrag in BenutzerFaecher hinzufügen
         public static void CreateBenutzerFach(int benutzerID, int fachID)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -31,7 +30,6 @@ namespace Mentoren_App.classes
             }
         }
 
-        // READ: Alle Einträge aus BenutzerFaecher abrufen
         public static List<BenutzerFaecher> ReadAllBenutzerFaecher()
         {
             List<BenutzerFaecher> result = new List<BenutzerFaecher>();
@@ -55,7 +53,6 @@ namespace Mentoren_App.classes
             return result;
         }
 
-        // DELETE: Eintrag aus BenutzerFaecher löschen
         public static void DeleteBenutzerFach(int benutzerID, int fachID)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
