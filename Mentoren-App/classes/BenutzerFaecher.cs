@@ -10,12 +10,5 @@ namespace Mentoren_App.classes
     {
         int BenutzerID {  get; set; }
         int FachID {  get; set; }
-
-        BenutzerFaecher(int benutzerID, int fachID) 
-        {
-            this.BenutzerID = benutzerID;
-            this.FachID = fachID;
-        }
     }
-
 }

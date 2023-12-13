@@ -14,15 +14,5 @@ namespace Mentoren_App.classes
         int FachID { get; set; }
         string Status { get; set; }
         string Nachrichten { get; set; }
-
-        MentoringAnfragen(int anfragenID, int schuelerID, int mentorID, int fachID, string status, string nachrichten) 
-        { 
-            this.AnfragenID = anfragenID;
-            this.SchuelerID = schuelerID;
-            this.MentorID = mentorID;
-            this.FachID = fachID;
-            this.Status = status;
-            this.Nachrichten = nachrichten;
-        }
     }
 }
