@@ -15,7 +15,6 @@ namespace Mentoren_App.classes
             this.Fachname = fachname;
         }
 
-        // CREATE: Neues Fach hinzufügen
         public static void CreateFach(string fachname)
         {
             string query = "INSERT INTO Faecher (Fachname) VALUES (@Fachname)";
@@ -23,7 +22,6 @@ namespace Mentoren_App.classes
             new Faecher(0, "").CreateData(query, parameters);
         }
 
-        // READ: Alle Fächer abrufen
         public static List<Faecher> ReadAllFaecher()
         {
             List<Faecher> result = new List<Faecher>();
@@ -40,7 +38,6 @@ namespace Mentoren_App.classes
             return result;
         }
 
-        // UPDATE: Fachnamen aktualisieren
         public void UpdateFach(string neuerFachname)
         {
             string query = "UPDATE Faecher SET Fachname = @NeuerFachname WHERE FachID = @FachID";
@@ -48,7 +45,6 @@ namespace Mentoren_App.classes
             new Faecher(0, "").UpdateData(query, parameters);
         }
 
-        // DELETE: Fach löschen
         public void DeleteFach()
         {
             string query = "DELETE FROM Faecher WHERE FachID = @FachID";
