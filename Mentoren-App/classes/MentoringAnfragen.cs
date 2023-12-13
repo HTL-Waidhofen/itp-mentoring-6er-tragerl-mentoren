@@ -1,28 +1,77 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Mentoren_App.classes
 {
     internal class MentoringAnfragen : DbConnection
     {
-        int AnfragenID { get; set; }
-        int SchuelerID { get; set; }
-        int MentorID {  get; set; }
-        int FachID { get; set; }
-        string Status { get; set; }
-        string Nachrichten { get; set; }
+        public int AnfrageID { get; set; }
+        public int SchuelerID { get; set; }
+        public int MentorID { get; set; }
+        public int FachID { get; set; }
+        public string Status { get; set; }
+        public string Nachricht { get; set; }
 
-        MentoringAnfragen(int anfragenID, int schuelerID, int mentorID, int fachID, string status, string nachrichten) 
-        { 
-            this.AnfragenID = anfragenID;
+        public MentoringAnfragen(int anfrageID, int schuelerID, int mentorID, int fachID, string status, string nachrichten)
+        {
+            this.AnfrageID = anfrageID;
             this.SchuelerID = schuelerID;
             this.MentorID = mentorID;
             this.FachID = fachID;
             this.Status = status;
-            this.Nachrichten = nachrichten;
+            this.Nachricht = nachrichten;
+        }
+
+        // CREATE: Neue Mentoring-Anfrage hinzufügen
+        public static void CreateMentoringAnfrage(int schuelerID, int mentorID, int fachID, string nachricht)
+        {
+            string query = "INSERT INTO MentoringAnfragen (SchuelerID, MentorID, FachID, Status, Nachricht) VALUES (@SchuelerID, @MentorID, @FachID, @Status, @Nachricht)";
+            SqlParameter[] parameters = {
+                new SqlParameter("@SchuelerID", schuelerID),
+                new SqlParameter("@MentorID", mentorID),
+                new SqlParameter("@FachID", fachID),
+                new SqlParameter("@Status", "Offen"), // Standardmäßig als "Offen" markieren
+                new SqlParameter("@Nachricht", nachricht)
+            };
+            new MentoringAnfragen(0, 0, 0, 0, "", "").CreateData(query, parameters);
+        }
+
+        // READ: Alle Mentoring-Anfragen abrufen
+        public static List<MentoringAnfragen> ReadAllMentoringAnfragen()
+        {
+            List<MentoringAnfragen> result = new List<MentoringAnfragen>();
+            string query = "SELECT * FROM MentoringAnfragen";
+            using (SqlDataReader reader = new MentoringAnfragen(0, 0, 0, 0, "", "").ReadData(query, null))
+            {
+                while (reader.Read())
+                {
+                    int anfrageID = Convert.ToInt32(reader["AnfragenID"]);
+                    int schuelerID = Convert.ToInt32(reader["SchuelerID"]);
+                    int mentorID = Convert.ToInt32(reader["MentorID"]);
+                    int fachID = Convert.ToInt32(reader["FachID"]);
+                    string status = Convert.ToString(reader["Status"]);
+                    string nachricht = Convert.ToString(reader["Nachricht"]);
+                    result.Add(new MentoringAnfragen(anfrageID, schuelerID, mentorID, fachID, status, nachricht));
+                }
+            }
+            return result;
+        }
+
+        // UPDATE: Status einer Mentoring-Anfrage aktualisieren
+        public void UpdateMentoringAnfrageStatus(string neuerStatus)
+        {
+            string query = "UPDATE MentoringAnfragen SET Status = @NeuerStatus WHERE AnfragenID = @AnfrageID";
+            SqlParameter[] parameters = { new SqlParameter("@NeuerStatus", neuerStatus), new SqlParameter("@AnfrageID", this.AnfrageID) };
+            new MentoringAnfragen(0, 0, 0, 0, "", "").UpdateData(query, parameters);
+        }
+
+        // DELETE: Mentoring-Anfrage löschen
+        public void DeleteMentoringAnfrage()
+        {
+            string query = "DELETE FROM MentoringAnfragen WHERE AnfragenID = @AnfrageID";
+            SqlParameter[] parameters = { new SqlParameter("@AnfrageID", this.AnfrageID) };
+            new MentoringAnfragen(0, 0, 0, 0, "", "").DeleteData(query, parameters);
         }
     }
 }
