@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Mentoren_App.classes
 {
-    internal class Faecher : DbConnection
+    public class Faecher : DbConnection
     {
         int FachID { get; set; }
         string Fachname { get; set; }
+
+        Faecher(int fachID, string fachname)
+        {
+            this.FachID = fachID;
+            this.Fachname = fachname;
+        }
     }
 }
