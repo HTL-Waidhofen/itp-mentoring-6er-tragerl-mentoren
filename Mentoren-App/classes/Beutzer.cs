@@ -26,7 +26,6 @@ public class Benutzer : DbConnection
         this.Passwort = passwort;
     }
 
-    // CREATE: Neuen Benutzer hinzufügen
     public static void CreateBenutzer(string vorname, string nachname, string role, string email, string passwort)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -45,7 +44,6 @@ public class Benutzer : DbConnection
         }
     }
 
-    // READ: Benutzer nach ID abrufen
     public static Benutzer ReadBenutzerByID(int id)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -74,7 +72,6 @@ public class Benutzer : DbConnection
         return null;
     }
 
-    // UPDATE: E-Mail-Adresse eines Benutzers aktualisieren
     public void UpdateBenutzerEmail(string neueEmail)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -90,7 +87,6 @@ public class Benutzer : DbConnection
         }
     }
 
-    // DELETE: Benutzer löschen
     public void DeleteBenutzer()
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
