@@ -23,7 +23,6 @@ namespace Mentoren_App.classes
             this.Nachricht = nachrichten;
         }
 
-        // CREATE: Neue Mentoring-Anfrage hinzufügen
         public static void CreateMentoringAnfrage(int schuelerID, int mentorID, int fachID, string nachricht)
         {
             string query = "INSERT INTO MentoringAnfragen (SchuelerID, MentorID, FachID, Status, Nachricht) VALUES (@SchuelerID, @MentorID, @FachID, @Status, @Nachricht)";
@@ -37,7 +36,6 @@ namespace Mentoren_App.classes
             new MentoringAnfragen(0, 0, 0, 0, "", "").CreateData(query, parameters);
         }
 
-        // READ: Alle Mentoring-Anfragen abrufen
         public static List<MentoringAnfragen> ReadAllMentoringAnfragen()
         {
             List<MentoringAnfragen> result = new List<MentoringAnfragen>();
@@ -58,7 +56,6 @@ namespace Mentoren_App.classes
             return result;
         }
 
-        // UPDATE: Status einer Mentoring-Anfrage aktualisieren
         public void UpdateMentoringAnfrageStatus(string neuerStatus)
         {
             string query = "UPDATE MentoringAnfragen SET Status = @NeuerStatus WHERE AnfragenID = @AnfrageID";
@@ -66,7 +63,6 @@ namespace Mentoren_App.classes
             new MentoringAnfragen(0, 0, 0, 0, "", "").UpdateData(query, parameters);
         }
 
-        // DELETE: Mentoring-Anfrage löschen
         public void DeleteMentoringAnfrage()
         {
             string query = "DELETE FROM MentoringAnfragen WHERE AnfragenID = @AnfrageID";
