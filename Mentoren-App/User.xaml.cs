@@ -29,35 +29,36 @@ namespace Mentoren_App
 
         public void SendEmail_Click(object sender, RoutedEventArgs e)
         {
-           
-            try
-            {
-                MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+            try {
+                string fromMail = "ana.pop@htlwy.at";
 
-                mail.From = new MailAddress("zaunersilke21@gmail.com");
-               
-                mail.To.Add(LoginMail_TB.Text);
-                mail.Subject = Betreff_TB.Text;
-                mail.Body = EmailContent_TB.Text;
+                using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
+                {
+                    smtpClient.Port = 587;
+                    smtpClient.UseDefaultCredentials = false;
+                    smtpClient.Credentials = new NetworkCredential(fromMail, "Funny_Bunny11");
+                    smtpClient.EnableSsl = true;
 
-              
-                SmtpServer.Port = 587;
-                SmtpServer.EnableSsl = true;
-                string psw = passwordbx.Password;
-               
 
-                SmtpServer.Credentials = new System.Net.NetworkCredential("zaunersilke21@gmail.com", psw);
+                    using (var mailMessage = new MailMessage())
+                    {
+                        mailMessage.From = new MailAddress(fromMail);
+                        mailMessage.Subject = Betreff_TB.Text;
+                        mailMessage.Body = EmailContent_TB.Text;
+                        mailMessage.IsBodyHtml = true;
+                        mailMessage.To.Add(LoginMail_TB.Text);
 
-                SmtpServer.EnableSsl = true;
+                        smtpClient.Send(mailMessage);
+                    }
+                }
 
-                SmtpServer.Send(mail);
-                MessageBox.Show("mail Send");
+                MessageBox.Show("E-Mail wurde erfolgreich gesendet.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+
         }
     }
 }

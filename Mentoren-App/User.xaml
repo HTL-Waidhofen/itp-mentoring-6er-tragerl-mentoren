@@ -46,16 +46,20 @@
                             <PasswordBox x:Name="passwordbx" Width="88"></PasswordBox>
                         </StackPanel>
                     </StackPanel>
+                    
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Betreff" Width="60"/>
                         <TextBox x:Name="Betreff_TB"  Width="140" Margin="3"/>
                     </StackPanel>
+                    
                     <StackPanel Margin="7">
                      <TextBox x:Name="EmailContent_TB" Height="100"/>
                     </StackPanel>
+                    
                     <StackPanel>
                         <Button Foreground="White" Background="DarkSlateBlue" Width="80" Margin="3" Content="Absenden" Click="SendEmail_Click"/>
                     </StackPanel>
+                    
                 </StackPanel>
             </GroupBox>
         </StackPanel>
