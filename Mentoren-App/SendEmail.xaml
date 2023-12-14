@@ -8,7 +8,29 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SendEmail">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Vertical" Background="White">
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Email" FontSize="30" FontWeight="Bold" Foreground="DarkSlateBlue"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Email Empfänger" Width="105" FontWeight="DemiBold"/>
+            <TextBox x:Name="recipientEmail" Margin="3" Width="250"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Betreff" Width="105" FontWeight="DemiBold"/>
+            <TextBox x:Name="Betreff"  Width="250" Margin="3"/>
+        </StackPanel>
+
+        <StackPanel Margin="7">
+            <TextBox x:Name="EmailBody" Height="100"/>
+        </StackPanel>
+
+        <StackPanel>
+            <Button Foreground="White" Background="DarkSlateBlue" Width="80" Margin="3" Content="Absenden" Click="SendEmail_Click"/>
+        </StackPanel>
+
+
+    </StackPanel>
 </Page>
