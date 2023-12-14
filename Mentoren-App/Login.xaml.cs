@@ -37,7 +37,7 @@ namespace Mentoren_App
         {
             //Methode für den Login mit Email/ Passwort 
             //If true => Redirect to Page
-            NavigationService?.Navigate(new Uri("User.xaml", UriKind.Relative));
+            NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
             //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             /*

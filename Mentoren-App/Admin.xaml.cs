@@ -28,6 +28,8 @@ namespace Mentoren_App
                 mainWindow.ShowMenuItems();
                 mainWindow.writeBenuterToListBox(mainWindow.testUser, SchuelerList);
                 mainWindow.writeBenuterToListBox(mainWindow.testUser, MentorList);
+                
+                
             }
         }
   
@@ -42,7 +44,7 @@ namespace Mentoren_App
 
         private void SelectProfile(object sender, SelectionChangedEventArgs e)
         {
-            
+            //mit id auf listen zugreifen und benutzer mitgeben
         }
     }
 }
