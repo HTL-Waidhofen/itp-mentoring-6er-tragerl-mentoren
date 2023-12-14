@@ -42,7 +42,7 @@ namespace Mentoren_App
 
         private void SelectProfile(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
     }
 }
