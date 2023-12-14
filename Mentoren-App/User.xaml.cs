@@ -29,7 +29,7 @@ namespace Mentoren_App
 
         private void GoToEmailPage(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new Uri("SendEmail.xaml", UriKind.Relative));
         }
     }
 }
