@@ -80,9 +80,9 @@ namespace Mentoren_App
 
             foreach (TextBox field in fields)
             {
-                if (string.IsNullOrWhiteSpace(textBox.Text))
+                if (string.IsNullOrWhiteSpace(field.Text))
                 {
-                    textBox.Background = brightRedBrush;
+                    field.Background = brightRedBrush;
                     isFilled = false;
                     break; // exit the loop on the first empty field
                 }
