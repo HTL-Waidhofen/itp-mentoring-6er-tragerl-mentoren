@@ -38,8 +38,8 @@
             </GroupBox>
             <GroupBox Header="E-mail" x:Name="MailTo">
 
-                <StackPanel Height="52">
-                    <Button Foreground="White" Background="DarkSlateBlue" Width="152" Margin="3" Content="Email an Mentor senden" Click="SendEmail_Click" Height="26"/>
+                <StackPanel>
+                    <Button Foreground="White" Background="DarkSlateBlue" Width="150" Margin="3" Content="Email an Mentor senden" Click="SendEmail_Click" Height="30"/>
                 </StackPanel>
 
             </GroupBox>
