@@ -26,40 +26,41 @@ namespace Mentoren_App
         {
             InitializeComponent();
         }
-    }
-    public void SendEmail_Click(object sender, RoutedEventArgs e)
-    {
-        try
-        {
-            string fromMail = "ana.pop@htlwy.at";
 
-            using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
+        private void SendEmail_Click(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                smtpClient.Port = 587;
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential(fromMail, "Funny_Bunny11");
-                smtpClient.EnableSsl = true;
+                string fromMail = "ana.pop@htlwy.at";
 
-
-                using (var mailMessage = new MailMessage())
+                using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
                 {
-                    mailMessage.From = new MailAddress(fromMail);
-                    mailMessage.Subject =  Subject.Text;
-                    mailMessage.Body = EmailContent_TB.Text;
-                    mailMessage.IsBodyHtml = true;
-                    mailMessage.To.Add(recipientEmail.Text);
+                    smtpClient.Port = 587;
+                    smtpClient.UseDefaultCredentials = false;
+                    smtpClient.Credentials = new NetworkCredential(fromMail, "Funny_Bunny11");
+                    smtpClient.EnableSsl = true;
 
-                    smtpClient.Send(mailMessage);
+
+                    using (var mailMessage = new MailMessage())
+                    {
+                        mailMessage.From = new MailAddress(fromMail);
+                        mailMessage.Subject = Subject.Text;
+                        mailMessage.Body = EmailBody.Text;
+                        mailMessage.IsBodyHtml = true;
+                        mailMessage.To.Add(recipientEmail.Text);
+
+                        smtpClient.Send(mailMessage);
+                    }
                 }
+
+                MessageBox.Show("E-Mail wurde erfolgreich gesendet.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-
-            MessageBox.Show("E-Mail wurde erfolgreich gesendet.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.ToString());
-        }
-
     }
+ 
 
 }
