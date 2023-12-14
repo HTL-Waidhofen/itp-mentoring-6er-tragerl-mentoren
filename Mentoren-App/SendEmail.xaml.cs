@@ -26,41 +26,57 @@ namespace Mentoren_App
         {
             InitializeComponent();
         }
-
         private void SendEmail_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (recipientEmail.Text == "")
             {
-                string fromMail = "ana.pop@htlwy.at";
-
-                using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
-                {
-                    smtpClient.Port = 587;
-                    smtpClient.UseDefaultCredentials = false;
-                    smtpClient.Credentials = new NetworkCredential(fromMail, "Funny_Bunny11");
-                    smtpClient.EnableSsl = true;
-
-
-                    using (var mailMessage = new MailMessage())
-                    {
-                        mailMessage.From = new MailAddress(fromMail);
-                        mailMessage.Subject = Subject.Text;
-                        mailMessage.Body = EmailBody.Text;
-                        mailMessage.IsBodyHtml = true;
-                        mailMessage.To.Add(recipientEmail.Text);
-
-                        smtpClient.Send(mailMessage);
-                    }
-                }
-
-                MessageBox.Show("E-Mail wurde erfolgreich gesendet.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
+                recipientEmail.Background = Brushes.Red;
+                MessageBox.Show("Fülle alle Felder aus");
             }
-            catch (Exception ex)
+            else if (Subject.Text == "")
             {
-                MessageBox.Show(ex.ToString());
+                Subject.Background = Brushes.Red;
+                MessageBox.Show("Fülle alle Felder aus");
+            }
+            else if (EmailBody.Text == "")
+            {
+                EmailBody.Background = Brushes.Red;
+                MessageBox.Show("Fülle alle Felder aus");
+            }
+            else
+            {
+                recipientEmail.Background = Brushes.White;
+                EmailBody.Background = Brushes.White;
+                Subject.Background = Brushes.White;
+                try
+                {
+                    string fromMail = "ana.pop@htlwy.at";
+
+                    using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
+                    {
+                        smtpClient.Port = 587;
+                        smtpClient.UseDefaultCredentials = false;
+                        smtpClient.Credentials = new NetworkCredential(fromMail, "Funny_Bunny11");
+                        smtpClient.EnableSsl = true;
+
+                        using (var mailMessage = new MailMessage())
+                        {
+                            mailMessage.From = new MailAddress(fromMail);
+                            mailMessage.Subject = Subject.Text;
+                            mailMessage.Body = EmailBody.Text;
+                            mailMessage.IsBodyHtml = true;
+                            mailMessage.To.Add(recipientEmail.Text);
+                            smtpClient.Send(mailMessage);
+                        }
+                    }
+                    MessageBox.Show("E-Mail wurde erfolgreich gesendet.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Email konnte nicht gesendet werden");
+                }
             }
         }
     }
- 
 
 }
