@@ -27,39 +27,7 @@ namespace Mentoren_App
             InitializeComponent();
         }
 
-        public void SendEmail_Click(object sender, RoutedEventArgs e)
-        {
-            try {
-                string fromMail = "ana.pop@htlwy.at";
-
-                using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
-                {
-                    smtpClient.Port = 587;
-                    smtpClient.UseDefaultCredentials = false;
-                    smtpClient.Credentials = new NetworkCredential(fromMail, "Funny_Bunny11");
-                    smtpClient.EnableSsl = true;
-
-
-                    using (var mailMessage = new MailMessage())
-                    {
-                        mailMessage.From = new MailAddress(fromMail);
-                        mailMessage.Subject = Betreff_TB.Text;
-                        mailMessage.Body = EmailContent_TB.Text;
-                        mailMessage.IsBodyHtml = true;
-                        mailMessage.To.Add(LoginMail_TB.Text);
-
-                        smtpClient.Send(mailMessage);
-                    }
-                }
-
-                MessageBox.Show("E-Mail wurde erfolgreich gesendet.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-        }
+        
     }
 }
 
