@@ -44,7 +44,7 @@ namespace Mentoren_App
                 using (var mailMessage = new MailMessage())
                 {
                     mailMessage.From = new MailAddress(fromMail);
-                    mailMessage.Subject =  Sub.Text;
+                    mailMessage.Subject =  Subject.Text;
                     mailMessage.Body = EmailContent_TB.Text;
                     mailMessage.IsBodyHtml = true;
                     mailMessage.To.Add(recipientEmail.Text);

@@ -20,7 +20,7 @@
 
         <StackPanel Orientation="Horizontal">
             <Label Content="Betreff" Width="105" FontWeight="DemiBold"/>
-            <TextBox x:Name="Betreff"  Width="250" Margin="3"/>
+            <TextBox x:Name="Subject"  Width="250" Margin="3"/>
         </StackPanel>
 
         <StackPanel Margin="7">
