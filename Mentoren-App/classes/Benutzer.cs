@@ -28,17 +28,17 @@ public class Benutzer : DbConnection
         this.ConnectionString = base.ConnectionString;
     }
 
-    public static void CreateBenutzer(string vorname, string nachname, string role, string email, string passwort, string ConnectionString)
+    public static void CreateBenutzer(string vorname, string nachname, string rolle, string email, string passwort, string ConnectionString)
     {
         using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
-            string query = "INSERT INTO Benutzer (Vorname, Nachname, Rolle, Email, Passwort) VALUES (@Vorname, @Nachname, @Role, @Email, @Passwort)";
+            string query = "INSERT INTO Benutzer (Vorname, Nachname, Rolle, Email, Passwort) VALUES (@Vorname, @Nachname, @Rolle, @Email, @Passwort)";
             using (SqlCommand cmd = new SqlCommand(query, connection))
             {
                 cmd.Parameters.AddWithValue("@Vorname", vorname);
                 cmd.Parameters.AddWithValue("@Nachname", nachname);
-                cmd.Parameters.AddWithValue("@Role", role);
+                cmd.Parameters.AddWithValue("@Rolle", rolle);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@Passwort", passwort);
                 cmd.ExecuteNonQuery();
@@ -105,7 +105,7 @@ public class Benutzer : DbConnection
     public static List<Benutzer> GetAllSchueler(string ConnectionString)
     {
         List<Benutzer> result = new List<Benutzer>();
-        string query = "SELECT * FROM Benutzer WHERE Role = 'Schüler'";
+        string query = "SELECT * FROM Benutzer WHERE Rolle = 'Schüler'";
 
         using (SqlConnection connection = new SqlConnection(ConnectionString))
         {

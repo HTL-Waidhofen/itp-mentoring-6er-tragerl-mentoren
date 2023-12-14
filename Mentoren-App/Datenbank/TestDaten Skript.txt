@@ -1,9 +1,7 @@
-
-INSERT INTO Benutzer (Vorname, Nachname, Role, Email, Passwort) VALUES
+INSERT INTO Benutzer (Vorname, Nachname, Rolle, Email, Passwort) VALUES
 ('Max', 'Mustermann', 'Schüler', 'max.schueler@example.com', 'pass123'),
 ('Anna', 'Mentorin', 'Mentor', 'anna.mentor@example.com', 'pass456'),
-('Peter', 'Lehrer', 'Lehrer', 'peter.lehrer@example.com', 'pass789');
-
+('Peter', 'Lehrer', 'Mentor', 'peter.mentor@example.com', 'pass789');
 
 INSERT INTO Faecher (Fachname) VALUES
 ('Mathematik'),
@@ -20,8 +18,7 @@ INSERT INTO BenutzerFaecher (BenutzerID, FachID) VALUES
 (3, 2),
 (3, 3);
 
-
-INSERT INTO MentoringAnfragen (SchuelerID, MentorID, FachID, Status, Nachrichten) VALUES
+INSERT INTO MentoringAnfragen (SchuelerID, MentorID, FachID, Status, Nachricht) VALUES
 (1, 2, 1, 'Offen', 'Kannst du mir bei Mathematik helfen?'),
 (2, 3, 4, 'In Bearbeitung', 'Können wir uns nächste Woche treffen?'),
 (3, 1, 2, 'Abgeschlossen', 'Vielen Dank für deine Hilfe in Physik.');
