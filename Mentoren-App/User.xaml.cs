@@ -30,16 +30,19 @@ namespace Mentoren_App
         private void SendEmail_Click(object sender, RoutedEventArgs e)
         {
             try {
+                string fromMail = "ana.pop@htlwy.at";
 
-                using (var smtpClient = new SmtpClient("smtp.gmail.com"))
+                using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
                 {
                     smtpClient.Port = 587;
-                    smtpClient.Credentials = new NetworkCredential("", "");
+                    smtpClient.UseDefaultCredentials = false;
+                    smtpClient.Credentials = new NetworkCredential(fromMail, "Funny_Bunny11");
                     smtpClient.EnableSsl = true;
+
 
                     using (var mailMessage = new MailMessage())
                     {
-                        mailMessage.From = new MailAddress("");
+                        mailMessage.From = new MailAddress(fromMail);
                         mailMessage.Subject = Betreff_TB.Text;
                         mailMessage.Body = EmailContent_TB.Text;
                         mailMessage.IsBodyHtml = true;
