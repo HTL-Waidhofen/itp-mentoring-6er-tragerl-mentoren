@@ -34,12 +34,12 @@ namespace Mentoren_App
                 using (var smtpClient = new SmtpClient("smtp.gmail.com"))
                 {
                     smtpClient.Port = 587;
-                    smtpClient.Credentials = new NetworkCredential("anappp73@gmail.com", "anapopmaria");
+                    smtpClient.Credentials = new NetworkCredential("", "");
                     smtpClient.EnableSsl = true;
 
                     using (var mailMessage = new MailMessage())
                     {
-                        mailMessage.From = new MailAddress("anappp73@gmail.com");
+                        mailMessage.From = new MailAddress("");
                         mailMessage.Subject = Betreff_TB.Text;
                         mailMessage.Body = EmailContent_TB.Text;
                         mailMessage.IsBodyHtml = true;
