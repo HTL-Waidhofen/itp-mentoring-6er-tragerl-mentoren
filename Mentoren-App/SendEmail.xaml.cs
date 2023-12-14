@@ -70,6 +70,9 @@ namespace Mentoren_App
                         }
                     }
                     MessageBox.Show("E-Mail wurde erfolgreich gesendet.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
+                    recipientEmail.Text = "";
+                    Subject.Text = "";
+                    EmailBody.Text = "";
                 }
                 catch (Exception ex)
                 {
