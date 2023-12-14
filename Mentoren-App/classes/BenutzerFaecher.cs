@@ -9,15 +9,17 @@ namespace Mentoren_App.classes
         public int BenutzerID { get; set; }
         public int FachID { get; set; }
 
-        public BenutzerFaecher(int benutzerID, int fachID)
+        public BenutzerFaecher(int benutzerID, int fachID) :base()
         {
             this.BenutzerID = benutzerID;
             this.FachID = fachID;
+
+            this.ConnectionString = base.ConnectionString;
         }
 
-        public static void CreateBenutzerFach(int benutzerID, int fachID)
+        public static void CreateBenutzerFach(int benutzerID, int fachID, string ConnectionString)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = "INSERT INTO BenutzerFaecher (BenutzerID, FachID) VALUES (@BenutzerID, @FachID)";
@@ -30,10 +32,10 @@ namespace Mentoren_App.classes
             }
         }
 
-        public static List<BenutzerFaecher> ReadAllBenutzerFaecher()
+        public static List<BenutzerFaecher> ReadAllBenutzerFaecher(string ConnectionString)
         {
             List<BenutzerFaecher> result = new List<BenutzerFaecher>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = "SELECT * FROM BenutzerFaecher";
@@ -53,9 +55,9 @@ namespace Mentoren_App.classes
             return result;
         }
 
-        public static void DeleteBenutzerFach(int benutzerID, int fachID)
+        public static void DeleteBenutzerFach(int benutzerID, int fachID, string ConnectionString)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = "DELETE FROM BenutzerFaecher WHERE BenutzerID = @BenutzerID AND FachID = @FachID";

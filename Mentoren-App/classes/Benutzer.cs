@@ -16,7 +16,7 @@ public class Benutzer : DbConnection
         return Vorname + " " + Nachname + ", Email: " + Email;
     }
 
-    public Benutzer(int id, string vorname, string nachname, string role, string email, string passwort)
+    public Benutzer(int id, string vorname, string nachname, string role, string email, string passwort) :base() 
     {
         this.ID = id;
         this.Vorname = vorname;
@@ -24,9 +24,11 @@ public class Benutzer : DbConnection
         this.Role = role;
         this.Email = email;
         this.Passwort = passwort;
+
+        this.ConnectionString = base.ConnectionString;
     }
 
-    public static void CreateBenutzer(string vorname, string nachname, string role, string email, string passwort)
+    public static void CreateBenutzer(string vorname, string nachname, string role, string email, string passwort, string connectionString)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -44,7 +46,7 @@ public class Benutzer : DbConnection
         }
     }
 
-    public static Benutzer ReadBenutzerByID(int id)
+    public static Benutzer ReadBenutzerByID(int id, string connectionString)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -72,7 +74,7 @@ public class Benutzer : DbConnection
         return null;
     }
 
-    public void UpdateBenutzerEmail(string neueEmail)
+    public void UpdateBenutzerEmail(string neueEmail, string connectionString)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -87,7 +89,7 @@ public class Benutzer : DbConnection
         }
     }
 
-    public void DeleteBenutzer()
+    public void DeleteBenutzer(string connectionString)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {

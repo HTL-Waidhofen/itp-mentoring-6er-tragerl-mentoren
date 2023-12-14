@@ -9,7 +9,7 @@ namespace Mentoren_App.classes
         public int FachID { get; set; }
         public string Fachname { get; set; }
 
-        public Faecher(int fachID, string fachname)
+        public Faecher(int fachID, string fachname) :base()
         {
             this.FachID = fachID;
             this.Fachname = fachname;
