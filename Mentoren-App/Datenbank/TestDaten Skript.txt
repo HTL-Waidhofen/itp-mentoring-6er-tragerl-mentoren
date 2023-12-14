@@ -20,5 +20,5 @@ INSERT INTO BenutzerFaecher (BenutzerID, FachID) VALUES
 
 INSERT INTO MentoringAnfragen (SchuelerID, MentorID, FachID, Status, Nachricht) VALUES
 (1, 2, 1, 'Offen', 'Kannst du mir bei Mathematik helfen?'),
-(2, 3, 4, 'In Bearbeitung', 'Können wir uns nächste Woche treffen?'),
-(3, 1, 2, 'Abgeschlossen', 'Vielen Dank für deine Hilfe in Physik.');
+(2, 3, 4, 'Angenommen', 'Können wir uns nächste Woche treffen?'),
+(3, 1, 2, 'Abgelehnt', 'Vielen Dank für deine Hilfe in Physik.');
