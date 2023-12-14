@@ -10,7 +10,9 @@ namespace Mentoren_App.classes
         public int BenutzerID { get; set; }
         public int FachID { get; set; }
 
+
         public BenutzerFaecher(int benutzerID, int fachID) :base()
+
         {
             this.BenutzerID = benutzerID;
             this.FachID = fachID;
