@@ -42,6 +42,9 @@
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Email" Width="60"/>
                         <TextBox x:Name="LoginMail_TB"  Width="140" Margin="3"/>
+                        <StackPanel Orientation="Horizontal">
+                            <PasswordBox x:Name="passwordbx" Width="88"></PasswordBox>
+                        </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Betreff" Width="60"/>

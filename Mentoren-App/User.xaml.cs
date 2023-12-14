@@ -27,39 +27,38 @@ namespace Mentoren_App
             InitializeComponent();
         }
 
-        private void SendEmail_Click(object sender, RoutedEventArgs e)
+        public void SendEmail_Click(object sender, RoutedEventArgs e)
         {
-            try { 
+           
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-            string smtpServer = "smtp.gmail.com";
-            int smtpPort = 587;
-            string smtpBenutzername = "";
-            string smtpPasswort = "";
+                mail.From = new MailAddress("zaunersilke21@gmail.com");
+               
+                mail.To.Add(LoginMail_TB.Text);
+                mail.Subject = Betreff_TB.Text;
+                mail.Body = EmailContent_TB.Text;
 
-            string absenderEmail = LoginMail_TB.Text;
-            string empfaengerEmail = "";
-            string betreff = Betreff_TB.Text;
-            string text = EmailContent_TB.Text;
+              
+                SmtpServer.Port = 587;
+                SmtpServer.EnableSsl = true;
+                string psw = passwordbx.Password;
+               
 
-            // Erstellen der MailMessage
+                SmtpServer.Credentials = new System.Net.NetworkCredential("zaunersilke21@gmail.com", psw);
 
-            MailMessage mailNachricht = new MailMessage(absenderEmail, empfaengerEmail, betreff, text);
+                SmtpServer.EnableSsl = true;
 
-            // Erstellen des SmtpClients und Senden der E-Mail
-
-            SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort);
-            smtpClient.Credentials = new NetworkCredential(smtpBenutzername, smtpPasswort);
-            smtpClient.EnableSsl = true;
-
-            smtpClient.Send(mailNachricht);
-
-            MessageBox.Show("E-Mail wurde erfolgreich gesendet.", "Erfolg", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
+                SmtpServer.Send(mail);
+                MessageBox.Show("mail Send");
+            }
             catch (Exception ex)
             {
-                MessageBox.Show($"Fehler beim Senden der E-Mail: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.ToString());
             }
-
-}
+        }
     }
 }
+
