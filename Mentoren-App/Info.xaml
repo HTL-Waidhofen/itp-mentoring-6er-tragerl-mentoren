@@ -10,6 +10,7 @@
 
     <StackPanel Background="White">
 
+
         <StackPanel Background="White" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="Willkommen bei unserer Info App!"  FontSize="18" />
         </StackPanel>
