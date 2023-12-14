@@ -28,6 +28,13 @@ namespace Mentoren_App
         }
         private void SendEmail_Click(object sender, RoutedEventArgs e)
         {
+            string patternemail = @"";
+
+            static void IsEmailCorrect(string email , string pattern) 
+            {
+
+                
+            }
             if (recipientEmail.Text == "")
             {
                 recipientEmail.Background = Brushes.Red;
@@ -51,6 +58,7 @@ namespace Mentoren_App
                 try
                 {
                     string fromMail = "ana.pop@htlwy.at";
+
 
                     using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
                     {
