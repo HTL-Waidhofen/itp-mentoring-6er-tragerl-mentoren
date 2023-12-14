@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Runtime.CompilerServices;
 
 public class Benutzer : DbConnection
 {
@@ -17,7 +16,7 @@ public class Benutzer : DbConnection
         return Vorname + " " + Nachname + ", Email: " + Email;
     }
 
-    public Benutzer(int id, string vorname, string nachname, string role, string email, string passwort)
+    public Benutzer(int id, string vorname, string nachname, string role, string email, string passwort) : base()
     {
         this.ID = id;
         this.Vorname = vorname;
@@ -25,19 +24,21 @@ public class Benutzer : DbConnection
         this.Role = role;
         this.Email = email;
         this.Passwort = passwort;
+
+        this.ConnectionString = base.ConnectionString;
     }
 
-    public static void CreateBenutzer(string vorname, string nachname, string role, string email, string passwort)
+    public static void CreateBenutzer(string vorname, string nachname, string rolle, string email, string passwort, string ConnectionString)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
-            string query = "INSERT INTO Benutzer (Vorname, Nachname, Rolle, Email, Passwort) VALUES (@Vorname, @Nachname, @Role, @Email, @Passwort)";
+            string query = "INSERT INTO Benutzer (Vorname, Nachname, Rolle, Email, Passwort) VALUES (@Vorname, @Nachname, @Rolle, @Email, @Passwort)";
             using (SqlCommand cmd = new SqlCommand(query, connection))
             {
                 cmd.Parameters.AddWithValue("@Vorname", vorname);
                 cmd.Parameters.AddWithValue("@Nachname", nachname);
-                cmd.Parameters.AddWithValue("@Role", role);
+                cmd.Parameters.AddWithValue("@Rolle", rolle);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@Passwort", passwort);
                 cmd.ExecuteNonQuery();
@@ -45,9 +46,9 @@ public class Benutzer : DbConnection
         }
     }
 
-    public static Benutzer ReadBenutzerByID(int id)
+    public static Benutzer ReadBenutzerByID(int id, string ConnectionString)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             string query = "SELECT * FROM Benutzer WHERE ID = @ID";
@@ -73,9 +74,9 @@ public class Benutzer : DbConnection
         return null;
     }
 
-    public void UpdateBenutzerEmail(string neueEmail)
+    public void UpdateBenutzerEmail(string neueEmail, string ConnectionString)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             string query = "UPDATE Benutzer SET Email = @NeueEmail WHERE ID = @ID";
@@ -88,9 +89,9 @@ public class Benutzer : DbConnection
         }
     }
 
-    public void DeleteBenutzer()
+    public void DeleteBenutzer(string ConnectionString)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
             connection.Open();
             string query = "DELETE FROM Benutzer WHERE ID = @ID";
@@ -101,9 +102,73 @@ public class Benutzer : DbConnection
             }
         }
     }
+    public static List<Benutzer> GetAllSchueler(string ConnectionString)
+    {
+        List<Benutzer> result = new List<Benutzer>();
+        string query = "SELECT * FROM Benutzer WHERE Rolle = 'Schüler'";
+
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
+        {
+            connection.Open();
+
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = Convert.ToInt32(reader["ID"]);
+                        string vorname = Convert.ToString(reader["Vorname"]);
+                        string nachname = Convert.ToString(reader["Nachname"]);
+                        string role = Convert.ToString(reader["Role"]);
+                        string email = Convert.ToString(reader["Email"]);
+                        string passwort = Convert.ToString(reader["Passwort"]);
+
+                        result.Add(new Benutzer(id, vorname, nachname, role, email, passwort));
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static List<Benutzer> GetAllMentoren(string ConnectionString)
+    {
+        List<Benutzer> result = new List<Benutzer>();
+        string query = "SELECT * FROM Benutzer WHERE Role = 'Mentor'";
+
+        using (SqlConnection connection = new SqlConnection(ConnectionString))
+        {
+            connection.Open();
+
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = Convert.ToInt32(reader["ID"]);
+                        string vorname = Convert.ToString(reader["Vorname"]);
+                        string nachname = Convert.ToString(reader["Nachname"]);
+                        string role = Convert.ToString(reader["Role"]);
+                        string email = Convert.ToString(reader["Email"]);
+                        string passwort = Convert.ToString(reader["Passwort"]);
+
+                        result.Add(new Benutzer(id, vorname, nachname, role, email, passwort));
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
     public string ListBoxFormat()
     {
         return ID.ToString() + " | " + Vorname + " " + Nachname;
     }
 }
+
+
+
 
