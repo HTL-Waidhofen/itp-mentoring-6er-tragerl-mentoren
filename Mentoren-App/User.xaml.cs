@@ -23,6 +23,29 @@ namespace Mentoren_App
         public User()
         {
             InitializeComponent();
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.ShowMenuItems();
+            }
         }
+        /*
+        public void sortMentorsBySubject(List<Benutzer> allMentors)
+        {
+            List<Benutzer> sortedMentors = new List<Benutzer>;
+            foreach(Benutzer mentor in allMentors)
+            {
+                foreach (Feacher fach in mentor.Subjects)
+                    sortedMentors.Add(mentor);
+                
+            }
+            showMentors(sortedMentors);
+        }
+        public void showMentors(List<Benutzer> sortedMentors)
+        {
+            foreach (Benutzer mentor in sortedMentors)
+
+                mentorOutput.Items.Add(mentor.ToString);
+        }*/
+        
     }
 }

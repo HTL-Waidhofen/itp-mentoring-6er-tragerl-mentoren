@@ -74,8 +74,6 @@ namespace Mentoren_App
         }
         public void HideMenuItems()
         {
-
-
             foreach (var menuItem in Menu.Items)
             {
                 if (menuItem is MenuItem subMenuItem)
@@ -87,5 +85,19 @@ namespace Mentoren_App
                 }
             }
         }
+        public void ShowMenuItems()
+        {
+            foreach (var menuItem in Menu.Items)
+            {
+                if (menuItem is MenuItem subMenuItem)
+                {
+                    if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout")
+                    {
+                        subMenuItem.Visibility = Visibility.Visible;
+                    }
+}
+            }
+        }
+
     }
 }
