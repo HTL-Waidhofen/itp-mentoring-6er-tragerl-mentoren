@@ -9,16 +9,25 @@
       Title="Info">
 
     <StackPanel Background="White">
-        <Label HorizontalAlignment="Center" FontSize="30" Content="Info"></Label>
-        <Label Content="  Diese App wurde in Rahmen eines ITP Projekts über 3-4 Monate erstellt.
-          Team:
-          Maximillian Heschl
-          Silke Zauner
-          Ana Pop
-          Jakob Hintsteiner
-          Killian Mayrhofer
-          Tobias Teufel">
 
-        </Label>
+
+        <StackPanel Background="White" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Willkommen bei unserer Info App!"  FontSize="18" />
+        </StackPanel>
+
+     
+        <StackPanel Margin="20">
+            <TextBlock Text="Diese App wurde im Rahmen eines ITP  Projekts erstellt. Wir stellen euch mit dieser App eine Funktion bereit, die euch hilft Mentoren, die euch helfen können zu finden." TextWrapping="Wrap" Margin="0,0,0,15"/>
+
+            <TextBlock Text="Teammitglieder:" Margin="0,0,0,10"/>
+            <StackPanel Margin="20,0,0,0">
+                <TextBlock Text="Maximillian Heschl"/>
+                <TextBlock Text="Silke Zauner"/>
+                <TextBlock Text="Ana Pop"/>
+                <TextBlock Text="Jakob Hintsteiner"/>
+                <TextBlock Text="Killian Mayrhofer"/>
+                <TextBlock Text="Tobias Teufel"/>
+            </StackPanel>
+        </StackPanel>
     </StackPanel>
 </Page>
