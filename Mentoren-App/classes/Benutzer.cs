@@ -105,7 +105,7 @@ public class Benutzer : DbConnection
     public static List<Benutzer> GetAllSchueler(string ConnectionString)
     {
         List<Benutzer> result = new List<Benutzer>();
-        string query = "SELECT * FROM Benutzer WHERE Rolle = 'Schüler'";
+        string query = "SELECT * FROM Benutzer WHERE Rolle = 'SchÃ¼ler'";
 
         using (SqlConnection connection = new SqlConnection(ConnectionString))
         {
@@ -163,12 +163,12 @@ public class Benutzer : DbConnection
 
         return result;
     }
+
     public string ListBoxFormat()
     {
         return ID.ToString() + " | " + Vorname + " " + Nachname;
     }
 }
-
-
+}
 
 
