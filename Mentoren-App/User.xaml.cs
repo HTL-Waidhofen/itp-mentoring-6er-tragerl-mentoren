@@ -27,7 +27,10 @@ namespace Mentoren_App
             InitializeComponent();
         }
 
-        
+        private void GoToEmailPage(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 
