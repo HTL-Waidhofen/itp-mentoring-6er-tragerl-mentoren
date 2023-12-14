@@ -15,7 +15,7 @@
 
         <StackPanel Orientation="Vertical" Width="270" Height="400px" >
             <Label Content="Wähle ein Fach aus:"/>
-            <ComboBox SelectedIndex="0" x:Name="chooseSubject" Margin="3,0,3,3">
+            <ComboBox x:Name="chooseSubject" Margin="3,0,3,3">
                 <ComboBoxItem >Mathematik</ComboBoxItem>
                 <ComboBoxItem>Englisch</ComboBoxItem>
                 <ComboBoxItem>Deutsch</ComboBoxItem>
@@ -29,20 +29,20 @@
                 <ListBox x:Name="MentorList">Hier Sollen die Mentoren ausgegeben werden, die für das oben ausgewählte Fach zuständig sind</ListBox>
             </GroupBox>
         </StackPanel>
+        
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
             <GroupBox Header="Mentor-Profil" Height="130" />
+            
             <GroupBox Header="Mentor-Verlauf" Height="150">
-                <ScrollBar HorizontalAlignment="Right">
-
-                </ScrollBar>
+                <ScrollBar HorizontalAlignment="Right"/>
             </GroupBox>
-            <GroupBox Header="E-mail" x:Name="MailTo">
 
+            <GroupBox Header="E-mail" x:Name="MailTo">
                 <StackPanel>
                     <Button Foreground="White" Background="DarkSlateBlue" Width="150" Margin="3" Content="Email an Mentor senden" Click="GoToEmailPage" Height="30"/>
                 </StackPanel>
-
             </GroupBox>
         </StackPanel>
+        
     </StackPanel>
 </Page>

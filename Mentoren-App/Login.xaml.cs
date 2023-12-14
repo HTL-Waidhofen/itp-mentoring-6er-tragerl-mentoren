@@ -85,7 +85,6 @@ namespace Mentoren_App
             NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
         }
 
-     
     }
 }
 
