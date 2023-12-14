@@ -101,5 +101,9 @@ public class Benutzer : DbConnection
             }
         }
     }
+    public string ListBoxFormat()
+    {
+        return ID.ToString() + " | " + Vorname + " " + Nachname;
+    }
 }
 

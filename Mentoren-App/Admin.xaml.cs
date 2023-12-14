@@ -26,7 +26,23 @@ namespace Mentoren_App
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
                 mainWindow.ShowMenuItems();
+                mainWindow.writeBenuterToListBox(mainWindow.testUser, SchuelerList);
+                mainWindow.writeBenuterToListBox(mainWindow.testUser, MentorList);
             }
+        }
+  
+
+        public void showUserInfo(Benutzer user)
+        {
+            nameBox.Text = user.Vorname + " " + user.Nachname;
+            idBox.Text = user.ID.ToString();
+            mailBox.Text = user.Email;
+            // Benutzerklasse muss Angepasst werden //roleBox.Text = ;
+        }
+
+        private void SelectProfile(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
