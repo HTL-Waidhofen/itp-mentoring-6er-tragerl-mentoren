@@ -26,6 +26,8 @@ namespace Mentoren_App
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
                 mainWindow.ShowMenuItems();
+
+                //Correct Lists should be added
                 mainWindow.writeBenuterToListBox(mainWindow.testUser, SchuelerList);
                 mainWindow.writeBenuterToListBox(mainWindow.testUser, MentorList);
                 
@@ -39,12 +41,24 @@ namespace Mentoren_App
             nameBox.Text = user.Vorname + " " + user.Nachname;
             idBox.Text = user.ID.ToString();
             mailBox.Text = user.Email;
-            // Benutzerklasse muss Angepasst werden //roleBox.Text = ;
+            roleBox.Text = user.Role;
         }
 
-        private void SelectProfile(object sender, SelectionChangedEventArgs e)
+        
+        private void SelectProfileSchueler(object sender, SelectionChangedEventArgs e)
         {
-            //mit id auf listen zugreifen und benutzer mitgeben
+            MainWindow mainWindow = new MainWindow();
+            char idChar = SchuelerList.SelectedItem.ToString().ElementAt(0);
+            int id = int.Parse(idChar.ToString());
+            showUserInfo(mainWindow.GetBenutzerByID(id));
+        }
+
+        private void SelectProfileMentor(object sender, SelectionChangedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            char idChar = MentorList.SelectedItem.ToString().ElementAt(0);
+            int id = int.Parse(idChar.ToString());
+            showUserInfo(mainWindow.GetBenutzerByID(id));
         }
     }
 }

@@ -31,14 +31,14 @@
         </StackPanel>
         <StackPanel Orientation="Vertical" Width="300px" Height="400px" >
             <GroupBox Header="Schüler">
-                <ListBox x:Name="SchuelerList" SelectionChanged="SelectProfile">Hier sollen die Schüler ausgegeben werden</ListBox>
+                <ListBox x:Name="SchuelerList"  SelectionChanged="SelectProfileSchueler"></ListBox>
             </GroupBox>
         </StackPanel>
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
             <GroupBox Header="Mentoren">
-                <ListBox x:Name="MentorList">Hier sollen die Mentoren ausgegeben werden</ListBox>
+                <ListBox x:Name="MentorList" SelectionChanged="SelectProfileMentor"></ListBox>
             </GroupBox>
         </StackPanel>
-
+        
     </StackPanel>
 </Page>
