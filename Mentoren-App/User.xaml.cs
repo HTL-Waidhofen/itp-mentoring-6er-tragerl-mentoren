@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.classes.facher;
 
 namespace Mentoren_App
 {
@@ -28,24 +29,34 @@ namespace Mentoren_App
                 mainWindow.ShowMenuItems();
             }
         }
-        /*
-        public void sortMentorsBySubject(List<Benutzer> allMentors)
-        {
-            List<Benutzer> sortedMentors = new List<Benutzer>;
-            foreach(Benutzer mentor in allMentors)
-            {
-                foreach (Feacher fach in mentor.Subjects)
-                    sortedMentors.Add(mentor);
-                
-            }
-            showMentors(sortedMentors);
-        }
-        public void showMentors(List<Benutzer> sortedMentors)
-        {
-            foreach (Benutzer mentor in sortedMentors)
 
-                mentorOutput.Items.Add(mentor.ToString);
-        }*/
-        
+        private void chooseSubject_DropDownOpened(object sender, EventArgs e)
+        {
+            //idk why aber Faecher gibts nicht.
+            /*List<Faecher> subject = new List<Faecher>();
+            foreach (var faecher in subject)
+            {
+                subject.Add(faecher.Name);
+            }*/
+        }
+        /*
+public void sortMentorsBySubject(List<Benutzer> allMentors)
+{
+   List<Benutzer> sortedMentors = new List<Benutzer>;
+   foreach(Benutzer mentor in allMentors)
+   {
+       foreach (Feacher fach in mentor.Subjects)
+           sortedMentors.Add(mentor);
+
+   }
+   showMentors(sortedMentors);
+}
+public void showMentors(List<Benutzer> sortedMentors)
+{
+   foreach (Benutzer mentor in sortedMentors)
+
+       mentorOutput.Items.Add(mentor.ToString);
+}*/
+
     }
 }
