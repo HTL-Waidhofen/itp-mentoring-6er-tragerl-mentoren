@@ -60,5 +60,10 @@ namespace Mentoren_App
             int id = int.Parse(idChar.ToString());
             showUserInfo(mainWindow.GetBenutzerByID(id));
         }
+
+        private void ChangeData(object sender, RoutedEventArgs e)
+        {
+            //
+        }
     }
 }
