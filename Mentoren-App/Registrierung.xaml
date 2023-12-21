@@ -11,7 +11,7 @@
     <StackPanel VerticalAlignment="Center">
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
-            <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
+            <Label Content="Registrierung" FontSize="30" FontWeight="Bold" Foreground="DarkSlateBlue" HorizontalAlignment="Center"/>
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Vorname" Width="70"/>

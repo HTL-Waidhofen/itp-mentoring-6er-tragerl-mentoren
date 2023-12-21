@@ -11,7 +11,7 @@
 
         <StackPanel Background="white" Orientation="Vertical" HorizontalAlignment="Center">
 
-            <Label HorizontalAlignment="Center" Content="Login" FontSize="20"/>
+            <Label HorizontalAlignment="Center" Content="Login" FontSize="30" FontWeight="Bold" Foreground="DarkSlateBlue"/>
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Email" Width="60"/>

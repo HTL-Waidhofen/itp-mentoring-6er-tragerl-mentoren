@@ -9,7 +9,7 @@
       Title="Info">
 
     <StackPanel Background="White">
-        <TextBox HorizontalAlignment="Center" FontSize="30">Info</TextBox>
+        <Label Content="Info" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="DarkSlateBlue"/>
         <TextBox>
           Diese App wurde in Rahmen eines ITP Projekts über 3-4 Monate erstellt.
           Team:
