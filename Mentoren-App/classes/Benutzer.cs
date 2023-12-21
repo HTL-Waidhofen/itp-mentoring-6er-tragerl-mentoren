@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 public class Benutzer : DbConnection
 {
@@ -10,6 +11,9 @@ public class Benutzer : DbConnection
     public string Role { get; set; }
     public string Email { get; set; }
     private string Passwort { get; set; }
+
+    private List<Benutzer> schuelerListe;
+    private List<Benutzer> mentorListe;
 
     public override string ToString()
     {
@@ -24,9 +28,107 @@ public class Benutzer : DbConnection
         this.Role = role;
         this.Email = email;
         this.Passwort = passwort;
+        this.schuelerListe = GetAllSchueler();
+        this.mentorListe = GetAllMentoren();
 
         this.ConnectionString = base.ConnectionString;
     }
+
+    public void AktualisiereBenutzerListe()
+    {
+        schuelerListe = GetAllSchueler();
+
+        mentorListe = GetAllMentoren();
+    }
+
+    public void AktualisiereBenutzerListeBeiDatenbankAenderung()
+    {
+        List<Benutzer> aktualisierteSchuelerListe = GetAllSchueler();
+        List<Benutzer> aktualisierteMentorListe = GetAllMentoren();
+
+        if (!IstGleich(schuelerListe, aktualisierteSchuelerListe))
+        {
+            schuelerListe = aktualisierteSchuelerListe;
+        }
+
+        if (!IstGleich(mentorListe, aktualisierteMentorListe))
+        {
+            mentorListe = aktualisierteMentorListe;
+        }
+    }
+
+    private List<Benutzer> GetAllMentoren()
+    {
+        {
+            List<Benutzer> result = new List<Benutzer>();
+            string query = "SELECT * FROM Benutzer WHERE Role = 'Mentor'";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = Convert.ToInt32(reader["ID"]);
+                            string vorname = Convert.ToString(reader["Vorname"]);
+                            string nachname = Convert.ToString(reader["Nachname"]);
+                            string role = Convert.ToString(reader["Role"]);
+                            string email = Convert.ToString(reader["Email"]);
+                            string passwort = Convert.ToString(reader["Passwort"]);
+
+                            result.Add(new Benutzer(id, vorname, nachname, role, email, passwort));
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+    }
+
+    private List<Benutzer> GetAllSchueler()
+    {
+        {
+            List<Benutzer> result = new List<Benutzer>();
+            string query = "SELECT * FROM Benutzer WHERE Rolle = 'Schüler'";
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = Convert.ToInt32(reader["ID"]);
+                            string vorname = Convert.ToString(reader["Vorname"]);
+                            string nachname = Convert.ToString(reader["Nachname"]);
+                            string role = Convert.ToString(reader["Role"]);
+                            string email = Convert.ToString(reader["Email"]);
+                            string passwort = Convert.ToString(reader["Passwort"]);
+
+                            result.Add(new Benutzer(id, vorname, nachname, role, email, passwort));
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+    }
+
+    private bool IstGleich(List<Benutzer> listeA, List<Benutzer> listeB)
+    {
+        // Überprüfe, ob beide Listen die gleichen Elemente in der gleichen Reihenfolge enthalten
+        return listeA.Count == listeB.Count && Enumerable.SequenceEqual(listeA, listeB);
+    }
+
 
     public static void CreateBenutzer(string vorname, string nachname, string rolle, string email, string passwort, string ConnectionString)
     {
