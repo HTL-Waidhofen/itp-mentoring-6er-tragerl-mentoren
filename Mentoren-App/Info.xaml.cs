@@ -22,7 +22,7 @@ namespace Mentoren_App
     {
         public Info()
         {
-            InitializeComponent();
+            
         }
     }
 }
