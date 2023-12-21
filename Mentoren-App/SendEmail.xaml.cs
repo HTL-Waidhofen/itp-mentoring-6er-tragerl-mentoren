@@ -33,7 +33,6 @@ namespace Mentoren_App
             static void IsEmailCorrect(string email , string pattern) 
             {
 
-                
             }
             if (recipientEmail.Text == "")
             {
@@ -57,14 +56,14 @@ namespace Mentoren_App
                 Subject.Background = Brushes.White;
                 try
                 {
-                    string fromMail = "ana.pop@htlwy.at";
+                    string fromMail = "";
 
 
                     using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
                     {
                         smtpClient.Port = 587;
                         smtpClient.UseDefaultCredentials = false;
-                        smtpClient.Credentials = new NetworkCredential(fromMail, "Funny_Bunny11");
+                        smtpClient.Credentials = new NetworkCredential(fromMail, "Password");
                         smtpClient.EnableSsl = true;
 
                         using (var mailMessage = new MailMessage())
