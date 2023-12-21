@@ -30,13 +30,12 @@ namespace Mentoren_App
                 mainWindow.ShowMenuItems();
             }
         }
-<<<<<<< HEAD
 
         private void GoToEmailPage(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new Uri("SendEmail.xaml", UriKind.Relative));
         }
-=======
+
         /*
         public void sortMentorsBySubject(List<Benutzer> allMentors)
         {
@@ -55,8 +54,6 @@ namespace Mentoren_App
 
                 mentorOutput.Items.Add(mentor.ToString);
         }*/
-        
->>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
     }
 }
 
