@@ -31,6 +31,7 @@
         </StackPanel>
         
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
+<<<<<<< HEAD
             <GroupBox Header="Mentor-Profil" Height="130" />
             
             <GroupBox Header="Mentor-Verlauf" Height="150">
@@ -44,5 +45,16 @@
             </GroupBox>
         </StackPanel>
         
+=======
+            <GroupBox Header="Mentor-Profil"></GroupBox>
+            <GroupBox Header="Mentor-Verlauf"></GroupBox>
+            <GroupBox Header="Email an Mentor" x:Name="MailTo">
+                <StackPanel Orientation="Vertical">
+                   
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+            
+>>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
     </StackPanel>
 </Page>

@@ -23,6 +23,47 @@ namespace Mentoren_App
         public Admin()
         {
             InitializeComponent();
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.ShowMenuItems();
+
+                //Correct Lists should be added
+                mainWindow.writeBenuterToListBox(mainWindow.testUser, SchuelerList);
+                mainWindow.writeBenuterToListBox(mainWindow.testUser, MentorList);
+                
+                
+            }
+        }
+  
+
+        public void showUserInfo(Benutzer user)
+        {
+            nameBox.Text = user.Vorname + " " + user.Nachname;
+            idBox.Text = user.ID.ToString();
+            mailBox.Text = user.Email;
+            roleBox.Text = user.Role;
+        }
+
+        
+        private void SelectProfileSchueler(object sender, SelectionChangedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            char idChar = SchuelerList.SelectedItem.ToString().ElementAt(0);
+            int id = int.Parse(idChar.ToString());
+            showUserInfo(mainWindow.GetBenutzerByID(id));
+        }
+
+        private void SelectProfileMentor(object sender, SelectionChangedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            char idChar = MentorList.SelectedItem.ToString().ElementAt(0);
+            int id = int.Parse(idChar.ToString());
+            showUserInfo(mainWindow.GetBenutzerByID(id));
+        }
+
+        private void ChangeData(object sender, RoutedEventArgs e)
+        {
+            //
         }
     }
 }

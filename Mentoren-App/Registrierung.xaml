@@ -8,6 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registrierung">
 
+<<<<<<< HEAD
     <StackPanel VerticalAlignment="Center">
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
@@ -19,6 +20,19 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
+=======
+    <StackPanel VerticalAlignment="Center" >
+        
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
+            <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Vorname" Width="70"/>
+                <TextBox x:Name="VName" Margin="3" Width="120"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+>>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
                 <Label Content="Nachname" Width="70"/>
                 <TextBox x:Name="NName" Margin="3" Width="120"/>
             </StackPanel>
@@ -47,5 +61,9 @@
 
             <Button Click="RegistrateUser"  Background="DarkSlateBlue" Foreground="White" Width="100px"  Margin="3">Registrieren</Button>
         </StackPanel>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
     </StackPanel>
 </Page>

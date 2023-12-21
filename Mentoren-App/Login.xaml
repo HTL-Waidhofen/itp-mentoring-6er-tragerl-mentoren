@@ -13,6 +13,7 @@
 
             <Label HorizontalAlignment="Center" Content="Login" FontSize="20"/>
 
+<<<<<<< HEAD
             <StackPanel Orientation="Horizontal">
                 <Label Content="Email" Width="60"/>
                 <TextBox x:Name="LoginMail"  Width="100" Margin="3"/>
@@ -21,6 +22,33 @@
             <StackPanel Orientation="Horizontal">
                 <Label Width="60" Content="Passwort"/>
                 <PasswordBox x:Name="LoginPwd" Width="100px" Margin="3"/>
+=======
+
+            <StackPanel Background="White">
+
+
+
+                <StackPanel VerticalAlignment="Center" Height="237" >
+
+
+                    <StackPanel Background="White" Height="188" Width="220">
+
+                        <Label HorizontalAlignment="Center" Content="Login" FontSize="20" Height="44"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Email" Width="60"/>
+                            <TextBox x:Name="LoginMail"  Width="100px" Height="20"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="60" Content="Passwort"/>
+                            <PasswordBox x:Name="LoginPwd" Width="100px" Height="20" />
+                        </StackPanel>
+                        <StackPanel Margin="10" Height="51">
+                            <Button Foreground="White" Background="DarkSlateBlue" Margin="5" Click="LogUserIn" Width="100px" Content="Login"/>
+                            <Button Foreground="White"  Background="DarkSlateBlue" Click="GoToRegistration"  Width="100px" Content="Registrieren"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+>>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
             </StackPanel>
 
             <StackPanel Margin="10" Height="51">

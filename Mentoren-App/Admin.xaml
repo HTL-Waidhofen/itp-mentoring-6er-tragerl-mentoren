@@ -9,19 +9,40 @@
       Title="Admin">
 
     <StackPanel Orientation="Horizontal" Background="White">
+        
         <StackPanel Orientation="Vertical" Width="200px" Height="400px">
-            <GroupBox Header="Profil"></GroupBox>
+            <GroupBox Header="Profil">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <Label FontSize="12" Margin="5,0,5,5">Name</Label>
+                            <Label FontSize="12" Margin="5,7,5,5">ID</Label>
+                            <Label FontSize="12" Margin="5,5,5,5">E-Mail</Label>
+                            <Label FontSize="12" Margin="5,5,5,5">Rolle</Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBox x:Name="nameBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                            <TextBox x:Name="idBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                            <TextBox x:Name="mailBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                            <TextBox x:Name="roleBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button Content="Daten ändern" Click="ChangeData"/>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
+            
         <StackPanel Orientation="Vertical" Width="300px" Height="400px" >
             <GroupBox Header="Schüler">
-                <ListBox x:Name="SchülerList">Hier sollen die Schüler ausgegeben werden</ListBox>
+                <ListBox x:Name="SchuelerList"  SelectionChanged="SelectProfileSchueler"></ListBox>
             </GroupBox>
         </StackPanel>
+            
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
             <GroupBox Header="Mentoren">
-                <ListBox x:Name="MentorList">Hier sollen die Mentoren ausgegeben werden</ListBox>
+                <ListBox x:Name="MentorList" SelectionChanged="SelectProfileMentor"></ListBox>
             </GroupBox>
         </StackPanel>
-
+        
     </StackPanel>
 </Page>

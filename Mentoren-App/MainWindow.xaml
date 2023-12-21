@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:Mentoren_App"
         mc:Ignorable="d"
         Title="Mentoren-App" Height="450" Width="800">
-    
+
     <StackPanel>
- 
+        
+
+
 
         <Menu VerticalAlignment="Top">
             <MenuItem x:Name="Menu" Header="_Menü">
@@ -19,7 +21,10 @@
             </MenuItem>
         </Menu>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
         <Frame x:Name="mainFrame"/>
 
     </StackPanel>

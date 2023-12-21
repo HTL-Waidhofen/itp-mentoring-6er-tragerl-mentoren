@@ -25,12 +25,38 @@ namespace Mentoren_App
         public User()
         {
             InitializeComponent();
+            if (Application.Current.MainWindow is MainWindow mainWindow)
+            {
+                mainWindow.ShowMenuItems();
+            }
         }
+<<<<<<< HEAD
 
         private void GoToEmailPage(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new Uri("SendEmail.xaml", UriKind.Relative));
         }
+=======
+        /*
+        public void sortMentorsBySubject(List<Benutzer> allMentors)
+        {
+            List<Benutzer> sortedMentors = new List<Benutzer>;
+            foreach(Benutzer mentor in allMentors)
+            {
+                foreach (Feacher fach in mentor.Subjects)
+                    sortedMentors.Add(mentor);
+                
+            }
+            showMentors(sortedMentors);
+        }
+        public void showMentors(List<Benutzer> sortedMentors)
+        {
+            foreach (Benutzer mentor in sortedMentors)
+
+                mentorOutput.Items.Add(mentor.ToString);
+        }*/
+        
+>>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
     }
 }
 
