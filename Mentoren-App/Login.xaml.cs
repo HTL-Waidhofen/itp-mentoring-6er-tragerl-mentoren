@@ -32,16 +32,16 @@ namespace Mentoren_App
                 mainWindow.HideMenuItems();
             }
         }
-
+        
         private void LogUserIn(object sender, RoutedEventArgs e)
         {
             //Methode für den Login mit Email/ Passwort 
             //If true => Redirect to Page
-<<<<<<< HEAD
+
             NavigationService?.Navigate(new Uri("User.xaml", UriKind.Relative));
-=======
+
             NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
->>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
+
             //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             /*
