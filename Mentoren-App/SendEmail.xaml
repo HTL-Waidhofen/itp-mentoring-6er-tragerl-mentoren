@@ -14,7 +14,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal">
-            <Label Content="Email Empfänger" Width="105" FontWeight="DemiBold"/>
+            <Label Content="Empfänger-Email" Width="105" FontWeight="DemiBold"/>
             <TextBox x:Name="recipientEmail" Margin="3" Width="250"/>
         </StackPanel>
 
@@ -24,7 +24,7 @@
         </StackPanel>
 
         <StackPanel Margin="7">
-            <TextBox x:Name="EmailBody" Height="100"/>
+            <TextBox x:Name="EmailBody" Height="150"/>
         </StackPanel>
 
         <StackPanel>
