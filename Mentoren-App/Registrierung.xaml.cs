@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Mentoren_App
 {
@@ -33,24 +25,23 @@ namespace Mentoren_App
         private void RegistrateUser(object sender, RoutedEventArgs e)
         {
             //Registrierungsfunktion
-            if(IsValidEmail(Mail.Text.ToString()) == false)
+            if (AreFieldsFilled() == false)
+            {
+            }
+            else if (IsValidEmail(Mail.Text.ToString()) == false)
             {
                 MessageBox.Show("Ihre Email hat ein falsches Format. Bitte überprüfen sie ihre Eingabe", "Fehler bei Email", MessageBoxButton.OK);
-            }
-            else if (AreFieldsFilled() == false)
-            {
-                MessageBox.Show("Nicht alle Felder sind ausgefüllt.","Fehler bei Eingabe" ,MessageBoxButton.OK);
             }
             else if (PwAreEqual() == false)
             {
                 MessageBox.Show("Die Passwörter stimmen nich überein oder besitzen keine Großbchstaben/Zahlen", "Felher bei Passwort", MessageBoxButton.OK);
             }
             else
-            {          
+            {
                 //Crud Funktion für Benutzer erstellen
                 MessageBox.Show("Registrierung wurde verarbeitet. Sie können sich nun einloggen.", "Registrierung", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService?.Navigate(new Uri("Login.xaml", UriKind.Relative));
-                
+
             }
         }
         public bool IsValidEmail(string email)
@@ -74,6 +65,11 @@ namespace Mentoren_App
             fields.Add(NName);
             fields.Add(Mail);
 
+            List<PasswordBox> pwds = new List<PasswordBox>();
+            pwds.Add(pwd);
+            pwds.Add(pwdBestaetigt);
+
+
             bool isFilled = true;
             SolidColorBrush brightRedBrush = new SolidColorBrush(Colors.IndianRed);
             SolidColorBrush whiteBrush = new SolidColorBrush(Colors.White);
@@ -82,20 +78,41 @@ namespace Mentoren_App
             {
                 if (string.IsNullOrWhiteSpace(field.Text))
                 {
-                    field.Background = brightRedBrush;
+                    field.BorderBrush = brightRedBrush;
                     isFilled = false;
-                    break; // exit the loop on the first empty field
+
                 }
                 else
                 {
                     field.Background = whiteBrush;
                 }
             }
+            foreach (PasswordBox pw in pwds)
+            {
+                if (string.IsNullOrEmpty(pw.Password))
+                {
+                    pw.BorderBrush = brightRedBrush;
+                    isFilled = false;
+
+                }
+                else
+                {
+                    pw.Background = whiteBrush;
+                }
+            }
+            if (student.IsChecked == false && mentor.IsChecked == false)
+            {
+                isFilled = false;
+            }
+            else
+            {
+                isFilled = true;
+            }
             if (isFilled == false)
             {
                 MessageBox.Show("Bitte füllen Sie alle Felder aus", "Felder ausfüllen", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-           // Schüler Mentor
+            // Schüler Mentor
             return isFilled;
         }
 
@@ -115,11 +132,10 @@ namespace Mentoren_App
         {
             string pw = pwd.Password.ToString();
             string verPw = pwdBestaetigt.Password.ToString();
-            string pat = "[1,2,3,4,5,6,7,8,9,0][A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]";
-            Regex pwdPat = new Regex(pat);
+            Regex pwdPat = new Regex(@"\d[A-Z]");
             MatchCollection pwdCol = pwdPat.Matches(pw);
-            
-            if(pw.Equals(verPw) && pwdCol.Count() == 1)
+
+            if (pw.Equals(verPw) && pwdCol.Count() == 1)
                 return true;
 
             return false;
