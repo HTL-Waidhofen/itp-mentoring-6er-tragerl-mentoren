@@ -10,7 +10,7 @@
 
     <StackPanel Background="White">
 
-        <Label Content="Einstellungen" FontSize="30" HorizontalAlignment="Center"/>
+        <Label Content="Einstellungen" FontSize="30" FontWeight="Bold" Foreground="DarkSlateBlue" HorizontalAlignment="Center"/>
         
         <GroupBox Header="Profil">
             <StackPanel>

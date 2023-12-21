@@ -8,11 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registrierung">
 
-<<<<<<< HEAD
     <StackPanel VerticalAlignment="Center">
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
-            <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
+            <Label Content="Registrierung" FontSize="30" FontWeight="Bold" Foreground="DarkSlateBlue" HorizontalAlignment="Center"/>
 
             <StackPanel Orientation="Horizontal">
                 <Label Content="Vorname" Width="70"/>
@@ -20,50 +19,44 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-=======
-    <StackPanel VerticalAlignment="Center" >
-        
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
-            <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
+                <StackPanel VerticalAlignment="Center" >
 
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Vorname" Width="70"/>
-                <TextBox x:Name="VName" Margin="3" Width="120"/>
-            </StackPanel>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Background="White">
+                        <Label Content="Registrierung" FontSize="30" HorizontalAlignment="Center"/>
 
-            <StackPanel Orientation="Horizontal">
->>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
-                <Label Content="Nachname" Width="70"/>
-                <TextBox x:Name="NName" Margin="3" Width="120"/>
-            </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Vorname" Width="70"/>
+                            <TextBox x:Name="VName" Margin="3" Width="120"/>
+                        </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
-                <Label Content="E-Mail" Width="70"/>
-                <TextBox x:Name="Mail" Margin="3" Width="120"/>
-            </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Nachname" Width="70"/>
+                            <TextBox x:Name="NName" Margin="3" Width="120"/>
+                        </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Password" Width="70"/>
-                <PasswordBox x:Name="pwd" Margin="3" Width="120"/>
-            </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="E-Mail" Width="70"/>
+                            <TextBox x:Name="Mail" Margin="3" Width="120"/>
+                        </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Password" Width="70"/>
+                            <PasswordBox x:Name="pwd" Margin="3" Width="120"/>
+                        </StackPanel>
 
-                <Label Content="Password bestätigen"></Label>
-                <PasswordBox x:Name="pwdBestaetigt" Margin="3" Width="120"/>
+                        <StackPanel Orientation="Horizontal">
 
-            </StackPanel>
+                            <Label Content="Password bestätigen"></Label>
+                            <PasswordBox x:Name="pwdBestaetigt" Margin="3" Width="120"/>
 
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <CheckBox x:Name="student" Content="Schüler"/>
-                <CheckBox x:Name="mentor" Content="Mentor"/>
-            </StackPanel>
+                        </StackPanel>
 
-            <Button Click="RegistrateUser"  Background="DarkSlateBlue" Foreground="White" Width="100px"  Margin="3">Registrieren</Button>
-        </StackPanel>
-<<<<<<< HEAD
-=======
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <CheckBox x:Name="student" Content="Schüler"/>
+                            <CheckBox x:Name="mentor" Content="Mentor"/>
+                        </StackPanel>
 
->>>>>>> 367f7aa73b33650e9b047d4ed492c26126f087ad
-    </StackPanel>
+                        <Button Click="RegistrateUser"  Background="DarkSlateBlue" Foreground="White" Width="100px"  Margin="3">Registrieren</Button>
+                    </StackPanel>
+                </StackPanel>
 </Page>

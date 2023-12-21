@@ -9,6 +9,7 @@
       Title="Info">
 
     <StackPanel Background="White">
+<<<<<<< HEAD
 
 
         <StackPanel Background="White" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -29,5 +30,20 @@
                 <TextBlock Text="Tobias Teufel"/>
             </StackPanel>
         </StackPanel>
+=======
+        <Label Content="Info" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="DarkSlateBlue"/>
+        <TextBox>
+          Diese App wurde in Rahmen eines ITP Projekts über 3-4 Monate erstellt.
+          Team:
+          Maximillian Heschl
+          Silke Zauner
+          Ana Pop
+          Jakob Hintsteiner
+          Killian Mayrhofer
+          Tobias Teufel
+        </TextBox>
+        
+        
+>>>>>>> dd80e70a658e8fccb32bf2a8035e06d687bf45d3
     </StackPanel>
 </Page>
