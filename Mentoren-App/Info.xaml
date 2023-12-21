@@ -19,7 +19,17 @@
                 <Run Text=" - Teufel Tobias"/>
             </TextBlock>
 
-            
+            <TextBlock Text="Allgemeine Information:" FontWeight="Bold" Margin="0,10,0,5"/>
+            <TextBlock Text="Unsere Anwendung bietet die Möglichkeit für Schüler, sich als Lernende und Mentoren gleichermaßen anzumelden,"/>
+            <TextBlock Text="egal, ob du Unterstützung in einem bestimmten Fach suchst oder deine Kenntnisse als Mentor teilen möchtest."/>
+
+            <TextBlock Text="Urheberrechtshinweis:" FontWeight="Bold" Margin="0,10,0,5"/>
+            <TextBlock Text="Die Inhalte dieser Website unterliegen österreichischem Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung"/>
+            <TextBlock Text="und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung "/>
+            <TextBlock Text="der jeweiligen Autoren bzw. Erstellern."/>
+
+            <TextBlock Text="Datenschutzerklärung:" FontWeight="Bold" Margin="0,10,0,5"/>
+            <TextBlock Text="Wir beachten die datenschutzrechtlichen Bestimmungen. Details dazu finden Sie in unserer Datenschutzerklärung (nicht)."/>
         </StackPanel>
     </Grid>
 </Window>
