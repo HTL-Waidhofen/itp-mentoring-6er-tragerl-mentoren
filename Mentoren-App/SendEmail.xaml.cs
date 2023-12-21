@@ -26,14 +26,8 @@ namespace Mentoren_App
         {
             InitializeComponent();
         }
-        private void SendEmail_Click(object sender, RoutedEventArgs e)
+        public void SendEmail_Click(object sender, RoutedEventArgs e)
         {
-            string patternemail = @"";
-
-            static void IsEmailCorrect(string email , string pattern) 
-            {
-
-            }
             if (recipientEmail.Text == "")
             {
                 recipientEmail.Background = Brushes.Red;
@@ -55,10 +49,10 @@ namespace Mentoren_App
                 EmailBody.Background = Brushes.White;
                 Subject.Background = Brushes.White;
                 try
-                {
+                {    
+                    //Listbox
                     string fromMail = "";
-
-
+                    
                     using (var smtpClient = new SmtpClient("smtp-mail.outlook.com"))
                     {
                         smtpClient.Port = 587;

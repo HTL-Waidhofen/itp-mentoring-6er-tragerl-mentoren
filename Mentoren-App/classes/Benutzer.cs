@@ -89,7 +89,6 @@ public class Benutzer : DbConnection
             return result;
         }
     }
-
     private List<Benutzer> GetAllSchueler()
     {
         {
@@ -118,11 +117,9 @@ public class Benutzer : DbConnection
                     }
                 }
             }
-
             return result;
         }
     }
-
     private bool IstGleich(List<Benutzer> listeA, List<Benutzer> listeB)
     {
         // Überprüfe, ob beide Listen die gleichen Elemente in der gleichen Reihenfolge enthalten
