@@ -13,7 +13,7 @@
             <GroupBox Header="Profil"></GroupBox>
         </StackPanel>
         <StackPanel Orientation="Vertical" Width="300px" Height="400px" >
-            <ComboBox x:Name="chooseSubject">
+            <ComboBox x:Name="chooseSubject" SelectionChanged="subjectChanged">
                 <ComboBoxItem>Mathematik</ComboBoxItem>
                 <ComboBoxItem>Englisch</ComboBoxItem>
                 <ComboBoxItem>Deutsch</ComboBoxItem>
@@ -23,7 +23,7 @@
                 <ComboBoxItem>SYT</ComboBoxItem>
             </ComboBox>
             <GroupBox Header="Mentoren">
-                <ListBox x:Name="MentorList">Hier Sollen die Mentoren ausgegeben werden, die für das oben ausgewählte Fach zuständig sind</ListBox>
+                <ListBox x:Name="MentorOutput">Hier Sollen die Mentoren ausgegeben werden, die für das oben ausgewählte Fach zuständig sind</ListBox>
             </GroupBox>
         </StackPanel>
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">

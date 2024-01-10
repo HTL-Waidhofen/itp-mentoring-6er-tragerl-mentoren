@@ -28,12 +28,13 @@ namespace Mentoren_App
                 new Benutzer(4, "Lena", "Lustig", "Benutzer", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "Mentor", "tom@example.com", "geheimesPasswort5"),
                 };
+        public List<Benutzer> allUsers = new List<Benutzer>(); //Liste mit allen Benutzern erstellen
+        public Benutzer currentUser = new Benutzer(1, "Max", "Mustermann", "Admin", "max@example.com", "geheimesPasswort1");
         public MainWindow()
         {
             InitializeComponent();
             NavigateToPage("Login.xaml");
         }
-
         // Navigation Functions
         public void NavigateToPage(string pageName)
         {

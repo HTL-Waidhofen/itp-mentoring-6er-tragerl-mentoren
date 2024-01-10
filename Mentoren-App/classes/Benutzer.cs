@@ -270,6 +270,14 @@ public class Benutzer : DbConnection
     {
         return ID.ToString() + " | " + Vorname + " " + Nachname;
     }
+    public bool isLoginDataCorrect(string email, string passwort)
+    {
+        if(email == Email && passwort == Passwort)
+            return true;
+        return false;
+    }
+
+
 }
     
 

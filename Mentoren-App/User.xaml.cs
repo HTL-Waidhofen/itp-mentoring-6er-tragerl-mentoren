@@ -26,26 +26,32 @@ namespace Mentoren_App
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
                 mainWindow.ShowMenuItems();
+                //showMentors(mainWindow.mentorListe); needs List in Main
             }
         }
-        /*
-        public void sortMentorsBySubject(List<Benutzer> allMentors)
+
+        private void subjectChanged(object sender, SelectionChangedEventArgs e)
         {
-            List<Benutzer> sortedMentors = new List<Benutzer>;
-            foreach(Benutzer mentor in allMentors)
-            {
-                foreach (Feacher fach in mentor.Subjects)
-                    sortedMentors.Add(mentor);
-                
-            }
-            showMentors(sortedMentors);
+            sortMentorsBySubject();
+        }
+        
+        public void sortMentorsBySubject()
+        {
+           List<Benutzer> sortedMentors = new List<Benutzer>;
+           foreach(Benutzer mentor in mentorListe)
+           {
+               foreach (Feacher fach in mentor.Subjects)
+                   sortedMentors.Add(mentor);
+
+           }
+           showMentors(sortedMentors);
         }
         public void showMentors(List<Benutzer> sortedMentors)
         {
-            foreach (Benutzer mentor in sortedMentors)
+           foreach (Benutzer mentor in sortedMentors)
 
-                mentorOutput.Items.Add(mentor.ToString);
-        }*/
-        
+               MentorOutput.Items.Add(mentor.ToString);
+        }
+
     }
 }

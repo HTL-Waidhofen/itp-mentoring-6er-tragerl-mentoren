@@ -20,28 +20,38 @@ namespace Mentoren_App
     /// </summary>
     public partial class Einstellungen : Page
     {
+        public MainWindow mainWindow = new MainWindow();
         public Einstellungen()
         {
             InitializeComponent();
+            showUserInSettings();
         }
 
+        private void showUserInSettings()
+        {
+            MainWindow mainWindow = new MainWindow();
+            VName.Text = mainWindow.currentUser.Vorname;
+            NName.Text = mainWindow.currentUser.Nachname;
+            ID.Text = mainWindow.currentUser.ID.ToString();
+            Email.Text = mainWindow.currentUser.Email;
+        }
         private void changeProfileInfo(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Sollen die Änderungen übernommen werden?", "Profil bearbeiten", MessageBoxButton.YesNo);
 
             if (result == MessageBoxResult.Yes)
             {
-                //User Bearbeiten
+                mainWindow.currentUser.
             }
         }
 
         private void deleteProfile(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Möchten Sie das Profil wirklich löschen?", "Profil löschen", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Möchten Sie das Profil wirklich löschen? Dies kann nicht rückgängig gemacht werden", "Profil löschen", MessageBoxButton.YesNo);
 
             if (result == MessageBoxResult.Yes)
             {
-               //User Löschen
+                mainWindow.currentUser.DeleteBenutzer();
             }
         }
     }

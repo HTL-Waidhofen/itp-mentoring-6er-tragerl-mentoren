@@ -17,6 +17,8 @@ using Microsoft.Data.SqlClient;
 using System.Data.SQLite;
 using System.Configuration;
 using Mentoren_App;
+using System.Diagnostics.Eventing.Reader;
+
 namespace Mentoren_App
 {
     /// <summary>
@@ -35,6 +37,7 @@ namespace Mentoren_App
 
         private void LogUserIn(object sender, RoutedEventArgs e)
         {
+            /*
             //Methode für den Login mit Email/ Passwort 
             //If true => Redirect to Page
             NavigationService?.Navigate(new Uri("Mentoren.xaml", UriKind.Relative));
@@ -74,11 +77,26 @@ namespace Mentoren_App
 
         }
     }
-*/
 
             //Output if Login failed
             //if(false == true)
             //MessageBox.Show("Ein Fehler ist aufgetreten. Bitte kontrollieren sie ihre Eingaben. Wenn sie noch nicht registriet sind klicken sie auf 'Registrieren'","Fehler bei Verarbeitung", MessageBoxButton.OK);
+        
+*/
+            MainWindow mainWindow = new MainWindow();
+            foreach (var User in mainWindow.allUsers)
+            {
+                if (User.isLoginDataCorrect(LoginMail.Text, LoginPwd.SecurePassword.ToString()))
+                    mainWindow.currentUser = User;
+            }
+            if(mainWindow.currentUser.Role.Contains('s'))
+                NavigationService?.Navigate(new Uri("User.xaml", UriKind.Relative));
+            else if (mainWindow.currentUser.Role.Contains('m'))
+                NavigationService?.Navigate(new Uri("Mentoren.xaml", UriKind.Relative));
+            else if(mainWindow.currentUser.Role.Contains('a'))
+                NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
+            else
+                MessageBox.Show("Ein Fehler ist aufgetreten","Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         public void GoToRegistration(object sender, RoutedEventArgs e)
         {
