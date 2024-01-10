@@ -39,13 +39,10 @@ namespace Mentoren_App
             //If true => Redirect to Page
 
             NavigationService?.Navigate(new Uri("User.xaml", UriKind.Relative));
-<<<<<<< HEAD
             NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
-=======
-
             NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
 
->>>>>>> 3ee85847cbeaeeab3fa2ab969a830e8feb0f3cbd
+
             //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             /*
