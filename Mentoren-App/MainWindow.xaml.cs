@@ -63,11 +63,13 @@ namespace Mentoren_App
         {
             foreach (var menuItem in Menu.Items)
             {
+                
                 if (menuItem is MenuItem subMenuItem)
                 {
-                    if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout")
+                    if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout" || subMenuItem.Header.ToString() == "Schüler" || subMenuItem.Header.ToString() == "Mentor")
                     {
                         subMenuItem.Visibility = Visibility.Collapsed;
+
                     }
                 }
             }
@@ -85,6 +87,16 @@ namespace Mentoren_App
                 }
             }
         }
+        private void ChangeToUser(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("User.xaml");
+        }
+        private void ChangeToMentor(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("Mentoren.xaml");
+        }
+
+
         //End of Navigation Functions
 
         /// <summary>
@@ -136,6 +148,6 @@ namespace Mentoren_App
             }
                 return new Benutzer(-1, "N:A", "N:A", string.Empty, "N:A", string.Empty);
         }
-       
+
     }
 }

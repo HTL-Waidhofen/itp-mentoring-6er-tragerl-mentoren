@@ -19,6 +19,10 @@
                 <MenuItem x:Name="Info" Header="Info" Click="GoToInfo" />
                 <MenuItem x:Name="Shut" Header="Beenden" Click="Shutdown" />
             </MenuItem>
+            <MenuItem Header="_Ansicht wechseln">
+                <MenuItem  Header ="Schüler" Click="ChangeToUser"/>
+                <MenuItem  Header ="Mentor" Click="ChangeToMentor"/>
+            </MenuItem>
         </Menu>
 
         <Frame x:Name="mainFrame"/>
