@@ -28,7 +28,6 @@ namespace Mentoren_App
             {
                 mainWindow.ShowMenuItems();
 
-                //Correct Lists should be added
                 mainWindow.writeBenuterToListBox(mainWindow.schuelerListe, SchuelerList);
                 mainWindow.writeBenuterToListBox(mainWindow.mentorListe, MentorList);
                 

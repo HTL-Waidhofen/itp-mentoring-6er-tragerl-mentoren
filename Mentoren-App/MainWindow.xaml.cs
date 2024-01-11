@@ -36,7 +36,15 @@ namespace Mentoren_App
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
                 };
-        public List<Benutzer> allUsers = new List<Benutzer>(); //Liste mit allen Benutzern erstellen
+        public List<Benutzer> allUsers = new List<Benutzer> {
+                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
+                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
+                new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
+                };
+    
+
         public Benutzer currentUser = new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1");
         public MainWindow()
         {
