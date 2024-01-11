@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Identity.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -29,19 +30,16 @@ namespace Mentoren_App
             {
             }
             else if (IsValidEmail(Mail.Text.ToString()) == false)
-            {
                 MessageBox.Show("Ihre Email hat ein falsches Format. Bitte überprüfen sie ihre Eingabe", "Fehler bei Email", MessageBoxButton.OK);
-            }
             else if (PwAreEqual() == false)
-            {
-                MessageBox.Show("Die Passwörter stimmen nich überein oder besitzen keine Großbchstaben/Zahlen", "Felher bei Passwort", MessageBoxButton.OK);
-            }
+                MessageBox.Show("Die Passwörter stimmen nich überein", "Felher bei Passwort", MessageBoxButton.OK);      
+            else if(PwMeetReq() == false)
+                MessageBox.Show("Ihr Passwort entspiricht nicht dem richtigen Format \n (min. 1 Großbuchstabe, Zahl und zwischen 8-20 Zeichen lang)", "Felher bei Passwort", MessageBoxButton.OK);
             else
             {
                 //Crud Funktion für Benutzer erstellen
                 MessageBox.Show("Registrierung wurde verarbeitet. Sie können sich nun einloggen.", "Registrierung", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService?.Navigate(new Uri("Login.xaml", UriKind.Relative));
-
             }
         }
         public bool IsValidEmail(string email)
@@ -71,14 +69,14 @@ namespace Mentoren_App
 
 
             bool isFilled = true;
-            SolidColorBrush brightRedBrush = new SolidColorBrush(Colors.IndianRed);
+            SolidColorBrush brightRedBrush = new SolidColorBrush(Colors.Red);
             SolidColorBrush whiteBrush = new SolidColorBrush(Colors.White);
 
             foreach (TextBox field in fields)
             {
                 if (string.IsNullOrWhiteSpace(field.Text))
                 {
-                    field.BorderBrush = brightRedBrush;
+                    field.Background = brightRedBrush;
                     isFilled = false;
 
                 }
@@ -91,7 +89,7 @@ namespace Mentoren_App
             {
                 if (string.IsNullOrEmpty(pw.Password))
                 {
-                    pw.BorderBrush = brightRedBrush;
+                    pw.Background = brightRedBrush;
                     isFilled = false;
 
                 }
@@ -132,10 +130,19 @@ namespace Mentoren_App
         {
             string pw = pwd.Password.ToString();
             string verPw = pwdBestaetigt.Password.ToString();
-            Regex pwdPat = new Regex(@"\d[A-Z]");
+
+            if (pw.Equals(verPw))
+                return true;
+
+            return false;
+        }
+       public bool PwMeetReq()
+        {
+            string pw = pwd.Password.ToString();
+            Regex pwdPat = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,20}$");
             MatchCollection pwdCol = pwdPat.Matches(pw);
 
-            if (pw.Equals(verPw) && pwdCol.Count() == 1)
+            if (pwdCol.Count() == 1)
                 return true;
 
             return false;
