@@ -24,7 +24,7 @@ namespace Mentoren_App
             {
                 new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
                 };
@@ -32,14 +32,14 @@ namespace Mentoren_App
             {
                 new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
                 };
         public List<Benutzer> allUsers = new List<Benutzer> {
                 new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
                 };
@@ -98,19 +98,22 @@ namespace Mentoren_App
                 if (menuItem is MenuItem subMenuItem)
                 {
                     if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout")
-                    subMenuItem.Visibility = Visibility.Visible;
-                    
 
-                    if (currentUser.Role == "a")
+                        subMenuItem.Visibility = Visibility.Visible;
+
+
+                    if (currentUser.Role == "a" || currentUser.Role =="m,s")
                     {
                         subMenuItem.Visibility = Visibility.Visible;
                     }
-                    else if(currentUser.Role == "m")
+
+                    if(currentUser.Role == "m")
                     {
                         if(subMenuItem.Header.ToString() =="Mentor")
                             subMenuItem.Visibility = Visibility.Visible;
                     }
-                    else if(currentUser.Role == "s")
+
+                    if(currentUser.Role == "s")
                     {
                         if (subMenuItem.Header.ToString() == "Schüler")
                             subMenuItem.Visibility = Visibility.Visible;
