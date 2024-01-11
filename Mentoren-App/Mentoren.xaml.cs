@@ -26,6 +26,7 @@ namespace Mentoren_App
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
                 mainWindow.ShowMenuItems();
+                
             }
         }
 
