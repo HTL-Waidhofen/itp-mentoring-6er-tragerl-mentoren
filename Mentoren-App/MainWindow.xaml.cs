@@ -20,20 +20,37 @@ namespace Mentoren_App
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Benutzer> testUser = new List<Benutzer>
+        public List<Benutzer> mentorListe = new List<Benutzer>
             {
-                new Benutzer(1, "Max", "Mustermann", "Admin", "max@example.com", "geheimesPasswort1"),
-                new Benutzer(2, "Anna", "Musterfrau", "Benutzer", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "Mentor", "peter@example.com", "geheimesPasswort3"),
-                new Benutzer(4, "Lena", "Lustig", "Benutzer", "lena@example.com", "geheimesPasswort4"),
-                new Benutzer(5, "Tom", "Tester", "Mentor", "tom@example.com", "geheimesPasswort5"),
+                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
+                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
+                new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
                 };
+        public List<Benutzer> schuelerListe = new List<Benutzer>
+            {
+                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
+                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
+                new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
+                };
+        public List<Benutzer> allUsers = new List<Benutzer> {
+                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
+                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
+                new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
+                };
+    
+
+        public Benutzer currentUser = new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1");
         public MainWindow()
         {
             InitializeComponent();
             NavigateToPage("Login.xaml");
         }
-
         // Navigation Functions
         public void NavigateToPage(string pageName)
         {
@@ -140,7 +157,7 @@ namespace Mentoren_App
         }
         public Benutzer GetBenutzerByID(int id) 
         {
-            foreach(Benutzer user in testUser)
+            foreach(Benutzer user in allUsers)
             {
                 if(user.ID == id)
                 { return user; }
