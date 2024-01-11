@@ -37,59 +37,17 @@ namespace Mentoren_App
         
         private void LogUserIn(object sender, RoutedEventArgs e)
         {
-            /*
-            //Methode für den Login mit Email/ Passwort 
-            //If true => Redirect to Page
-
-            
-            NavigationService?.Navigate(new Uri("User.xaml", UriKind.Relative));
-            //NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
+         
+       
+            //NavigationService?.Navigate(new Uri("User.xaml", UriKind.Relative));
+            NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
             
             //NavigationService?.Navigate(new Uri("Mentoren.xaml", UriKind.Relative));
-
-            NavigationService?.Navigate(new Uri("Mentoren.xaml", UriKind.Relative));
-            //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
-            //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
-            /*
-            SqlConnection sqlCon = new SqlConnection(@"Mentoren DB.sqbpro");
-            try
-            {
-                if (sqlCon.State == ConnectionState.Closed)
-                    sqlCon.Open();
-                String query = "SELECT COUNT(1) FROM tblUser WHERE Email=@Email AND Password=@Password";
-                SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.Parameters.AddWithValue("@Email", LoginMail.Text);
-                sqlCmd.Parameters.AddWithValue("@Password", LoginPwd.Text);
-                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                if (count == 1)
-                {
-                    MainWindow dashboard = new MainWindow();
-                    dashboard.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Username or password is incorrect.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                sqlCon.Close();
-            }
-
-        }
-    }
-
             //Output if Login failed
             //if(false == true)
             //MessageBox.Show("Ein Fehler ist aufgetreten. Bitte kontrollieren sie ihre Eingaben. Wenn sie noch nicht registriet sind klicken sie auf 'Registrieren'","Fehler bei Verarbeitung", MessageBoxButton.OK);
         
-*/
+            /*
             MainWindow mainWindow = new MainWindow();
             foreach (var User in mainWindow.allUsers)
             {
@@ -104,6 +62,7 @@ namespace Mentoren_App
                 NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
             else
                 MessageBox.Show("Ein Fehler ist aufgetreten","Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            */
         }
         public void GoToRegistration(object sender, RoutedEventArgs e)
         {

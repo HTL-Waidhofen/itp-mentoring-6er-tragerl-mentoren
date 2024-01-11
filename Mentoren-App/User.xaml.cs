@@ -29,14 +29,14 @@ namespace Mentoren_App
             InitializeComponent();
            
                 mainWindow.ShowMenuItems();
-                showMentors(mainWindow.mentorListe);
+            mainWindow.writeBenuterToListBox(mainWindow.mentorListe, MentorOutput);
            
         }
 
         private void subjectChanged(object sender, SelectionChangedEventArgs e)
         {
             sortMentorsBySubject();
-            }
+            
         }
 
         private void GoToEmailPage(object sender, RoutedEventArgs e)
@@ -59,9 +59,23 @@ namespace Mentoren_App
         {
            foreach (Benutzer mentor in sortedMentors)
 
-               MentorOutput.Items.Add(mentor.ToString);
+               MentorOutput.Items.Add(mentor.ToString());
+        }
+        public void showUserInfo(Benutzer user)
+        {
+            nameBox.Text = user.Vorname + " " + user.Nachname;
+            idBox.Text = user.ID.ToString();
+            mailBox.Text = user.Email;
+            roleBox.Text = user.Role;
         }
 
+        private void mentorSelected(object sender, SelectionChangedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            char idChar = MentorOutput.SelectedItem.ToString().ElementAt(0);
+            int id = int.Parse(idChar.ToString());
+            showUserInfo(mainWindow.GetBenutzerByID(id));
+        }
     }
 }
 

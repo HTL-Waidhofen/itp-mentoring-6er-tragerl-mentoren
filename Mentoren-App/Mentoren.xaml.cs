@@ -28,6 +28,7 @@ namespace Mentoren_App
                 mainWindow.ShowMenuItems();
             }
         }
-        
+
+
     }
 }

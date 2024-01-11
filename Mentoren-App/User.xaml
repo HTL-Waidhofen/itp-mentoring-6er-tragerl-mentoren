@@ -26,13 +26,19 @@
             </ComboBox>
 
             <GroupBox Header="Mentoren">
-                <ListBox x:Name="MentorOutput">Hier Sollen die Mentoren ausgegeben werden, die für das oben ausgewählte Fach zuständig sind</ListBox>
+                <ListBox x:Name="MentorOutput" SelectionChanged="mentorSelected"></ListBox>
             </GroupBox>
         </StackPanel>
         
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
-            <GroupBox Header="Mentor-Profil" Height="130" />
-            
+            <GroupBox Header="Mentor-Profil" Height="130" >
+                <StackPanel Orientation="Vertical">
+                    <TextBox x:Name="nameBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                    <TextBox x:Name="idBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                    <TextBox x:Name="mailBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                    <TextBox x:Name="roleBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                </StackPanel>
+            </GroupBox>
             <GroupBox Header="Mentor-Verlauf" Height="150">
                 <ScrollBar HorizontalAlignment="Right"/>
             </GroupBox>
