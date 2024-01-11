@@ -27,7 +27,7 @@ namespace Mentoren_App
             InitializeComponent();
            
                 mainWindow.ShowMenuItems();
-                //showMentors(mainWindow.mentorListe); needs List in Main
+                showMentors(mainWindow.mentorListe);
            
         }
 

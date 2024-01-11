@@ -28,8 +28,8 @@ public class Benutzer : DbConnection
         this.Role = role;
         this.Email = email;
         this.Passwort = passwort;
-        this.schuelerListe = GetAllSchueler();
-        this.mentorListe = GetAllMentoren();
+        //this.schuelerListe = GetAllSchueler();
+        //this.mentorListe = GetAllMentoren();
 
         this.ConnectionString = base.ConnectionString;
     }
