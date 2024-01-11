@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 public abstract class DbConnection
 {
-    public string ConnectionString = "Data Source=Datenbank\\Mentor.db";
+    public string ConnectionString = @"C:\\Users\\Silke\\Documents\\Schule\\Ittp\\Mentoren\\Mentoren-App\\Datenbank\\Mentor.db";
 
     public void CreateData(string query, SqlParameter[] parameters)
     {

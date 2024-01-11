@@ -1,7 +1,10 @@
+using Mentoren_App;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using static System.Net.WebRequestMethods;
+
 
 public class Benutzer : DbConnection
 {
@@ -28,8 +31,8 @@ public class Benutzer : DbConnection
         this.Role = role;
         this.Email = email;
         this.Passwort = passwort;
-        this.schuelerListe = GetAllSchueler();
-        this.mentorListe = GetAllMentoren();
+        //this.schuelerListe = GetAllSchueler();
+        //this.mentorListe = GetAllMentoren();
 
         this.ConnectionString = base.ConnectionString;
     }
@@ -94,8 +97,8 @@ public class Benutzer : DbConnection
         {
             List<Benutzer> result = new List<Benutzer>();
             string query = "SELECT * FROM Benutzer WHERE Rolle = 'Schüler'";
-
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (
+                SqlConnection connection = new SqlConnection(@"C:\Users\Silke\Documents\Schule\Ittp\Mentoren\Mentoren - App\Datenbank\Mentor.db"))
             {
                 connection.Open();
 
@@ -268,6 +271,3 @@ public class Benutzer : DbConnection
         return ID.ToString() + " | " + Vorname + " " + Nachname;
     }
 }
-    
-
-

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 namespace Mentoren_App
 {
+   
     /// <summary>
     /// Interaktionslogik für Admin.xaml
     /// </summary>
@@ -63,7 +64,7 @@ namespace Mentoren_App
 
         private void ChangeData(object sender, RoutedEventArgs e)
         {
-            //
+            
         }
     }
 }
