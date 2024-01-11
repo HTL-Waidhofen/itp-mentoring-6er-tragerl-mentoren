@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Identity.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace Mentoren_App
 {
     /// <summary>
@@ -20,14 +20,15 @@ namespace Mentoren_App
     /// </summary>
     public partial class User : Page
     {
+        public MainWindow mainWindow = new MainWindow();
         public User()
         {
+            
             InitializeComponent();
-            if (Application.Current.MainWindow is MainWindow mainWindow)
-            {
+           
                 mainWindow.ShowMenuItems();
                 //showMentors(mainWindow.mentorListe); needs List in Main
-            }
+           
         }
 
         private void subjectChanged(object sender, SelectionChangedEventArgs e)
@@ -37,10 +38,10 @@ namespace Mentoren_App
         
         public void sortMentorsBySubject()
         {
-           List<Benutzer> sortedMentors = new List<Benutzer>;
-           foreach(Benutzer mentor in mentorListe)
+           List<Benutzer> sortedMentors = new List<Benutzer>();
+           foreach(Benutzer mentor in mainWindow.mentorListe)
            {
-               foreach (Feacher fach in mentor.Subjects)
+            //   foreach (Feacher fach in mentor.Subjects)
                    sortedMentors.Add(mentor);
 
            }

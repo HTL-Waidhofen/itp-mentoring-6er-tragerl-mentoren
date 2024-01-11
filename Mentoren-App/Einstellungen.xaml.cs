@@ -41,7 +41,7 @@ namespace Mentoren_App
 
             if (result == MessageBoxResult.Yes)
             {
-                mainWindow.currentUser.
+                //mainWindow.currentUser.UpdateBenutzerEmail(Email.Text);
             }
         }
 
@@ -51,7 +51,7 @@ namespace Mentoren_App
 
             if (result == MessageBoxResult.Yes)
             {
-                mainWindow.currentUser.DeleteBenutzer();
+                //mainWindow.currentUser.DeleteBenutzer();
             }
         }
     }
