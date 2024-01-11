@@ -7,14 +7,16 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="User">
-
     <StackPanel Orientation="Horizontal" Background="White">
-        <StackPanel Orientation="Vertical" Width="200px" Height="400px">
-            <GroupBox Header="Profil"></GroupBox>
+
+        <StackPanel Orientation="Vertical" Width="170" Height="400px">
+            <GroupBox Header="Profil" Height="150" />
         </StackPanel>
-        <StackPanel Orientation="Vertical" Width="300px" Height="400px" >
-            <ComboBox x:Name="chooseSubject">
-                <ComboBoxItem>Mathematik</ComboBoxItem>
+
+        <StackPanel Orientation="Vertical" Width="270" Height="400px" >
+            <Label Content="Wähle ein Fach aus:"/>
+            <ComboBox x:Name="chooseSubject" Margin="3,0,3,3">
+                <ComboBoxItem >Mathematik</ComboBoxItem>
                 <ComboBoxItem>Englisch</ComboBoxItem>
                 <ComboBoxItem>Deutsch</ComboBoxItem>
                 <ComboBoxItem>SEW</ComboBoxItem>
@@ -22,19 +24,31 @@
                 <ComboBoxItem>ITP</ComboBoxItem>
                 <ComboBoxItem>SYT</ComboBoxItem>
             </ComboBox>
+
             <GroupBox Header="Mentoren">
-                <ListBox x:Name="MentorList">Hier Sollen die Mentoren ausgegeben werden, die für das oben ausgewählte Fach zuständig sind</ListBox>
+                <ListBox x:Name="MentorOutput" SelectionChanged="mentorSelected"></ListBox>
             </GroupBox>
         </StackPanel>
+        
         <StackPanel Orientation="Vertical" Width="300px" Height="400px">
-            <GroupBox Header="Mentor-Profil"></GroupBox>
-            <GroupBox Header="Mentor-Verlauf"></GroupBox>
-            <GroupBox Header="Email an Mentor" x:Name="MailTo">
+            <GroupBox Header="Mentor-Profil" Height="130" >
                 <StackPanel Orientation="Vertical">
-                   
+                    <TextBox x:Name="nameBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                    <TextBox x:Name="idBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                    <TextBox x:Name="mailBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                    <TextBox x:Name="roleBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Mentor-Verlauf" Height="150">
+                <ScrollBar HorizontalAlignment="Right"/>
+            </GroupBox>
+
+            <GroupBox Header="E-mail" x:Name="MailTo">
+                <StackPanel>
+                    <Button Foreground="White" Background="DarkSlateBlue" Width="150" Margin="3" Content="Email an Mentor senden" Click="GoToEmailPage" Height="30"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
-            
+        
     </StackPanel>
 </Page>

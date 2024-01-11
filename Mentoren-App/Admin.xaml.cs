@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 namespace Mentoren_App
 {
+   
     /// <summary>
     /// Interaktionslogik für Admin.xaml
     /// </summary>
@@ -27,9 +28,8 @@ namespace Mentoren_App
             {
                 mainWindow.ShowMenuItems();
 
-                //Correct Lists should be added
-                mainWindow.writeBenuterToListBox(mainWindow.testUser, SchuelerList);
-                mainWindow.writeBenuterToListBox(mainWindow.testUser, MentorList);
+                mainWindow.writeBenuterToListBox(mainWindow.schuelerListe, SchuelerList);
+                mainWindow.writeBenuterToListBox(mainWindow.mentorListe, MentorList);
                 
                 
             }
@@ -63,7 +63,7 @@ namespace Mentoren_App
 
         private void ChangeData(object sender, RoutedEventArgs e)
         {
-            //
+            
         }
     }
 }
