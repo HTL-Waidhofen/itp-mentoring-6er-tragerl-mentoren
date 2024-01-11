@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//using System.classes.facher;
+
 namespace Mentoren_App
 {
     /// <summary>
@@ -29,6 +31,7 @@ namespace Mentoren_App
             InitializeComponent();
            
                 mainWindow.ShowMenuItems();
+
             mainWindow.writeBenuterToListBox(mainWindow.mentorListe, MentorOutput);
            
         }
@@ -39,11 +42,12 @@ namespace Mentoren_App
             
         }
 
+
         private void GoToEmailPage(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new Uri("SendEmail.xaml", UriKind.Relative));
         }
-        
+
         public void sortMentorsBySubject()
         {
            List<Benutzer> sortedMentors = new List<Benutzer>();
@@ -58,6 +62,7 @@ namespace Mentoren_App
         public void showMentors(List<Benutzer> sortedMentors)
         {
            foreach (Benutzer mentor in sortedMentors)
+
 
                MentorOutput.Items.Add(mentor.ToString());
         }
