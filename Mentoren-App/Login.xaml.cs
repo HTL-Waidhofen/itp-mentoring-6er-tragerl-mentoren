@@ -43,9 +43,6 @@ namespace Mentoren_App
             //NavigationService?.Navigate(new Uri("Admin.xaml", UriKind.Relative));
 
             //NavigationService?.Navigate(new Uri("Mentoren.xaml", UriKind.Relative));
-
-
->>>>>>>>> Temporary merge branch 2
             //Redirect auf Mentor /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             //Redirect auf Admin /NavigationService?.Navigate(new Uri("Registrierung.xaml", UriKind.Relative));
             /*

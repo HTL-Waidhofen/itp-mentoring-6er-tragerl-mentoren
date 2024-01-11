@@ -28,6 +28,7 @@ namespace Mentoren_App
         }
         public void SendEmail_Click(object sender, RoutedEventArgs e)
         {
+           
             if (recipientEmail.Text == "")
             {
                 recipientEmail.Background = Brushes.Red;
@@ -81,6 +82,8 @@ namespace Mentoren_App
                 }
             }
         }
+
+       
     }
 
 }
