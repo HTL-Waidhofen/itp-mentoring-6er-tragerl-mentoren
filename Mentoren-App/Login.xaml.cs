@@ -34,7 +34,7 @@ namespace Mentoren_App
                 mainWindow.HideMenuItems();
             }
         }
-        
+
         private void LogUserIn(object sender, RoutedEventArgs e)
         {
          
