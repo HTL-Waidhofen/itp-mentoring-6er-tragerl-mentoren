@@ -1,7 +1,10 @@
+using Mentoren_App;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using static System.Net.WebRequestMethods;
+
 
 public class Benutzer : DbConnection
 {
@@ -89,14 +92,13 @@ public class Benutzer : DbConnection
             return result;
         }
     }
-
     private List<Benutzer> GetAllSchueler()
     {
         {
             List<Benutzer> result = new List<Benutzer>();
             string query = "SELECT * FROM Benutzer WHERE Rolle = 'Schüler'";
-
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (
+                SqlConnection connection = new SqlConnection(@"C:\Users\Silke\Documents\Schule\Ittp\Mentoren\Mentoren - App\Datenbank\Mentor.db"))
             {
                 connection.Open();
 
@@ -118,11 +120,9 @@ public class Benutzer : DbConnection
                     }
                 }
             }
-
             return result;
         }
     }
-
     private bool IstGleich(List<Benutzer> listeA, List<Benutzer> listeB)
     {
         // Überprüfe, ob beide Listen die gleichen Elemente in der gleichen Reihenfolge enthalten

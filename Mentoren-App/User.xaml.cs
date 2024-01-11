@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -34,6 +36,12 @@ namespace Mentoren_App
         private void subjectChanged(object sender, SelectionChangedEventArgs e)
         {
             sortMentorsBySubject();
+            }
+        }
+
+        private void GoToEmailPage(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new Uri("SendEmail.xaml", UriKind.Relative));
         }
         
         public void sortMentorsBySubject()
@@ -56,3 +64,4 @@ namespace Mentoren_App
 
     }
 }
+
