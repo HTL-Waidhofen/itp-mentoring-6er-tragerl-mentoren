@@ -81,9 +81,24 @@ namespace Mentoren_App
                 if (menuItem is MenuItem subMenuItem)
                 {
                     if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout")
+                    subMenuItem.Visibility = Visibility.Visible;
+                    
+
+                    if (currentUser.Role == "a")
                     {
                         subMenuItem.Visibility = Visibility.Visible;
                     }
+                    else if(currentUser.Role == "m")
+                    {
+                        if(subMenuItem.Header.ToString() =="Mentor")
+                            subMenuItem.Visibility = Visibility.Visible;
+                    }
+                    else if(currentUser.Role == "s")
+                    {
+                        if (subMenuItem.Header.ToString() == "Schüler")
+                            subMenuItem.Visibility = Visibility.Visible;
+                    }
+
                 }
             }
         }
