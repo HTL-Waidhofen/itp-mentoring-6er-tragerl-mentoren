@@ -10,13 +10,30 @@
 
     <StackPanel Background="White">
 
-        <Label Content="Einstellungen" FontSize="30" HorizontalAlignment="Center"/>
+        <Label Content="Einstellungen" FontSize="30" FontWeight="Bold" Foreground="DarkSlateBlue" HorizontalAlignment="Center"/>
+        
         <GroupBox Header="Profil">
             <StackPanel>
-                <TextBox x:Name="VName"></TextBox>
-                <TextBox x:Name="NName"></TextBox>
-                <TextBox x:Name="ID" IsEnabled="False"></TextBox>
-                <TextBox x:Name="Email"></TextBox>
+           
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Vorname: " Width="80"/>
+                    <TextBox x:Name="VName" IsReadOnly="True" Width="150" Margin="3"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Nachname: " Width="80"/>
+                    <TextBox x:Name="NName" IsReadOnly="True" Width="150" Margin="3"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="ID: " Width="80"/>
+                    <TextBox x:Name="ID" IsEnabled="False" Width="100" Margin="3"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="E-Mail: " Width="80"/>
+                    <TextBox x:Name="Email" IsReadOnly="True" Width="150" Margin="3"/>
+                </StackPanel>
                 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Click="changeProfileInfo" Background="DarkSlateBlue" Foreground="White" Width="100px"  Margin="3">Ändern</Button>
@@ -25,5 +42,6 @@
                 
             </StackPanel>
         </GroupBox>
+        
     </StackPanel>
 </Page>

@@ -32,6 +32,9 @@ namespace Mentoren_App
             if (result == MessageBoxResult.Yes)
             {
                 //User Bearbeiten
+                VName.IsReadOnly = false;
+                NName.IsReadOnly = false;
+                Email.IsReadOnly = false;
             }
         }
 

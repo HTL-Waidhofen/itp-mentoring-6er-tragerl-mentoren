@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,9 +31,16 @@ namespace Mentoren_App
             {
                 mainWindow.ShowMenuItems();
             }
+       
+
+        private void GoToEmailPage(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new Uri("SendEmail.xaml", UriKind.Relative));
         }
 
-        private void chooseSubject_DropDownOpened(object sender, EventArgs e)
+        /*
+        public void sortMentorsBySubject(List<Benutzer> allMentors)
+
         {
             //idk why aber Faecher gibts nicht.
             /*List<Faecher> subject = new List<Faecher>();
@@ -59,5 +68,8 @@ public void showMentors(List<Benutzer> sortedMentors)
        mentorOutput.Items.Add(mentor.ToString);
 }*/
 
+                mentorOutput.Items.Add(mentor.ToString);
+        }*/
     }
 }
+

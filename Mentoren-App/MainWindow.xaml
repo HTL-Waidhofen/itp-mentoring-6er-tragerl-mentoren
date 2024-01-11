@@ -8,16 +8,16 @@
         Title="Mentoren-App" Height="450" Width="800">
 
     <StackPanel>
-        
-
-
-
         <Menu VerticalAlignment="Top">
             <MenuItem x:Name="Menu" Header="_Menü">
                 <MenuItem x:Name="Settings" Header="Einstellungen" Click="GoToSettings"  />
                 <MenuItem x:Name="Log" Header="Logout" Click="Logout"/>
                 <MenuItem x:Name="Info" Header="Info" Click="GoToInfo" />
                 <MenuItem x:Name="Shut" Header="Beenden" Click="Shutdown" />
+            </MenuItem>
+            <MenuItem Header="_Ansicht wechseln">
+                <MenuItem  Header ="Schüler" Click="ChangeToUser"/>
+                <MenuItem  Header ="Mentor" Click="ChangeToMentor"/>
             </MenuItem>
         </Menu>
 
