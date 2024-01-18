@@ -1,4 +1,4 @@
-﻿<Window x:Class="YourNamespace.MainWindow"
+﻿<Window x:Class="Mentoren_App.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Impressum" Height="450" Width="800">
