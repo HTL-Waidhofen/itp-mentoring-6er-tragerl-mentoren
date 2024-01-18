@@ -1,7 +1,7 @@
 INSERT INTO Benutzer (Vorname, Nachname, Rolle, Email, Passwort) VALUES
-('Max', 'Mustermann', 'Schüler', 'max.schueler@example.com', 'pass123'),
-('Anna', 'Mentorin', 'Mentor', 'anna.mentor@example.com', 'pass456'),
-('Peter', 'Lehrer', 'Mentor', 'peter.mentor@example.com', 'pass789');
+('Max', 'Mustermann', 'Schüler', 'Max.Mustermann@htlwy.at', 'Pass1230'),
+('Anna', 'Mentorin', 'Mentor', 'Anna.Mentorin@htlwy.at', 'Pass4560'),
+('Peter', 'Lehrer', 'Mentor', 'Peter.Lehrer@htlwy.at', 'Pass7890');
 
 INSERT INTO Faecher (Fachname) VALUES
 ('Mathematik'),
