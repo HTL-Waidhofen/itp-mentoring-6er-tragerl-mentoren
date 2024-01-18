@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.Immutable;
 //using System.classes.facher;
 
 namespace Mentoren_App
@@ -48,6 +49,11 @@ namespace Mentoren_App
             NavigationService?.Navigate(new Uri("SendEmail.xaml", UriKind.Relative));
         }
 
+        public string GetEmailTextBox()
+        {
+            return mailBox.Text;
+        }
+
         public void sortMentorsBySubject()
         {
            List<Benutzer> sortedMentors = new List<Benutzer>();
@@ -68,6 +74,8 @@ namespace Mentoren_App
         }
         public void showUserInfo(Benutzer user)
         {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.MentorMail = user.Email.ToString();
             nameBox.Text = user.Vorname + " " + user.Nachname;
             idBox.Text = user.ID.ToString();
             mailBox.Text = user.Email;

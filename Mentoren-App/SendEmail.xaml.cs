@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Identity.Client;
 
 namespace Mentoren_App
 {
@@ -25,18 +26,17 @@ namespace Mentoren_App
         public SendEmail()
         {
             InitializeComponent();
+            MainWindow mainWindow = new MainWindow();
+            MessageBox.Show(mainWindow.MentorMail);
+            recipientEmail.Text = mainWindow.MentorMail;
 
         }
+
       
-        public void SendEmail_Click(object sender, RoutedEventArgs e )
+        public void SendEmail_Click(object sender, RoutedEventArgs e)
         {
-            GetEmail();
-            if (recipientEmail.Text == "")
-            {
-                recipientEmail.Background = Brushes.Red;
-                MessageBox.Show("Fülle alle Felder aus");
-            }
-            else if (Subject.Text == "")
+
+            if (Subject.Text == "")
             {
                 Subject.Background = Brushes.Red;
                 MessageBox.Show("Fülle alle Felder aus");
@@ -60,7 +60,7 @@ namespace Mentoren_App
                     {
                         smtpClient.Port = 587;
                         smtpClient.UseDefaultCredentials = false;
-                        smtpClient.Credentials = new NetworkCredential(fromMail, "Password");
+                        smtpClient.Credentials = new NetworkCredential(fromMail, "");
                         smtpClient.EnableSsl = true;
 
                         using (var mailMessage = new MailMessage())
@@ -84,8 +84,7 @@ namespace Mentoren_App
                 }
             }
         }
-
-       
+ 
     }
 
 }

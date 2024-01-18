@@ -44,7 +44,7 @@ namespace Mentoren_App
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
                 };
 
-
+        public string MentorMail = "max@examle.com";
         public Benutzer currentUser = new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1");
         public MainWindow()
         {
