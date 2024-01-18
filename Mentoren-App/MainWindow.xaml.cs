@@ -21,31 +21,37 @@ namespace Mentoren_App
     public partial class MainWindow : Window
     {
         public List<Benutzer> mentorListe = new List<Benutzer>
+
             {
                 new Benutzer(1, "Max", "Mustermann", "a", "max@max.com", "HTLWY"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
-                };
+        };
         public List<Benutzer> schuelerListe = new List<Benutzer>
+
             {
                 new Benutzer(1, "Max", "Mustermann", "a", "max@max.com", "HTLWY"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
+
                 };
         public List<Benutzer> allUsers = new List<Benutzer> {
                 new Benutzer(1, "Max", "Mustermann", "s",  "max@max.com", "HTLWY"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
-                };
+
+        };
+    
 
 
         public Benutzer currentUser = new Benutzer();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -88,6 +94,18 @@ namespace Mentoren_App
                         subMenuItem.Visibility = Visibility.Collapsed;
 
                     }
+                }   
+            }
+            foreach (var menuItem in Ansicht.Items)
+            {
+
+                if (menuItem is MenuItem subMenuItem)
+                {
+                    if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout" || subMenuItem.Header.ToString() == "Schüler" || subMenuItem.Header.ToString() == "Mentor")
+                    {
+                        subMenuItem.Visibility = Visibility.Collapsed;
+
+                    }
                 }
             }
         }
@@ -98,24 +116,37 @@ namespace Mentoren_App
                 if (menuItem is MenuItem subMenuItem)
                 {
                     if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout")
+
+                        subMenuItem.Visibility = Visibility.Visible;
+                }
+            }
+            foreach(var menuItem in Ansicht.Items)
+            {
+                if (menuItem is MenuItem subMenuItem)
+                {
+
+                if (currentUser.Role.Contains('a'))
+                {
+                    subMenuItem.Visibility = Visibility.Visible;
+                }
+
+
+                if (currentUser.Role.Contains('m'))
+                {
+                    if (subMenuItem.Header.ToString() == "Mentor")
                         subMenuItem.Visibility = Visibility.Visible;
 
+                    else
+                        subMenuItem.Visibility = Visibility.Collapsed;
+                }
 
-                    if (currentUser.Role == "a")
-                    {
+                if (currentUser.Role.Contains('s'))
+                {
+                    if (subMenuItem.Header.ToString() == "Schüler")
                         subMenuItem.Visibility = Visibility.Visible;
-                    }
-                    else if (currentUser.Role == "m")
-                    {
-                        if (subMenuItem.Header.ToString() == "Mentor")
-                            subMenuItem.Visibility = Visibility.Visible;
-                    }
-                    else if (currentUser.Role == "s")
-                    {
-                        if (subMenuItem.Header.ToString() == "Schüler")
-                            subMenuItem.Visibility = Visibility.Visible;
-                    }
-
+                    else
+                        subMenuItem.Visibility = Visibility.Collapsed;
+                }
                 }
             }
         }
