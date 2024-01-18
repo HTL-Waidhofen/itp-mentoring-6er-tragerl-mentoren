@@ -22,7 +22,7 @@ namespace Mentoren_App
     {
         public List<Benutzer> mentorListe = new List<Benutzer>
             {
-                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(1, "Max", "Mustermann", "a", "max@max.com", "HTLWY"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
                 new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
@@ -30,14 +30,14 @@ namespace Mentoren_App
                 };
         public List<Benutzer> schuelerListe = new List<Benutzer>
             {
-                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(1, "Max", "Mustermann", "a", "max@max.com", "HTLWY"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
                 new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
                 };
         public List<Benutzer> allUsers = new List<Benutzer> {
-                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(1, "Max", "Mustermann", "s",  "max@max.com", "HTLWY"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
                 new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
@@ -45,7 +45,7 @@ namespace Mentoren_App
                 };
 
 
-        public Benutzer currentUser = new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1");
+        public Benutzer currentUser = new Benutzer();
         public MainWindow()
         {
             InitializeComponent();
@@ -122,7 +122,7 @@ namespace Mentoren_App
         private void ChangeToUser(object sender, RoutedEventArgs e)
         {
             NavigateToPage("User.xaml");
-        }
+        }   
         private void ChangeToMentor(object sender, RoutedEventArgs e)
         {
             NavigateToPage("Mentoren.xaml");
@@ -180,7 +180,6 @@ namespace Mentoren_App
             }
             return new Benutzer(-1, "N:A", "N:A", string.Empty, "N:A", string.Empty);
         }
-
     }
 }
 
