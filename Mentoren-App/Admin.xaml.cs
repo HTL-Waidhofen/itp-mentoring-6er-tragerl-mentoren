@@ -30,8 +30,6 @@ namespace Mentoren_App
 
                 mainWindow.writeBenuterToListBox(mainWindow.schuelerListe, SchuelerList);
                 mainWindow.writeBenuterToListBox(mainWindow.mentorListe, MentorList);
-                
-                
             }
         }
   

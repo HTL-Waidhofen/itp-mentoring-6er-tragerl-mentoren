@@ -25,10 +25,12 @@ namespace Mentoren_App
         public SendEmail()
         {
             InitializeComponent();
+
         }
-        public void SendEmail_Click(object sender, RoutedEventArgs e)
+      
+        public void SendEmail_Click(object sender, RoutedEventArgs e )
         {
-           
+            GetEmail();
             if (recipientEmail.Text == "")
             {
                 recipientEmail.Background = Brushes.Red;
