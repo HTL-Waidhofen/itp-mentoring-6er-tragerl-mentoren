@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security;
 using static System.Net.WebRequestMethods;
 
 
@@ -22,7 +23,7 @@ public class Benutzer : DbConnection
     {
         return Vorname + " " + Nachname + ", Email: " + Email;
     }
-
+    public Benutzer() { }
     public Benutzer(int id, string vorname, string nachname, string role, string email, string passwort) : base()
     {
         this.ID = id;
@@ -270,12 +271,17 @@ public class Benutzer : DbConnection
     {
         return ID.ToString() + " | " + Vorname + " " + Nachname;
     }
-
     public bool isLoginDataCorrect(string email, string passwort)
     {
-        if(email == Email && passwort == Passwort)
-            return true;
-        return false;
+        MainWindow mainWindow = new MainWindow();
+      
+            if (email == Email)
+            {
+                if (passwort == Passwort)
+                    return true;
+
+            }
+            return false;
     }
 
 
