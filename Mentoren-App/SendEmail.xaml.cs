@@ -31,7 +31,7 @@ namespace Mentoren_App
         public string GetRecipientEmail()
         {
             User u = new User();
-            return u.mailBox.Text;
+            return u.GetEmailTextBox();
         }
 
         public void SendEmail_Click(object sender, RoutedEventArgs e)
@@ -62,7 +62,7 @@ namespace Mentoren_App
                     {
                         smtpClient.Port = 587;
                         smtpClient.UseDefaultCredentials = false;
-                        smtpClient.Credentials = new NetworkCredential(fromMail, "Password");
+                        smtpClient.Credentials = new NetworkCredential(fromMail, "");
                         smtpClient.EnableSsl = true;
 
                         using (var mailMessage = new MailMessage())

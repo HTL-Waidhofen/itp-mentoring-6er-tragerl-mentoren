@@ -48,6 +48,11 @@ namespace Mentoren_App
             NavigationService?.Navigate(new Uri("SendEmail.xaml", UriKind.Relative));
         }
 
+        public string GetEmailTextBox()
+        {
+            return mailBox.Text;
+        }
+
         public void sortMentorsBySubject()
         {
            List<Benutzer> sortedMentors = new List<Benutzer>();
