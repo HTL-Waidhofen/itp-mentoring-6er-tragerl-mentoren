@@ -43,6 +43,7 @@ namespace Mentoren_App
                 new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
+
         };
     
 
@@ -81,7 +82,7 @@ namespace Mentoren_App
         {
             foreach (var menuItem in Menu.Items)
             {
-                
+
                 if (menuItem is MenuItem subMenuItem)
                 {
                     if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout" || subMenuItem.Header.ToString() == "Schüler" || subMenuItem.Header.ToString() == "Mentor")
@@ -125,10 +126,12 @@ namespace Mentoren_App
                     subMenuItem.Visibility = Visibility.Visible;
                 }
 
+
                 if (currentUser.Role.Contains('m'))
                 {
                     if (subMenuItem.Header.ToString() == "Mentor")
                         subMenuItem.Visibility = Visibility.Visible;
+
                     else
                         subMenuItem.Visibility = Visibility.Collapsed;
                 }
@@ -194,15 +197,15 @@ namespace Mentoren_App
                 listBox.Items.Add(b.ListBoxFormat());
             }
         }
-        public Benutzer GetBenutzerByID(int id) 
+        public Benutzer GetBenutzerByID(int id)
         {
-            foreach(Benutzer user in allUsers)
+            foreach (Benutzer user in allUsers)
             {
-                if(user.ID == id)
+                if (user.ID == id)
                 { return user; }
 
             }
-                return new Benutzer(-1, "N:A", "N:A", string.Empty, "N:A", string.Empty);
+            return new Benutzer(-1, "N:A", "N:A", string.Empty, "N:A", string.Empty);
         }
 
     }
