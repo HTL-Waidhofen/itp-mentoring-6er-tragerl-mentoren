@@ -39,13 +39,25 @@
                     <TextBox x:Name="roleBox" FontSize="14" Width="125" Margin="0,5,10,10"></TextBox>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="Mentor-Verlauf" Height="150">
-                <ScrollBar HorizontalAlignment="Right"/>
-            </GroupBox>
 
-            <GroupBox Header="E-mail" x:Name="MailTo">
+            <GroupBox Header="E-mail" x:Name="MailTo" Height="250">
                 <StackPanel>
-                    <Button Foreground="White" Background="DarkSlateBlue" Width="150" Margin="3" Content="Email an Mentor senden" Click="GoToEmailPage" Height="30"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Empfänger-Email" Width="105" FontWeight="DemiBold"/>
+                        <TextBox x:Name="recipientEmail" Margin="3" Width="150"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Betreff" Width="105" FontWeight="DemiBold"/>
+                        <TextBox x:Name="Subject"  Width="150" Margin="3"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="7">
+                        <TextBox x:Name="EmailBody" Height="130"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button Foreground="White" Background="DarkSlateBlue" Width="150" Margin="3" Content="Email an Mentor senden" Click="SendEmail_Click" Height="25"/>
+                    </StackPanel>
                 </StackPanel>
             </GroupBox>
         </StackPanel>

@@ -23,6 +23,7 @@ public class Benutzer : DbConnection
         return Vorname + " " + Nachname + ", Email: " + Email;
     }
 
+    public Benutzer() { }
     public Benutzer(int id, string vorname, string nachname, string role, string email, string passwort) : base()
     {
         this.ID = id;

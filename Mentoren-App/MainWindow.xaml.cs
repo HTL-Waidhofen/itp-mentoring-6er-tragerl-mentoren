@@ -21,31 +21,37 @@ namespace Mentoren_App
     public partial class MainWindow : Window
     {
         public List<Benutzer> mentorListe = new List<Benutzer>
+
             {
-                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(1, "Max", "Mustermann", "a", "max@max.com", "HTLWY"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
-                };
+        };
         public List<Benutzer> schuelerListe = new List<Benutzer>
+
             {
-                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(1, "Max", "Mustermann", "a", "max@max.com", "HTLWY"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
+
                 };
         public List<Benutzer> allUsers = new List<Benutzer> {
-                new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1"),
+                new Benutzer(1, "Max", "Mustermann", "s",  "max@max.com", "HTLWY"),
                 new Benutzer(2, "Anna", "Musterfrau", "s", "anna@example.com", "geheimesPasswort2"),
-                new Benutzer(3, "Peter", "Pan", "m", "peter@example.com", "geheimesPasswort3"),
+                new Benutzer(3, "Peter", "Pan", "m,s", "peter@example.com", "geheimesPasswort3"),
                 new Benutzer(4, "Lena", "Lustig", "s", "lena@example.com", "geheimesPasswort4"),
                 new Benutzer(5, "Tom", "Tester", "m", "tom@example.com", "geheimesPasswort5"),
-                };
 
-        public string MentorMail = "max@examle.com";
-        public Benutzer currentUser = new Benutzer(1, "Max", "Mustermann", "a", "max@example.com", "geheimesPasswort1");
+        };
+
+        public string MentorMail;
+
+        public Benutzer currentUser = new Benutzer();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -77,7 +83,7 @@ namespace Mentoren_App
             Environment.Exit(0);
         }
         public void HideMenuItems()
-        {
+        {/*
             foreach (var menuItem in Menu.Items)
             {
 
@@ -90,6 +96,18 @@ namespace Mentoren_App
                     }
                 }
             }
+            foreach (var menuItem in View.Items)
+            {
+
+                if (menuItem is MenuItem subMenuItem)
+                {
+                    if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout" || subMenuItem.Header.ToString() == "Schüler" || subMenuItem.Header.ToString() == "Mentor")
+                    {
+                        subMenuItem.Visibility = Visibility.Collapsed;
+
+                    }
+                }
+            }*/
         }
         public void ShowMenuItems()
         {
@@ -98,26 +116,41 @@ namespace Mentoren_App
                 if (menuItem is MenuItem subMenuItem)
                 {
                     if (subMenuItem.Header.ToString() == "Einstellungen" || subMenuItem.Header.ToString() == "Logout")
+
                         subMenuItem.Visibility = Visibility.Visible;
-
-
-                    if (currentUser.Role == "a")
-                    {
-                        subMenuItem.Visibility = Visibility.Visible;
-                    }
-                    else if (currentUser.Role == "m")
-                    {
-                        if (subMenuItem.Header.ToString() == "Mentor")
-                            subMenuItem.Visibility = Visibility.Visible;
-                    }
-                    else if (currentUser.Role == "s")
-                    {
-                        if (subMenuItem.Header.ToString() == "Schüler")
-                            subMenuItem.Visibility = Visibility.Visible;
-                    }
-
                 }
             }
+            /*
+            foreach (var menuItem in View.Items)
+            {
+                if (menuItem is MenuItem subMenuItem)
+                {
+
+                    // if (currentUser.Role.Contains('a'))
+                    //{
+                    //}
+                    subMenuItem.Visibility = Visibility.Visible;
+                    /*
+
+                                        if (currentUser.Role.Contains('m'))
+                                        {
+                                            if (subMenuItem.Header.ToString() == "Mentor")
+                                                subMenuItem.Visibility = Visibility.Visible;
+
+                                            else
+                                                subMenuItem.Visibility = Visibility.Collapsed;
+                                        }
+
+                                        if (currentUser.Role.Contains('s'))
+                                        {
+                                            if (subMenuItem.Header.ToString() == "Schüler")
+                                                subMenuItem.Visibility = Visibility.Visible;
+                                            else
+                                                subMenuItem.Visibility = Visibility.Collapsed;
+                                        }
+                                    }*/
+                
+            
         }
         private void ChangeToUser(object sender, RoutedEventArgs e)
         {
@@ -181,6 +214,9 @@ namespace Mentoren_App
             return new Benutzer(-1, "N:A", "N:A", string.Empty, "N:A", string.Empty);
         }
 
+        private void ChangeToAdmin(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("Admin.xaml");
+        }
     }
 }
-
